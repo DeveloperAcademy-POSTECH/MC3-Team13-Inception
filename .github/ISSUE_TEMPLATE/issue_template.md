@@ -1,7 +1,7 @@
 ---
 name: 인셉션 issue template
 about: 인셉션 기본 이슈 템플릿
-title: "[FEAT]"
+title: "✨ feat :"
 labels: ''
 assignees: ''
 
