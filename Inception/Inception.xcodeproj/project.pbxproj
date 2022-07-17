@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */; };
+		90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmClockView.storyboard; sourceTree = "<group>"; };
+		90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		B8B9D0BE2881324700F98980 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */,
+				90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */,
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
@@ -245,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
