@@ -40,8 +40,7 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-CS-euF">
                                                                         <rect key="frame" x="289.5" y="0.0" width="76.5" height="31"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="gray" title="알람 해제"/>
+                                                                        <buttonConfiguration key="configuration" style="gray" title="알람 해제" cornerStyle="capsule"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
