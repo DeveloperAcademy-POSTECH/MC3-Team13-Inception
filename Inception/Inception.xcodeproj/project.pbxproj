@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71944A728845374004FF1BE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71944A628845374004FF1BE /* UIButton+.swift */; };
 		A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D32883DC0A0099E6CE /* UIView+.swift */; };
 		A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D62883DC190099E6CE /* UIStackView+.swift */; };
+		A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */; };
+		A7F246DB2883DE580099E6CE /* SleepSatisfacation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */; };
+		A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246DC2883EBA30099E6CE /* EmojiButton.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -19,8 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A71944A628845374004FF1BE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		A7F246D32883DC0A0099E6CE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Inception/Global/Extension/View/UIView+.swift"; sourceTree = SOURCE_ROOT; };
 		A7F246D62883DC190099E6CE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSatisfacationViewController.swift; sourceTree = "<group>"; };
+		A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepSatisfacation.storyboard; sourceTree = "<group>"; };
+		A7F246DC2883EBA30099E6CE /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +56,7 @@
 			children = (
 				A7F246D32883DC0A0099E6CE /* UIView+.swift */,
 				A7F246D62883DC190099E6CE /* UIStackView+.swift */,
+				A71944A628845374004FF1BE /* UIButton+.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +149,9 @@
 		B8B9D0BC2881323200F98980 /* SleepSatisfaction */ = {
 			isa = PBXGroup;
 			children = (
+				A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */,
+				A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */,
+				A7F246DC2883EBA30099E6CE /* EmojiButton.swift */,
 			);
 			path = SleepSatisfaction;
 			sourceTree = "<group>";
@@ -248,6 +260,7 @@
 			files = (
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
+				A7F246DB2883DE580099E6CE /* SleepSatisfacation.storyboard in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +276,9 @@
 				A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
+				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
+				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
+				A71944A728845374004FF1BE /* UIButton+.swift in Sources */,
 				B8B9D0A82881311300F98980 /* Inception.xcdatamodeld in Sources */,
 				A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */,
 			);
