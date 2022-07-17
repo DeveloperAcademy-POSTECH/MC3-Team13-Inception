@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A8B3C3288403A6002E1D84 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8B3C2288403A6002E1D84 /* AlarmClockViewController.swift */; };
+		90A8B3C528840779002E1D84 /* AlarmClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8B3C428840779002E1D84 /* AlarmClock.storyboard */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90A8B3C2288403A6002E1D84 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
+		90A8B3C428840779002E1D84 /* AlarmClock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmClock.storyboard; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		B8B9D0BE2881324700F98980 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				90A8B3C2288403A6002E1D84 /* AlarmClockViewController.swift */,
+				90A8B3C428840779002E1D84 /* AlarmClock.storyboard */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
+				90A8B3C528840779002E1D84 /* AlarmClock.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A8B3C3288403A6002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
@@ -399,7 +407,7 @@
 				INFOPLIST_FILE = Inception/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AlarmClock;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -426,7 +434,7 @@
 				INFOPLIST_FILE = Inception/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AlarmClock;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
