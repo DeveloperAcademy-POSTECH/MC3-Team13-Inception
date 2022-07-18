@@ -1,7 +1,7 @@
 ---
 name: 인셉션 Bug report
 about: 인셉션 개발 중 생긴 버그를 작성합니다.
-title: "[BUG]"
+title: "🐞 bug : "
 labels: ''
 assignees: ''
 
