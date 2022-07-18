@@ -106,12 +106,11 @@ final class SleepSatisfacationViewController: UIViewController {
     return $0
   }(UIButton(type: .system))
   
-  
   // MARK: Store Properties
   
   private var selectedEmoji: EmojiButton?
   
-  private var sleepSatisfacationSelection: SleepSatisfacation = SleepSatisfacation.none {
+  private var sleepSatisfacationSelection: SleepSatisfacation = .none {
     didSet {
       changeSelected(sleepSatisfacationSelection)
     }
@@ -123,9 +122,7 @@ final class SleepSatisfacationViewController: UIViewController {
     super.viewDidLoad()
     self.view.backgroundColor = .black
     layout()
-    
   }
-  
   
   // MARK: Methods
   
@@ -167,7 +164,7 @@ final class SleepSatisfacationViewController: UIViewController {
     ])
     
   }
-   
+  
   // emoji button 이 선택되면 저장버튼 활성화
   private func changeSelected(_ index: SleepSatisfacation) {
     saveButton.isEnabled = true
@@ -188,15 +185,15 @@ final class SleepSatisfacationViewController: UIViewController {
     selectedEmoji?.isSelectedButton = true
     
     switch sender.tag {
-      case 1 :
-        sleepSatisfacationSelection = .bad
-      case 2 :
-        sleepSatisfacationSelection = .soso
-      case 3 :
-        sleepSatisfacationSelection = .good
-      default:
-        print("There's no selection.")
-      }
+    case 1 :
+      sleepSatisfacationSelection = .bad
+    case 2 :
+      sleepSatisfacationSelection = .soso
+    case 3 :
+      sleepSatisfacationSelection = .good
+    default:
+      print("There's no selection.")
+    }
   }
   
   @objc func saveButtonDidTap(_ sender: UIButton) {

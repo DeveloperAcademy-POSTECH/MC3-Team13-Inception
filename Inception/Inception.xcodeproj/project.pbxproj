@@ -51,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A719450F28856C58004FF1BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7F246DC2883EBA30099E6CE /* EmojiButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A7F246D52883DC100099E6CE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +157,9 @@
 		B8B9D0BC2881323200F98980 /* SleepSatisfaction */ = {
 			isa = PBXGroup;
 			children = (
+				A719450F28856C58004FF1BE /* Views */,
 				A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */,
 				A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */,
-				A7F246DC2883EBA30099E6CE /* EmojiButton.swift */,
 			);
 			path = SleepSatisfaction;
 			sourceTree = "<group>";
