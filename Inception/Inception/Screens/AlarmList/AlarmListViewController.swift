@@ -11,14 +11,18 @@ import UIKit
 class AlarmListViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var clearPresentAlarmButton: UIButton!
     @IBOutlet weak var presentTableView: UITableView!
     @IBOutlet weak var savedTableView: UITableView!
+    @IBOutlet weak var presentTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
     
-    let presentAlarms = ["09:00"]
-    let savedAlarms = ["10:00", "11:00", "12:00"]
+    let presentAlarms = ["10:00"]
+    let savedAlarms = ["10:00", "11:00", "12:00","10:00", "11:00", "12:00","10:00", "11:00", "12:00","10:00", "11:00", "12:00","10:00", "11:00", "12:00"]
     
+    let rowHeightOfTableView = 44
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,17 @@ class AlarmListViewController: UIViewController , UITableViewDelegate, UITableVi
         savedTableView.delegate = self
         savedTableView.dataSource = self
         savedTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        presentTableHeight.constant = CGFloat(presentAlarms.count * rowHeightOfTableView)
+        savedTableHeight.constant = CGFloat(savedAlarms.count * rowHeightOfTableView)
+        
+        presentTableView.isScrollEnabled = false
+        savedTableView.isScrollEnabled = false
+    }
 
+    func tableView(_ tableView: UITableView,
+         heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return 44 // height for every row
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,4 +83,6 @@ class AlarmListViewController: UIViewController , UITableViewDelegate, UITableVi
         return cell
     }
     
+    
+
 }
