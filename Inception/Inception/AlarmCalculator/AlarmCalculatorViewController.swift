@@ -11,6 +11,9 @@ import UIKit
 
 class AlarmCalculatorViewController: UIViewController {
     
+        
+    
+    
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     
@@ -28,6 +31,9 @@ class AlarmCalculatorViewController: UIViewController {
         }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        navigationItem.largeTitleDisplayMode = .never
+        
+        
         // Do any additional setup after loading the view.
     }
 }

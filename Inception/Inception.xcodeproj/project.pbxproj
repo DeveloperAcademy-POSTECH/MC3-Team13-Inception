@@ -72,6 +72,7 @@
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0AE2881311500F98980 /* Info.plist */,
 				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
+				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 			);
 			path = Inception;
 			sourceTree = "<group>";
@@ -107,7 +108,6 @@
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
 				B8B9D0BC2881323200F98980 /* SleepSatisfaction */,
 				B8B9D0BB288131FF00F98980 /* AlarmList */,
-				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -410,6 +410,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = AlarmCalculatorViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +438,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = AlarmCalculatorViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

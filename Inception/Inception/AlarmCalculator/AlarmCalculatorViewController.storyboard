@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DA1-8c-alq">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Alarm Calculator View Controller-->
+        <!--알람 추천-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AlarmCalculatorViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="dark" id="Y6W-OH-hqX" customClass="AlarmCalculatorViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tyu-D2-GQ5">
-                                <rect key="frame" x="101.66666666666669" y="60" width="187" height="32"/>
+                                <rect key="frame" x="20" y="156" width="350" height="32"/>
                                 <segments>
                                     <segment title="취침 시간 입력"/>
                                     <segment title="기상 시간 입력"/>
@@ -27,13 +27,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-4k-E5d">
-                                <rect key="frame" x="0.0" y="107" width="390" height="737"/>
+                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
                                 <connections>
                                     <segue destination="Jlo-W6-gYX" kind="embed" id="1aI-nj-dCX"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-eG-DXQ">
-                                <rect key="frame" x="0.0" y="107" width="390" height="737"/>
+                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
                                 <connections>
                                     <segue destination="wts-GS-jDy" kind="embed" id="Ic2-q5-TJz"/>
                                 </connections>
@@ -46,6 +46,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PJJ-4k-E5d" secondAttribute="trailing" id="5WP-66-G0W"/>
                             <constraint firstAttribute="bottom" secondItem="WU6-eG-DXQ" secondAttribute="bottom" id="G4I-N6-sdm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="WU6-eG-DXQ" secondAttribute="bottom" constant="402" id="JT1-Bf-0FQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tyu-D2-GQ5" secondAttribute="trailing" constant="20" id="Mqd-yT-taj"/>
+                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="OHG-33-s80"/>
                             <constraint firstItem="PJJ-4k-E5d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OYo-8v-EEA"/>
                             <constraint firstItem="PJJ-4k-E5d" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="T51-GL-Ype"/>
                             <constraint firstItem="WU6-eG-DXQ" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="V7n-Be-OSd"/>
@@ -56,6 +58,7 @@
                             <constraint firstItem="WU6-eG-DXQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yt3-En-vzy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="알람 추천" id="gCc-Zi-Fms"/>
                     <connections>
                         <outlet property="firstView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
                         <outlet property="secondView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
@@ -63,14 +66,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="92"/>
+            <point key="canvasLocation" x="1000" y="91.706161137440759"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8p0-oZ-PaL">
             <objects>
                 <viewController id="wts-GS-jDy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WoR-hG-zwp">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="737"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mmJ-Xi-tCl"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -78,14 +81,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzD-75-zLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="844"/>
+            <point key="canvasLocation" x="289" y="843"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bIO-A1-9Oe">
             <objects>
                 <viewController id="Jlo-W6-gYX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8QF-ee-Ggy">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="737"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="B4Y-7N-xon"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -93,7 +96,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-KQ-ReI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="843"/>
+            <point key="canvasLocation" x="1085" y="843"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ubE-xC-TTB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DA1-8c-alq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7eX-qk-fEm">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="m4u-Dh-aQ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIR-95-91J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="92"/>
         </scene>
     </scenes>
     <resources>
