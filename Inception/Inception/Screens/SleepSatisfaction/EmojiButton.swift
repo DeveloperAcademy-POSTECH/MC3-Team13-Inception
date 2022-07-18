@@ -38,8 +38,18 @@ class EmojiButton: UIButton {
     return $0
   }(UILabel())
   
-  
+
   private var viewModel: EmojiButtonViewModel?
+  
+  var isSelectedButton: Bool = false {
+    didSet {
+      if isSelectedButton {
+        self.emojiTitle.textColor = .black
+      } else {
+        self.emojiTitle.textColor = .white
+      }
+    }
+  }
   
   override init(frame: CGRect){
     self.viewModel = nil
@@ -56,6 +66,8 @@ class EmojiButton: UIButton {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  // MARK: Methods
   
   public func configure(with viewModel:EmojiButtonViewModel ){
     layer.masksToBounds = true

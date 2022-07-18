@@ -16,15 +16,6 @@ enum SleepSatisfacation {
 
 final class SleepSatisfacationViewController: UIViewController {
   
-  private var selectedEmoji: EmojiButton?
-  
-  private var sleepSatisfacationSelection: SleepSatisfacation = SleepSatisfacation.none {
-    didSet {
-      changeSelected(sleepSatisfacationSelection)
-    }
-  }
-  
-  
   // MARK: Views
   
   private let stackView: UIStackView = {
@@ -62,20 +53,23 @@ final class SleepSatisfacationViewController: UIViewController {
   }(UIStackView())
   
   private lazy var emojiButton1: EmojiButton = {
+    $0.tag = 1
     $0.backgroundColor = .darkGray
-    $0.addTarget(self, action: #selector(emojiButtonSelected(_:)), for: .touchUpInside)
+    $0.addTarget(self, action: #selector(emojiButtonDidTap(_:)), for: .touchUpInside)
     return $0
   }(EmojiButton())
   
   private lazy var emojiButton2: EmojiButton = {
+    $0.tag = 2
     $0.backgroundColor = .darkGray
-    $0.addTarget(self, action: #selector(emojiButtonSelected(_:)), for: .touchUpInside)
+    $0.addTarget(self, action: #selector(emojiButtonDidTap(_:)), for: .touchUpInside)
     return $0
   }(EmojiButton())
   
   private lazy var emojiButton3: EmojiButton = {
+    $0.tag = 3
     $0.backgroundColor = .darkGray
-    $0.addTarget(self, action: #selector(emojiButtonSelected(_:)), for: .touchUpInside)
+    $0.addTarget(self, action: #selector(emojiButtonDidTap(_:)), for: .touchUpInside)
     return $0
   }(EmojiButton())
   
@@ -112,14 +106,16 @@ final class SleepSatisfacationViewController: UIViewController {
     return $0
   }(UIButton(type: .system))
   
-  private let titleImageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: "login_title_icon")
-    imageView.contentMode = .scaleAspectFit
-    return imageView
-  }()
   
+  // MARK: Store Properties
+  
+  private var selectedEmoji: EmojiButton?
+  
+  private var sleepSatisfacationSelection: SleepSatisfacation = SleepSatisfacation.none {
+    didSet {
+      changeSelected(sleepSatisfacationSelection)
+    }
+  }
   
   // MARK: Life Cycle
   
@@ -139,6 +135,7 @@ final class SleepSatisfacationViewController: UIViewController {
     stackView.addArrangedSubviews(titleLabel, descriptionLabel, emojiStackView, saveButton, skipButton)
     stackView.setCustomSpacing(100, after: descriptionLabel)
     stackView.setCustomSpacing(109, after: emojiStackView)
+    stackView.setCustomSpacing(33, after: saveButton)
     
     NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 220),
@@ -170,7 +167,7 @@ final class SleepSatisfacationViewController: UIViewController {
     ])
     
   }
-  
+   
   // emoji button 이 선택되면 저장버튼 활성화
   private func changeSelected(_ index: SleepSatisfacation) {
     saveButton.isEnabled = true
@@ -178,26 +175,28 @@ final class SleepSatisfacationViewController: UIViewController {
     saveButton.setTitleColor(UIColor.black, for: .normal)
   }
   
-  @objc private func emojiButtonSelected(_ sender: EmojiButton) {
+  @objc private func emojiButtonDidTap(_ sender: EmojiButton) {
     
     // 기존에 선택된 버튼인지 확인
     guard selectedEmoji != sender else { return }
     selectedEmoji?.backgroundColor = .darkGray
+    selectedEmoji?.isSelectedButton = false
     
     // 현재 선택된 버튼
     selectedEmoji = sender
-    selectedEmoji?.backgroundColor = .systemOrange
+    selectedEmoji?.backgroundColor = .white
+    selectedEmoji?.isSelectedButton = true
     
-    switch selectedEmoji {
-    case self.emojiButton1 :
-      sleepSatisfacationSelection = SleepSatisfacation.bad
-    case self.emojiButton2 :
-      sleepSatisfacationSelection = SleepSatisfacation.soso
-    case self.emojiButton3 :
-      sleepSatisfacationSelection = SleepSatisfacation.good
-    default:
-      print("There's no selection.")
-    }
+    switch sender.tag {
+      case 1 :
+        sleepSatisfacationSelection = .bad
+      case 2 :
+        sleepSatisfacationSelection = .soso
+      case 3 :
+        sleepSatisfacationSelection = .good
+      default:
+        print("There's no selection.")
+      }
   }
   
   @objc func saveButtonDidTap(_ sender: UIButton) {

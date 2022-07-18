@@ -18,12 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+       /*
+       //MARK: initial entry point : SleepSatisfacation ( Code-base UI )
         let storyboard = UIStoryboard(name: "SleepSatisfacation", bundle: nil)
         guard let sleepSatisfacationViewControlller = storyboard.instantiateViewController(withIdentifier: "SleepSatisfacationViewController") as? SleepSatisfacationViewController else { return }
 //
 //        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = sleepSatisfacationViewControlller
         window?.makeKeyAndVisible()
+       */
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
