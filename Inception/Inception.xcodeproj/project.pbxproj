@@ -129,10 +129,7 @@
 			children = (
 				A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */,
 				84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */,
-				84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */,
 				84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */,
-				84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */,
-				84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */,
 				A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */,
 				B8B9D0C02881326C00F98980 /* Cell */,
 			);
@@ -178,6 +175,9 @@
 		B8B9D0C02881326C00F98980 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */,
+				84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */,
+				84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
