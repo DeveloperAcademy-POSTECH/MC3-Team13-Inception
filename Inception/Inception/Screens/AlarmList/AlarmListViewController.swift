@@ -23,6 +23,8 @@ class AlarmListViewController: UIViewController , UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
+        
         presentTableView.delegate = self
         presentTableView.dataSource = self
         presentTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
