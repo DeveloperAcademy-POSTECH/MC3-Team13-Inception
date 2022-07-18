@@ -47,14 +47,12 @@ class AlarmListViewController: UIViewController , UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        print(indexPath)
         
         var content = cell.defaultContentConfiguration()
         
         if tableView == self.presentTableView {
             if presentAlarms.count > 0 {
                 content.text = savedAlarms[indexPath.row]
-                print("function call")
                 cell.contentConfiguration = content
                 return cell
             }
