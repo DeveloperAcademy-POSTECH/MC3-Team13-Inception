@@ -8,17 +8,16 @@
 import UIKit
 
 class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
   @IBOutlet weak var tableView: UITableView!
   
   // Cell의 Label에 표시할 내용
   let data = [TimeDataModel(sleepCycle: "7.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
               TimeDataModel(sleepCycle: "6.0 시간", sleepTime: "오후 12:00", awakeTime: "오전 08:00"),
               TimeDataModel(sleepCycle: "4.5 시간", sleepTime: "오전 01:00", awakeTime: "오전 08:00")]
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     tableView.delegate = self
     tableView.dataSource = self
     
@@ -32,22 +31,28 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return data.count
   }
-
+  
   // 특정 row에 표시할 cell 리턴
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     // 내가 정의한 Cell 만들기
-    let cell: AwakeBasedRecoCell = tableView.dequeueReusableCell(withIdentifier: "AwakeBasedRecoCell", for: indexPath) as! AwakeBasedRecoCell
+    let cell: AwakeBasedRecoCell = tableView.dequeueReusableCell(
+      withIdentifier: "AwakeBasedRecoCell",
+      for: indexPath
+    ) as! AwakeBasedRecoCell
+    
     // Cell Label의 내용 지정
-    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
+    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(
+      .systemOrange,
+      renderingMode: .alwaysOriginal)
     cell.sleepCycle.text = data[indexPath.row].sleepCycle
     cell.sleepLabel.text = "취침"
     cell.awakeLabel.text = "기상"
     cell.sleepTime.text = data[indexPath.row].sleepTime
     cell.awakeTime.text = data[indexPath.row].awakeTime
-
+    
     // 생성한 Cell 리턴
     return cell
   }
-
+  
 }

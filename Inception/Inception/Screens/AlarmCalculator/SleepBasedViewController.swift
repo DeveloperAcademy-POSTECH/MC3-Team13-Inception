@@ -8,7 +8,6 @@
 import UIKit
 
 class SleepBasedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  
   @IBOutlet weak var tableView: UITableView!
   
   // Cell의 Label에 표시할 내용
@@ -36,10 +35,16 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
   // 특정 row에 표시할 cell 리턴
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // 내가 정의한 Cell 만들기
-    let cell: SleepBasedRecoCell = tableView.dequeueReusableCell(withIdentifier: "SleepBasedRecoCell", for: indexPath) as! SleepBasedRecoCell
+    let cell: SleepBasedRecoCell = tableView.dequeueReusableCell(
+      withIdentifier: "SleepBasedRecoCell",
+      for: indexPath
+    ) as! SleepBasedRecoCell
     
     // Cell Label의 내용 지정
-    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
+    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(
+      .systemOrange,
+      renderingMode: .alwaysOriginal
+    )
     cell.sleepCycle.text = data[indexPath.row].sleepCycle
     cell.sleepLabel.text = "취침"
     cell.awakeLabel.text = "기상"

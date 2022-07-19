@@ -17,4 +17,5 @@ struct TimeDataModel {
     self.sleepTime = sleepTime
     self.awakeTime = awakeTime
   }
+  
 }

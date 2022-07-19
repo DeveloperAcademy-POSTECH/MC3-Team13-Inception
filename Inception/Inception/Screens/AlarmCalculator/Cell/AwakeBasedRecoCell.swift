@@ -8,7 +8,6 @@
 import UIKit
 
 class AwakeBasedRecoCell: UITableViewCell {
-  
   @IBOutlet weak var sleepIcon: UIImageView!
   @IBOutlet weak var sleepCycle: UILabel!
   @IBOutlet weak var sleepLabel: UILabel!
@@ -19,13 +18,10 @@ class AwakeBasedRecoCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
   }
   
 }
