@@ -74,7 +74,6 @@
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0AE2881311500F98980 /* Info.plist */,
 				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
-				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 			);
 			path = Inception;
 			sourceTree = "<group>";
@@ -106,6 +105,7 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
 				B8B9D0BC2881323200F98980 /* SleepSatisfaction */,
