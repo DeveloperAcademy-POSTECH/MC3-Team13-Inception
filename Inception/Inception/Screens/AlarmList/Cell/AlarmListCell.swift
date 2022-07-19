@@ -43,7 +43,7 @@ class AlarmListCell: UITableViewCell {
             wakeuptimeTime.textColor = .white.withAlphaComponent(0.3)
             
             sleepHourField.textColor = .systemOrange.withAlphaComponent(0.5)
-            sleepHourField.tintColor = .systemOrange.withAlphaComponent(0.5)
+            sleepHourIcon.tintColor = .systemOrange.withAlphaComponent(0.5)
         }else {
             bedtimeTitle.textColor = .white
             bedtimeMeridiem.textColor = .white
@@ -54,7 +54,7 @@ class AlarmListCell: UITableViewCell {
             wakeuptimeTime.textColor = .white
             
             sleepHourField.textColor = .systemOrange
-            sleepHourField.tintColor = .systemOrange
+            sleepHourIcon.tintColor = .systemOrange
         }
     }
 }
