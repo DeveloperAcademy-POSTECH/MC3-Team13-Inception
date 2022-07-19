@@ -9,6 +9,7 @@ import UIKit
 
 class AwakeBasedRecoCell: UITableViewCell {
   
+  @IBOutlet weak var sleepIcon: UIImageView!
   @IBOutlet weak var sleepCycle: UILabel!
   @IBOutlet weak var sleepLabel: UILabel!
   @IBOutlet weak var awakeLabel: UILabel!

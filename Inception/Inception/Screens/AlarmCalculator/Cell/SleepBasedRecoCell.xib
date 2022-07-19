@@ -16,12 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5 H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auZ-Rb-I1m">
-                        <rect key="frame" x="20" y="18.5" width="29" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" systemColor="systemOrangeColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZK6-gy-PMS">
+                        <rect key="frame" x="20" y="18" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="7sg-UT-be9"/>
+                            <constraint firstAttribute="width" constant="15" id="lt4-fV-Iue"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV1-6a-K26">
                         <rect key="frame" x="20" y="53" width="20" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -58,11 +59,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5 H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auZ-Rb-I1m">
+                        <rect key="frame" x="40" y="18.5" width="29" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="systemOrangeColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Vcq-bo-H2j" firstAttribute="leading" secondItem="gV1-6a-K26" secondAttribute="trailing" constant="15" id="2pA-dC-M23"/>
                     <constraint firstAttribute="bottom" secondItem="DcP-0i-1nO" secondAttribute="bottom" constant="45" id="5Yj-Dz-0qz"/>
-                    <constraint firstItem="auZ-Rb-I1m" firstAttribute="leading" secondItem="1mI-qo-4We" secondAttribute="leading" constant="20" id="6y4-gb-My7"/>
                     <constraint firstItem="gV1-6a-K26" firstAttribute="leading" secondItem="1mI-qo-4We" secondAttribute="leading" constant="20" id="MWQ-0H-GNi"/>
                     <constraint firstItem="gV1-6a-K26" firstAttribute="centerY" secondItem="1mI-qo-4We" secondAttribute="centerY" id="Qcb-s2-kB2"/>
                     <constraint firstItem="xkX-YX-2Na" firstAttribute="leading" secondItem="I7f-RX-PLC" secondAttribute="trailing" constant="15" id="Rqx-fe-JdM"/>
@@ -71,9 +77,12 @@
                     <constraint firstItem="I7f-RX-PLC" firstAttribute="top" secondItem="gV1-6a-K26" secondAttribute="bottom" constant="20" id="bTn-CO-kEB"/>
                     <constraint firstAttribute="trailing" secondItem="DcP-0i-1nO" secondAttribute="trailing" constant="20" id="cW6-ea-FGX"/>
                     <constraint firstItem="Vcq-bo-H2j" firstAttribute="centerY" secondItem="1mI-qo-4We" secondAttribute="centerY" id="n6w-9H-FIl"/>
+                    <constraint firstItem="gV1-6a-K26" firstAttribute="top" secondItem="ZK6-gy-PMS" secondAttribute="bottom" constant="20" id="rfY-Sy-H9N"/>
                     <constraint firstItem="xkX-YX-2Na" firstAttribute="centerY" secondItem="I7f-RX-PLC" secondAttribute="centerY" id="svS-d3-13F"/>
+                    <constraint firstItem="auZ-Rb-I1m" firstAttribute="leading" secondItem="ZK6-gy-PMS" secondAttribute="trailing" constant="5" id="ttZ-1B-cms"/>
                     <constraint firstItem="DcP-0i-1nO" firstAttribute="top" secondItem="1mI-qo-4We" secondAttribute="top" constant="45" id="y9s-3U-fAg"/>
                     <constraint firstItem="gV1-6a-K26" firstAttribute="top" secondItem="auZ-Rb-I1m" secondAttribute="bottom" constant="20" id="yGg-ge-ZWY"/>
+                    <constraint firstItem="ZK6-gy-PMS" firstAttribute="leading" secondItem="1mI-qo-4We" secondAttribute="leading" constant="20" id="zRu-xL-YTJ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -81,10 +90,11 @@
                 <outlet property="awakeLabel" destination="I7f-RX-PLC" id="tam-al-Ei4"/>
                 <outlet property="awakeTime" destination="xkX-YX-2Na" id="y0l-8D-hIq"/>
                 <outlet property="sleepCycle" destination="auZ-Rb-I1m" id="5H3-vu-xCh"/>
+                <outlet property="sleepIcon" destination="ZK6-gy-PMS" id="e8w-VK-KQB"/>
                 <outlet property="sleepLabel" destination="gV1-6a-K26" id="7HV-df-FVS"/>
                 <outlet property="sleepTime" destination="Vcq-bo-H2j" id="srw-Df-X8m"/>
             </connections>
-            <point key="canvasLocation" x="188" y="34"/>
+            <point key="canvasLocation" x="186.95652173913044" y="33.482142857142854"/>
         </tableViewCell>
     </objects>
     <resources>

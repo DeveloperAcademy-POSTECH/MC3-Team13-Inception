@@ -12,9 +12,9 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
   @IBOutlet weak var tableView: UITableView!
   
   // Cell의 Label에 표시할 내용
-  let data = [TimeDataModel(sleepCycle: "수면 7.5 H", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
-              TimeDataModel(sleepCycle: "수면 6.0 H", sleepTime: "오후 12:00", awakeTime: "오전 08:00"),
-              TimeDataModel(sleepCycle: "수면 4.5 H", sleepTime: "오전 01:00", awakeTime: "오전 08:00")]
+  let data = [TimeDataModel(sleepCycle: "7.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
+              TimeDataModel(sleepCycle: "6.0 시간", sleepTime: "오후 12:00", awakeTime: "오전 08:00"),
+              TimeDataModel(sleepCycle: "4.5 시간", sleepTime: "오전 01:00", awakeTime: "오전 08:00")]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,6 +39,7 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
     // 내가 정의한 Cell 만들기
     let cell: AwakeBasedRecoCell = tableView.dequeueReusableCell(withIdentifier: "AwakeBasedRecoCell", for: indexPath) as! AwakeBasedRecoCell
     // Cell Label의 내용 지정
+    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
     cell.sleepCycle.text = data[indexPath.row].sleepCycle
     cell.sleepLabel.text = "취침"
     cell.awakeLabel.text = "기상"
