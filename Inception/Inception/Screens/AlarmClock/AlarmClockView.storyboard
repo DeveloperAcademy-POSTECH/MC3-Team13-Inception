@@ -25,7 +25,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-RR-Puv">
                                 <rect key="frame" x="84" y="585" width="246" height="52"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" subtitle="" buttonSize="large">
+                                <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="large" buttonSize="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="5분 후 다시 알림">
                                             <attributes>
@@ -41,7 +41,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-hf-ZDX">
                                 <rect key="frame" x="84" y="655" width="246" height="49.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" buttonSize="large">
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large" buttonSize="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="알람 종료">
                                             <attributes>
