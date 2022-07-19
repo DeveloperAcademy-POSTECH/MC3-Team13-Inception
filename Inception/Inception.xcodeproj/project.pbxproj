@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */; };
+		A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListCell.xib; sourceTree = "<group>"; };
+		A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 		B8B9D0BF2881326800F98980 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */,
+				A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
+				A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +256,7 @@
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
 				B8B9D0A82881311300F98980 /* Inception.xcdatamodeld in Sources */,
+				A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
