@@ -21,6 +21,10 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
     
     tableView.delegate = self
     tableView.dataSource = self
+    
+    // Xib로 분할한 Cell 파일 연결을 위한 작업
+    let nibName = UINib(nibName: "SleepBasedRecoCell", bundle: nil)
+    tableView.register(nibName, forCellReuseIdentifier: "SleepBasedRecoCell")
   }
   
   // 필수 함수 구현
@@ -33,6 +37,7 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // 내가 정의한 Cell 만들기
     let cell: SleepBasedRecoCell = tableView.dequeueReusableCell(withIdentifier: "SleepBasedRecoCell", for: indexPath) as! SleepBasedRecoCell
+    
     // Cell Label의 내용 지정
     cell.sleepCycle.text = data[indexPath.row].sleepCycle
     cell.sleepLabel.text = "취침"

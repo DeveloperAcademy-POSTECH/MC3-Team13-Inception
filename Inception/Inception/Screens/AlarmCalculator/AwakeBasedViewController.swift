@@ -21,6 +21,10 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
 
     tableView.delegate = self
     tableView.dataSource = self
+    
+    // Xib로 분할한 Cell 파일 연결을 위한 작업
+    let nibName = UINib(nibName: "AwakeBasedRecoCell", bundle: nil)
+    tableView.register(nibName, forCellReuseIdentifier: "AwakeBasedRecoCell")
   }
   
   // 필수 함수 구현
@@ -31,6 +35,7 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
 
   // 특정 row에 표시할 cell 리턴
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     // 내가 정의한 Cell 만들기
     let cell: AwakeBasedRecoCell = tableView.dequeueReusableCell(withIdentifier: "AwakeBasedRecoCell", for: indexPath) as! AwakeBasedRecoCell
     // Cell Label의 내용 지정

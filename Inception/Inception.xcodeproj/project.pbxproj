@@ -12,6 +12,8 @@
 		84D7C33828854AC400F1A0C5 /* TimeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */; };
 		84D7C33C288559DD00F1A0C5 /* AwakeBasedRecoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */; };
 		84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */; };
+		84D7C34228864EDA00F1A0C5 /* SleepBasedRecoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */; };
+		84D7C34628864FF200F1A0C5 /* AwakeBasedRecoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34428864FF200F1A0C5 /* AwakeBasedRecoCell.xib */; };
 		A9D3D4732882EFB400EDF412 /* AlarmCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */; };
 		A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 		84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDataModel.swift; sourceTree = "<group>"; };
 		84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedRecoCell.swift; sourceTree = "<group>"; };
 		84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedViewController.swift; sourceTree = "<group>"; };
+		84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepBasedRecoCell.xib; sourceTree = "<group>"; };
+		84D7C34428864FF200F1A0C5 /* AwakeBasedRecoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AwakeBasedRecoCell.xib; sourceTree = "<group>"; };
 		A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmCalculator.storyboard; sourceTree = "<group>"; };
 		A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCalculatorViewController.swift; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */,
+				84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */,
 				84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */,
+				84D7C34428864FF200F1A0C5 /* AwakeBasedRecoCell.xib */,
 				84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */,
 			);
 			path = Cell;
@@ -256,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
+				84D7C34628864FF200F1A0C5 /* AwakeBasedRecoCell.xib in Resources */,
+				84D7C34228864EDA00F1A0C5 /* SleepBasedRecoCell.xib in Resources */,
 				A9D3D4732882EFB400EDF412 /* AlarmCalculator.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
