@@ -17,57 +17,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K9-ux-KU7">
-                                <rect key="frame" x="181" y="139" width="52.5" height="26"/>
+                                <rect key="frame" x="181" y="139" width="52.5" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-RR-Puv">
-                                <rect key="frame" x="84" y="585" width="246" height="52"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="large" buttonSize="large">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="5분 후 다시 알림">
-                                            <attributes>
-                                                <font key="NSFont" size="18" name="AppleSDGothicNeo-SemiBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-hf-ZDX">
-                                <rect key="frame" x="84" y="655" width="246" height="49.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large" buttonSize="large">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="알람 종료">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="AppleSDGothicNeo-Medium"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-Mm-2EE">
+                                <rect key="frame" x="84" y="584.5" width="246" height="119.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-RR-Puv">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="52"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="large" buttonSize="large">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="5분 후 다시 알림">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="AppleSDGothicNeo-SemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-hf-ZDX">
+                                        <rect key="frame" x="0.0" y="70" width="246" height="49.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large" buttonSize="large">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="알람 종료">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="AppleSDGothicNeo-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-o3-EMd">
-                                <rect key="frame" x="56" y="221" width="302" height="302"/>
+                                <rect key="frame" x="56" y="220.5" width="302" height="302"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67B-UP-4wV">
-                                        <rect key="frame" x="81" y="107.5" width="140" height="87"/>
+                                        <rect key="frame" x="81.5" y="108" width="139.5" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w0-vG-wD5">
-                                                <rect key="frame" x="49" y="0.0" width="42" height="29"/>
+                                                <rect key="frame" x="48.5" y="0.0" width="42" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jws-V0-j7m">
-                                                <rect key="frame" x="0.0" y="29" width="140" height="58"/>
+                                                <rect key="frame" x="0.0" y="29" width="139.5" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -94,17 +99,14 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VcR-o3-EMd" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="56" id="0n5-E3-nQG"/>
-                            <constraint firstItem="yTU-RR-Puv" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="84" id="EiJ-Y8-wjj"/>
+                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="x1F-Mm-2EE" secondAttribute="trailing" constant="84" id="H1Z-Kg-gKU"/>
                             <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="VcR-o3-EMd" secondAttribute="trailing" constant="56" id="H9a-uy-IyS"/>
+                            <constraint firstItem="x1F-Mm-2EE" firstAttribute="top" secondItem="VcR-o3-EMd" secondAttribute="bottom" constant="62" id="HMh-d0-Fyl"/>
+                            <constraint firstItem="x1F-Mm-2EE" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="84" id="Q28-6v-4KJ"/>
                             <constraint firstItem="8K9-ux-KU7" firstAttribute="top" secondItem="8eI-cX-89I" secondAttribute="top" constant="95" id="Vql-pp-zWK"/>
                             <constraint firstItem="8K9-ux-KU7" firstAttribute="centerX" secondItem="iuC-2Y-QV8" secondAttribute="centerX" id="YS3-7u-78y"/>
-                            <constraint firstItem="5EK-hf-ZDX" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="84" id="f9y-kz-b4w"/>
                             <constraint firstItem="VcR-o3-EMd" firstAttribute="centerX" secondItem="iuC-2Y-QV8" secondAttribute="centerX" id="fpG-l7-bvK"/>
-                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="5EK-hf-ZDX" secondAttribute="trailing" constant="84" id="gY6-Wr-ZtI"/>
-                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="yTU-RR-Puv" secondAttribute="trailing" constant="84" id="oHO-fy-ioy"/>
                             <constraint firstItem="VcR-o3-EMd" firstAttribute="top" secondItem="8K9-ux-KU7" secondAttribute="bottom" constant="56" id="qpO-ht-zab"/>
-                            <constraint firstItem="yTU-RR-Puv" firstAttribute="top" secondItem="VcR-o3-EMd" secondAttribute="bottom" constant="62" id="ttE-rL-3IT"/>
-                            <constraint firstItem="5EK-hf-ZDX" firstAttribute="top" secondItem="yTU-RR-Puv" secondAttribute="bottom" constant="18" id="u5i-VF-J6z"/>
                         </constraints>
                     </view>
                     <connections>
