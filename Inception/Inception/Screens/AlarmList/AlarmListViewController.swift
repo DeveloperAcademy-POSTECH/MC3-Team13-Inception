@@ -9,9 +9,6 @@ import Foundation
 import UIKit
 
 class AlarmListViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
-
-    
-    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var clearPresentAlarmButton: UIButton!
     @IBOutlet weak var presentTableView: UITableView!
