@@ -8,22 +8,22 @@
 import UIKit
 
 final class AlarmListViewController: UIViewController {
-
+  
   // MARK: - Properties
-
+  
   @IBOutlet weak var clearPresentAlarmButton: UIButton!
   @IBOutlet weak var presentTableView: UITableView!
   @IBOutlet weak var savedTableView: UITableView!
   @IBOutlet weak var presentTableHeight: NSLayoutConstraint!
   @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
-
+  
   let presentAlarms = ["10:00"]
   let savedAlarms = ["10:00", "11:00", "12:00","10:00", "11:00",
                      "12:00","10:00", "11:00", "12:00","10:00",
                      "11:00", "12:00","10:00", "11:00", "12:00"]
-
+  
   let rowHeightOfTableView: CGFloat = 44
-
+  
   // MARK: - View Life Cycle
   
   override func viewDidLoad() {
@@ -45,15 +45,14 @@ final class AlarmListViewController: UIViewController {
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
   }
-
+  
 }
 
 // MARK: - UITableViewDataSource
 
 extension AlarmListViewController: UITableViewDataSource {
-
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     if tableView == presentTableView {
       return presentAlarms.count
     }
@@ -61,15 +60,12 @@ extension AlarmListViewController: UITableViewDataSource {
       return savedAlarms.count
     }
     return 0
-
   }
-
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
     var content = cell.defaultContentConfiguration()
-
+    
     if tableView == self.presentTableView {
       if presentAlarms.count > 0 {
         content.text = savedAlarms[indexPath.row]
@@ -85,18 +81,17 @@ extension AlarmListViewController: UITableViewDataSource {
       }
     }
     return cell
-
   }
   
-  func tableView(_ tableView: UITableView,
-                 heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return rowHeightOfTableView
-  }
-
 }
 
 // MARK: - UITableViewDelegate
 
 extension AlarmListViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView,
+                 heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return rowHeightOfTableView
+  }
   
 }
