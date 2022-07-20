@@ -17,8 +17,8 @@ final class AlarmListViewController: UIViewController {
   @IBOutlet weak var presentTableHeight: NSLayoutConstraint!
   @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
 
-  let presentAlarms = ["10:00"]
-  let savedAlarms = ["10:00", "11:00", "12:00","10:00", "11:00",
+  var presentAlarms = ["10:00"]
+  var savedAlarms = ["10:00", "11:00", "12:00","10:00", "11:00",
                      "12:00","10:00", "11:00", "12:00","10:00",
                      "11:00", "12:00","10:00", "11:00", "12:00"]
 
@@ -44,6 +44,8 @@ final class AlarmListViewController: UIViewController {
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
+    
+    presentTableView.allowsSelection = false
   }
 
 }
@@ -85,14 +87,8 @@ extension AlarmListViewController: UITableViewDataSource {
       }
     }
     return cell
-
   }
   
-  func tableView(_ tableView: UITableView,
-                 heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return rowHeightOfTableView
-  }
-
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     
     if tableView == self.savedTableView {
@@ -103,7 +99,6 @@ extension AlarmListViewController: UITableViewDataSource {
         savedTableHeight.constant = CGFloat(savedAlarms.count) * rowHeightOfTableView
       }
     }
-    
   }
   
 }
@@ -111,5 +106,18 @@ extension AlarmListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension AlarmListViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView,
+                 heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return rowHeightOfTableView
+  }
+  
+  func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    
+    if tableView == self.savedTableView {
+      return UITableViewCell.EditingStyle.delete
+    }
+    return UITableViewCell.EditingStyle.none
+  }
   
 }
