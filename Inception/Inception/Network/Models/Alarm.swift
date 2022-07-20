@@ -9,38 +9,27 @@ import Foundation
 
 struct Alarm: Codable {
   var id: String = UUID().uuidString
-  let bedtimeDate: Date
-  let wakeuptimeDate: Date
   var isOn: Bool
+  private let bedtimeDate: Date
+  private let wakeuptimeDate: Date
   
   var bedtimeTime: String {
-    let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "hh:mm"
-    return timeFormatter.string(from: bedtimeDate)
+    return Date().dateTo12HTimeString(bedtimeDate)
   }
   
   var bedtimeMeridiem: String {
-    let meridiemFormatter = DateFormatter()
-    meridiemFormatter.dateFormat = "a"
-    meridiemFormatter.locale = Locale(identifier: "ko")
-    return meridiemFormatter.string(from: bedtimeDate)
+    return Date().dateToMeridiemString(bedtimeDate)
   }
   
   var wakeuptimeTime: String {
-    let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "hh:mm"
-    return timeFormatter.string(from: wakeuptimeDate)
+    return Date().dateTo12HTimeString(wakeuptimeDate)
   }
   
   var wakeuptimeMeridiem: String {
-    let meridiemFormatter = DateFormatter()
-    meridiemFormatter.dateFormat = "a"
-    meridiemFormatter.locale = Locale(identifier: "ko")
-    return meridiemFormatter.string(from: wakeuptimeDate)
+    return Date().dateToMeridiemString(wakeuptimeDate)
   }
   
   var expectedSleepHour: Int {
-    return Int(wakeuptimeDate.timeIntervalSince(bedtimeDate)) / 60
+    return Date().minuteInterval(from: bedtimeDate, to: wakeuptimeDate)
   }
-  
 }

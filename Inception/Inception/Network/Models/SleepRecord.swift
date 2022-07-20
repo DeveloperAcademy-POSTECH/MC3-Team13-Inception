@@ -16,30 +16,23 @@ enum SleepSatisfacation: String, Codable {
 
 struct SleepRecord: Codable {
   var id: String = UUID().uuidString
-  let bedtimeDate: Date
-  let wakeuptimeDate: Date
   var sleepSatisfacation: SleepSatisfacation
+  private let bedtimeDate: Date
+  private let wakeuptimeDate: Date
   
   var bedtimeTime: String {
-    let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "HH:MM"
-    return timeFormatter.string(from: bedtimeDate)
+    return Date().dateTo24HTimeString(bedtimeDate)
   }
   
   var wakeuptimeTime: String {
-    let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "HH:MM"
-    return timeFormatter.string(from: wakeuptimeDate)
+    return Date().dateTo24HTimeString(wakeuptimeDate)
   }
   
   var actualSleepHour: Int {
-    return Int(wakeuptimeDate.timeIntervalSince(bedtimeDate)) / 60
+    return Date().minuteInterval(from: bedtimeDate, to: wakeuptimeDate)
   }
   
   var trackedDate: String {
-    let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "mm.dd"
-    return timeFormatter.string(from: wakeuptimeDate)
+    return Date().dateToStringMMDD(wakeuptimeDate)
   }
-  
 }
