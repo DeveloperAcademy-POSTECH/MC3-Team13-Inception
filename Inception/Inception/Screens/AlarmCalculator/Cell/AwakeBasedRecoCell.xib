@@ -58,8 +58,9 @@
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eop-JI-dNT">
-                        <rect key="frame" x="20" y="18" width="15" height="15"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed.double.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eop-JI-dNT">
+                        <rect key="frame" x="20" y="19.5" width="15" height="11.5"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="IrM-SY-b6j"/>
                             <constraint firstAttribute="width" constant="15" id="l0g-6v-agV"/>
@@ -98,6 +99,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bed.double.fill" catalog="system" width="128" height="82"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

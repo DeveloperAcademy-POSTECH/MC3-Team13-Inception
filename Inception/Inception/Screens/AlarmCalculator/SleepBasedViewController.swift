@@ -34,15 +34,7 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
       for: indexPath
     ) as! SleepBasedRecoCell
     
-    cell.sleepIcon.image = UIImage(systemName: "bed.double.fill")?.withTintColor(
-      .systemOrange,
-      renderingMode: .alwaysOriginal
-    )
-    cell.sleepHour.text = data[indexPath.row].sleepHour
-    cell.bedTimeLabel.text = "취침"
-    cell.wakeupTimeLabel.text = "기상"
-    cell.bedTime.text = data[indexPath.row].bedTime
-    cell.wakeupTime.text = data[indexPath.row].wakeupTime
+    cell.update(with: data[indexPath.row])
     
     return cell
   }

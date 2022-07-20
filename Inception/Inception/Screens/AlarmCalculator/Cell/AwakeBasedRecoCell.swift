@@ -16,6 +16,12 @@ class AwakeBasedRecoCell: UITableViewCell {
   @IBOutlet weak var wakeupTime: UILabel!
   @IBOutlet weak var addButton: UIButton!
   
+  func update(with recoAlarmTime: AlarmTime) {
+    sleepHour.text = recoAlarmTime.sleepHour
+    bedTime.text = recoAlarmTime.bedTime
+    wakeupTime.text = recoAlarmTime.wakeupTime
+  }
+  
   override func awakeFromNib() {
     super.awakeFromNib()
   }
