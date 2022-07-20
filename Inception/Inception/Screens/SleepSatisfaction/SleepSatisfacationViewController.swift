@@ -7,13 +7,6 @@
 
 import UIKit
 
-enum SleepSatisfacation {
-  case good
-  case soso
-  case bad
-  case none
-}
-
 final class SleepSatisfacationViewController: UIViewController {
   
   // MARK: Views
