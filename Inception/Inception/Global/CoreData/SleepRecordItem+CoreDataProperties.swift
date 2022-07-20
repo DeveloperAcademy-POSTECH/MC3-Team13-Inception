@@ -20,6 +20,7 @@ extension SleepRecordItem {
     @NSManaged public var bedTime: String?
     @NSManaged public var wakeupTime: String?
     @NSManaged public var actualSleepHour: String?
+    @NSManaged public var sleepSatisfaction: SleepSatisfacation?
 
 }
 

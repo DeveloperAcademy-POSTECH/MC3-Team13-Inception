@@ -3,10 +3,11 @@
     <entity name="SleepRecordItem" representedClassName="SleepRecordItem" syncable="YES">
         <attribute name="actualSleepHour" optional="YES" attributeType="String"/>
         <attribute name="bedTime" optional="YES" attributeType="String"/>
+        <attribute name="sleepSatisfacation" optional="YES" attributeType="Transformable" customClassName="SleepSatisfacation"/>
         <attribute name="trackedDate" optional="YES" attributeType="String"/>
         <attribute name="wakeupTime" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SleepRecordItem" positionX="-18" positionY="27" width="128" height="89"/>
+        <element name="SleepRecordItem" positionX="-18" positionY="27" width="128" height="104"/>
     </elements>
 </model>
