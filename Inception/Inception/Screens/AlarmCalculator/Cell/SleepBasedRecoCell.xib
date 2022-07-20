@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -87,12 +86,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="addButton" destination="DcP-0i-1nO" id="aZE-Ek-rfQ"/>
-                <outlet property="awakeLabel" destination="I7f-RX-PLC" id="tam-al-Ei4"/>
-                <outlet property="awakeTime" destination="xkX-YX-2Na" id="y0l-8D-hIq"/>
-                <outlet property="sleepCycle" destination="auZ-Rb-I1m" id="5H3-vu-xCh"/>
+                <outlet property="bedTime" destination="Vcq-bo-H2j" id="srw-Df-X8m"/>
+                <outlet property="bedTimeLabel" destination="gV1-6a-K26" id="7HV-df-FVS"/>
+                <outlet property="sleepHour" destination="auZ-Rb-I1m" id="5H3-vu-xCh"/>
                 <outlet property="sleepIcon" destination="ZK6-gy-PMS" id="e8w-VK-KQB"/>
-                <outlet property="sleepLabel" destination="gV1-6a-K26" id="7HV-df-FVS"/>
-                <outlet property="sleepTime" destination="Vcq-bo-H2j" id="srw-Df-X8m"/>
+                <outlet property="wakeupTime" destination="xkX-YX-2Na" id="y0l-8D-hIq"/>
+                <outlet property="wakeupTimeLabel" destination="I7f-RX-PLC" id="tam-al-Ei4"/>
             </connections>
             <point key="canvasLocation" x="186.95652173913044" y="33.482142857142854"/>
         </tableViewCell>

@@ -9,11 +9,11 @@ import UIKit
 
 class AwakeBasedRecoCell: UITableViewCell {
   @IBOutlet weak var sleepIcon: UIImageView!
-  @IBOutlet weak var sleepCycle: UILabel!
-  @IBOutlet weak var sleepLabel: UILabel!
-  @IBOutlet weak var awakeLabel: UILabel!
-  @IBOutlet weak var sleepTime: UILabel!
-  @IBOutlet weak var awakeTime: UILabel!
+  @IBOutlet weak var sleepHour: UILabel!
+  @IBOutlet weak var bedTimeLabel: UILabel!
+  @IBOutlet weak var wakeupTimeLabel: UILabel!
+  @IBOutlet weak var bedTime: UILabel!
+  @IBOutlet weak var wakeupTime: UILabel!
   @IBOutlet weak var addButton: UIButton!
   
   override func awakeFromNib() {

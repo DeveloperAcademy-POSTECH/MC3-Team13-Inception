@@ -8,14 +8,14 @@
 import Foundation
 
 struct AlarmTime {
-  var sleepCycle: String
-  var sleepTime: String
-  var awakeTime: String
+  var sleepHour: String
+  var bedTime: String
+  var wakeupTime: String
   
-  init(sleepCycle: String, sleepTime: String, awakeTime: String){
-    self.sleepCycle = sleepCycle
-    self.sleepTime = sleepTime
-    self.awakeTime = awakeTime
+  init(sleepHour: String, bedTime: String, wakeupTime: String){
+    self.sleepHour = sleepHour
+    self.bedTime = bedTime
+    self.wakeupTime = wakeupTime
   }
   
 }

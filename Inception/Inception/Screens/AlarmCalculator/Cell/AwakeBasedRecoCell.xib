@@ -87,12 +87,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="addButton" destination="Nwr-t8-iNR" id="ARt-WK-lZA"/>
-                <outlet property="awakeLabel" destination="5zh-Bc-HBJ" id="P0r-78-bEh"/>
-                <outlet property="awakeTime" destination="ixx-Z2-d1d" id="d1H-IB-kmk"/>
-                <outlet property="sleepCycle" destination="mlF-M3-VC1" id="Iy1-Dp-UKZ"/>
+                <outlet property="bedTime" destination="bYm-9r-XXe" id="YIp-mm-ZeQ"/>
+                <outlet property="bedTimeLabel" destination="USf-0G-kF7" id="mWr-OX-ba9"/>
+                <outlet property="sleepHour" destination="mlF-M3-VC1" id="Iy1-Dp-UKZ"/>
                 <outlet property="sleepIcon" destination="eop-JI-dNT" id="9yv-pq-3qc"/>
-                <outlet property="sleepLabel" destination="USf-0G-kF7" id="mWr-OX-ba9"/>
-                <outlet property="sleepTime" destination="bYm-9r-XXe" id="YIp-mm-ZeQ"/>
+                <outlet property="wakeupTime" destination="ixx-Z2-d1d" id="d1H-IB-kmk"/>
+                <outlet property="wakeupTimeLabel" destination="5zh-Bc-HBJ" id="P0r-78-bEh"/>
             </connections>
             <point key="canvasLocation" x="133" y="11"/>
         </tableViewCell>

@@ -11,9 +11,9 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
   @IBOutlet weak var tableView: UITableView!
   
   // Cell의 Label에 표시할 내용
-  let data = [AlarmTime(sleepCycle: "7.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
-              AlarmTime(sleepCycle: "6.0 시간", sleepTime: "오후 11:00", awakeTime: "오전 07:00"),
-              AlarmTime(sleepCycle: "4.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 06:00")]
+  let data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
+              AlarmTime(sleepHour: "6.0 시간", bedTime: "오후 11:00", wakeupTime: "오전 07:00"),
+              AlarmTime(sleepHour: "4.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 06:00")]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,11 +45,11 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
       .systemOrange,
       renderingMode: .alwaysOriginal
     )
-    cell.sleepCycle.text = data[indexPath.row].sleepCycle
-    cell.sleepLabel.text = "취침"
-    cell.awakeLabel.text = "기상"
-    cell.sleepTime.text = data[indexPath.row].sleepTime
-    cell.awakeTime.text = data[indexPath.row].awakeTime
+    cell.sleepHour.text = data[indexPath.row].sleepHour
+    cell.bedTimeLabel.text = "취침"
+    cell.wakeupTimeLabel.text = "기상"
+    cell.bedTime.text = data[indexPath.row].bedTime
+    cell.wakeupTime.text = data[indexPath.row].wakeupTime
     
     // 생성한 Cell 리턴
     return cell
