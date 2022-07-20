@@ -12,6 +12,8 @@ reviewers:
   - jinccc97
   - taehyeonk
   - tea-hkim
+  - YebinKim
+  - Joon-min
 
 # A list of keywords to be skipped the process that add reviewers if pull requests include it 
 skipKeywords:
