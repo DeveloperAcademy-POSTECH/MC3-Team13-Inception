@@ -1,5 +1,5 @@
 //
-//  TimeDataModel.swift
+//  AlarmTime.swift
 //  Inception
 //
 //  Created by Admin on 2022/07/18.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TimeDataModel {
+struct AlarmTime {
   var sleepCycle: String
   var sleepTime: String
   var awakeTime: String

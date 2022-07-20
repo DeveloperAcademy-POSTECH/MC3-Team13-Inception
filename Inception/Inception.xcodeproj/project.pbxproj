@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */; };
 		84D7C3362885446200F1A0C5 /* SleepBasedRecoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */; };
-		84D7C33828854AC400F1A0C5 /* TimeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */; };
+		84D7C33828854AC400F1A0C5 /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33728854AC400F1A0C5 /* AlarmTime.swift */; };
 		84D7C33C288559DD00F1A0C5 /* AwakeBasedRecoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */; };
 		84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */; };
 		84D7C34228864EDA00F1A0C5 /* SleepBasedRecoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedViewController.swift; sourceTree = "<group>"; };
 		84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedRecoCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDataModel.swift; sourceTree = "<group>"; };
+		84D7C33728854AC400F1A0C5 /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
 		84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedRecoCell.swift; sourceTree = "<group>"; };
 		84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedViewController.swift; sourceTree = "<group>"; };
 		84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepBasedRecoCell.xib; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				84D7C34028864EDA00F1A0C5 /* SleepBasedRecoCell.xib */,
 				84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */,
 				84D7C34428864FF200F1A0C5 /* AwakeBasedRecoCell.xib */,
-				84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */,
+				84D7C33728854AC400F1A0C5 /* AlarmTime.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D7C33828854AC400F1A0C5 /* TimeDataModel.swift in Sources */,
+				84D7C33828854AC400F1A0C5 /* AlarmTime.swift in Sources */,
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,

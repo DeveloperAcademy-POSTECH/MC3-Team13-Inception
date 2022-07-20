@@ -11,9 +11,9 @@ class AwakeBasedViewController: UIViewController, UITableViewDataSource, UITable
   @IBOutlet weak var tableView: UITableView!
   
   // Cell의 Label에 표시할 내용
-  let data = [TimeDataModel(sleepCycle: "7.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
-              TimeDataModel(sleepCycle: "6.0 시간", sleepTime: "오후 12:00", awakeTime: "오전 08:00"),
-              TimeDataModel(sleepCycle: "4.5 시간", sleepTime: "오전 01:00", awakeTime: "오전 08:00")]
+  let data = [AlarmTime(sleepCycle: "7.5 시간", sleepTime: "오후 11:00", awakeTime: "오전 08:00"),
+              AlarmTime(sleepCycle: "6.0 시간", sleepTime: "오후 12:00", awakeTime: "오전 08:00"),
+              AlarmTime(sleepCycle: "4.5 시간", sleepTime: "오전 01:00", awakeTime: "오전 08:00")]
   
   override func viewDidLoad() {
     super.viewDidLoad()
