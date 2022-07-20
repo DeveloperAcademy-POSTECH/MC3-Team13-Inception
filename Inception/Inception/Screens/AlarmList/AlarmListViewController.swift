@@ -55,7 +55,6 @@ final class AlarmListViewController: UIViewController {
 extension AlarmListViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     if tableView == presentTableView {
       return presentAlarms.count
     }
@@ -63,13 +62,10 @@ extension AlarmListViewController: UITableViewDataSource {
       return savedAlarms.count
     }
     return 0
-
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
     var content = cell.defaultContentConfiguration()
 
     if tableView == self.presentTableView {
@@ -89,8 +85,9 @@ extension AlarmListViewController: UITableViewDataSource {
     return cell
   }
   
-  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    
+  func tableView(_ tableView: UITableView,
+                 commit editingStyle: UITableViewCell.EditingStyle,
+                 forRowAt indexPath: IndexPath) {
     if tableView == self.savedTableView {
       if editingStyle == .delete {
         savedAlarms.remove(at: indexPath.row)
@@ -113,7 +110,6 @@ extension AlarmListViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    
     if tableView == self.savedTableView {
       return UITableViewCell.EditingStyle.delete
     }
