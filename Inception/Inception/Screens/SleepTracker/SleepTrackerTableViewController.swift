@@ -9,7 +9,7 @@ import UIKit
 
 class SleepTrackerTableViewController: UITableViewController {
   
-  // 기록 없을 때 나오는 빈 화면
+  /// 기록 없을 때 나오는 빈 화면
   @IBOutlet var recordEmptyView: UIView!
   
   // MARK: 빈 화면 테스트용 (추후 삭제 예정)
