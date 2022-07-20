@@ -132,17 +132,10 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="fFS-mq-SVX">
-                            <connections>
-                                <action selector="addTestDummy:" destination="tUe-Om-Jhh" id="l4U-Qe-TOi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj"/>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="654.5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addTestDummyButton" destination="fFS-mq-SVX" id="yOP-yl-T6q"/>
                         <outlet property="recordEmptyView" destination="wMU-e1-fka" id="Lki-o3-0h2"/>
                     </connections>
                 </tableViewController>

@@ -15,12 +15,6 @@ class DailySleepTrackerTableViewCell: UITableViewCell {
   @IBOutlet weak var sleepLengthLabel: UILabel!
   @IBOutlet weak var sleepConditionLabel: UIImageView!
 
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
-  }
-  
   func update(with dailySleepRecord : DailySleepTrack) {
     dateLabel.text = dailySleepRecord.date
     bedTimeLabel.text = dailySleepRecord.bedTime
