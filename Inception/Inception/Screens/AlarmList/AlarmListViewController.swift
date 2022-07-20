@@ -29,7 +29,7 @@ final class AlarmListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonDidTap))
     
     presentTableView.delegate = self
     presentTableView.dataSource = self
@@ -48,6 +48,18 @@ final class AlarmListViewController: UIViewController {
     presentTableView.allowsSelection = false
   }
 
+  @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
+    if savedTableView.isEditing {
+            // Edit mode off
+            savedTableView.setEditing(false, animated: true)
+            sender.title = "편집"
+        } else {
+            // Edit mode on
+            savedTableView.setEditing(true, animated: true)
+            sender.title = "완료"
+        }
+  }
+  
 }
 
 // MARK: - UITableViewDataSource
