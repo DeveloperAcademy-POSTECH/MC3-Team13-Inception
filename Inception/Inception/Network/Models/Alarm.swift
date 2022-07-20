@@ -39,7 +39,7 @@ struct Alarm: Codable {
     return meridiemFormatter.string(from: wakeuptimeDate)
   }
   
-  var sleepHour: Int {
+  var expectedSleepHour: Int {
     return Int(wakeuptimeDate.timeIntervalSince(bedtimeDate)) / 60
   }
   

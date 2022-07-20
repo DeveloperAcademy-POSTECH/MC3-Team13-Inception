@@ -22,37 +22,23 @@ struct SleepRecord: Codable {
   
   var bedtimeTime: String {
     let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "hh:mm"
+    timeFormatter.dateFormat = "HH:MM"
     return timeFormatter.string(from: bedtimeDate)
-  }
-  
-  var bedtimeMeridiem: String {
-    let meridiemFormatter = DateFormatter()
-    meridiemFormatter.dateFormat = "a"
-    meridiemFormatter.locale = Locale(identifier: "ko")
-    return meridiemFormatter.string(from: bedtimeDate)
   }
   
   var wakeuptimeTime: String {
     let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "hh:mm"
+    timeFormatter.dateFormat = "HH:MM"
     return timeFormatter.string(from: wakeuptimeDate)
   }
   
-  var wakeuptimeMeridiem: String {
-    let meridiemFormatter = DateFormatter()
-    meridiemFormatter.dateFormat = "a"
-    meridiemFormatter.locale = Locale(identifier: "ko")
-    return meridiemFormatter.string(from: wakeuptimeDate)
-  }
-  
-  var sleepHour: Int {
+  var actualSleepHour: Int {
     return Int(wakeuptimeDate.timeIntervalSince(bedtimeDate)) / 60
   }
   
   var trackedDate: String {
     let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "yyyy/mm/dd"
+    timeFormatter.dateFormat = "mm.dd"
     return timeFormatter.string(from: wakeuptimeDate)
   }
   
