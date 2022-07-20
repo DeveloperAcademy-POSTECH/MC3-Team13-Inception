@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D3D4722882EFB400EDF412 /* AlarmCalculatorViewController.storyboard */; };
+		A9D3D4732882EFB400EDF412 /* AlarmCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */; };
 		A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A9D3D4722882EFB400EDF412 /* AlarmCalculatorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmCalculatorViewController.storyboard; sourceTree = "<group>"; };
+		A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmCalculator.storyboard; sourceTree = "<group>"; };
 		A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCalculatorViewController.swift; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,11 +105,11 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
 				B8B9D0BC2881323200F98980 /* SleepSatisfaction */,
 				B8B9D0BB288131FF00F98980 /* AlarmList */,
+				B8B9D0B92881318E00F98980 /* AlarmCalculator */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -117,8 +117,8 @@
 		B8B9D0B92881318E00F98980 /* AlarmCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				A9D3D4722882EFB400EDF412 /* AlarmCalculatorViewController.storyboard */,
 				A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */,
+				A9D3D4722882EFB400EDF412 /* AlarmCalculator.storyboard */,
 				B8B9D0C02881326C00F98980 /* Cell */,
 			);
 			path = AlarmCalculator;
@@ -241,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
-				A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */,
+				A9D3D4732882EFB400EDF412 /* AlarmCalculator.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
 			);
