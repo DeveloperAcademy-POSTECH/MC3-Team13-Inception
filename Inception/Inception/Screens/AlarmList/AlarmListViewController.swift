@@ -93,6 +93,19 @@ extension AlarmListViewController: UITableViewDataSource {
     return rowHeightOfTableView
   }
 
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+    if tableView == self.savedTableView {
+      if editingStyle == .delete {
+        savedAlarms.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        savedTableHeight.constant = CGFloat(savedAlarms.count) * rowHeightOfTableView
+      }
+    }
+    
+  }
+  
 }
 
 // MARK: - UITableViewDelegate
