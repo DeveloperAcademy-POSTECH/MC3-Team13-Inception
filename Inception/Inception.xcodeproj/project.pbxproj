@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedViewController.swift; sourceTree = "<group>"; };
-		84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedRecoCell.swift; sourceTree = "<group>"; };
+		84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedRecoCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		84D7C33728854AC400F1A0C5 /* TimeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDataModel.swift; sourceTree = "<group>"; };
 		84D7C33B288559DD00F1A0C5 /* AwakeBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedRecoCell.swift; sourceTree = "<group>"; };
 		84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwakeBasedViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +63,9 @@
 				B8B9D09C2881311300F98980 /* Inception */,
 				B8B9D09B2881311300F98980 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		B8B9D09B2881311300F98980 /* Products */ = {
 			isa = PBXGroup;
@@ -87,10 +89,10 @@
 				B8B9D0AE2881311500F98980 /* Info.plist */,
 				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
 			);
-			indentWidth = 4;
+			indentWidth = 2;
 			path = Inception;
 			sourceTree = "<group>";
-			tabWidth = 4;
+			tabWidth = 2;
 		};
 		B8B9D0B52881312C00F98980 /* Global */ = {
 			isa = PBXGroup;
