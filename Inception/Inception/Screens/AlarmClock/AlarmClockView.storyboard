@@ -110,10 +110,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ampmLabel" destination="6w0-vG-wD5" id="aAJ-xa-dJz"/>
-                        <outlet property="morningCircle" destination="VcR-o3-EMd" id="4eQ-GY-Cay"/>
+                        <outlet property="meridiemLabel" destination="6w0-vG-wD5" id="Meu-qq-0Q0"/>
                         <outlet property="timeLabel" destination="Jws-V0-j7m" id="HiN-Wf-Tqy"/>
                         <outlet property="titleLabel" destination="8K9-ux-KU7" id="vkR-od-bn5"/>
+                        <outlet property="wakeupTimeCircle" destination="VcR-o3-EMd" id="QQ8-BO-l4E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Efk-hs-ViZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
