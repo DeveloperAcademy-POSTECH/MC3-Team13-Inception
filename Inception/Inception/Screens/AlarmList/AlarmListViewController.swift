@@ -20,6 +20,8 @@ final class AlarmListViewController: UIViewController {
   let rowHeightOfTableView: CGFloat = 123
   let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
   
+  let alarmListCellIdentifier: String = "AlarmListCell"
+  
   // MARK: - View Life Cycle
   
   override func viewDidLoad() {
@@ -27,9 +29,9 @@ final class AlarmListViewController: UIViewController {
     
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
     
-    let nib = UINib(nibName: "AlarmListCell", bundle: nil)
-    presentTableView.register(nib, forCellReuseIdentifier: "AlarmListCell")
-    savedTableView.register(nib, forCellReuseIdentifier: "AlarmListCell")
+    let nib = UINib(nibName: alarmListCellIdentifier, bundle: nil)
+    presentTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
+    savedTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
     
     presentTableView.delegate = self
     presentTableView.dataSource = self
@@ -65,8 +67,9 @@ extension AlarmListViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmListCell", for: indexPath)
-            as? AlarmListCell
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: alarmListCellIdentifier,
+      for: indexPath) as? AlarmListCell
     else { return UITableViewCell() }
     
     cell.layer.cornerRadius = 11
