@@ -58,8 +58,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="알람 추천" id="gCc-Zi-Fms"/>
                     <connections>
-                        <outlet property="firstView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
-                        <outlet property="secondView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
+                        <outlet property="bedTimeBasedView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
+                        <outlet property="wakeupTimeBasedView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,12 +152,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,20 +8,22 @@
 import UIKit
 
 class AlarmCalculatorViewController: UIViewController {
-  @IBOutlet weak var firstView: UIView!
-  @IBOutlet weak var secondView: UIView!
+  
+  @IBOutlet weak var bedTimeBasedView: UIView!
+  @IBOutlet weak var wakeupTimeBasedView: UIView!
+
+  //세그먼트 컨트롤 뷰를 변경시킴
   @IBAction func switchViews(_ sender: UISegmentedControl) {
     if sender.selectedSegmentIndex == 0 {
-      firstView.alpha = 0
-      secondView.alpha = 1
-    } else {
-      firstView.alpha = 1
-      secondView.alpha = 0
+      bedTimeBasedView.alpha = 1
+      wakeupTimeBasedView.alpha = 0
+    }   else {
+      bedTimeBasedView.alpha = 0
+      wakeupTimeBasedView.alpha = 1
     }
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 }
-
