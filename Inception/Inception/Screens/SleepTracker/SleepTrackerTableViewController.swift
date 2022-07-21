@@ -14,7 +14,10 @@ class SleepTrackerTableViewController: UITableViewController {
   
   /// 테스트 기록 추가 버튼
   @IBAction func addTestRecord(_ sender: Any) {
-    saveNewItem(sleepRecordItem: SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(-60*60*6.5), wakeuptimeDate: Date.now))
+    let testAtualSleepTime = -60 * 60 * 6.5
+    let temp = SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(testAtualSleepTime), wakeuptimeDate: Date.now)
+    
+    saveNewItem(sleepRecordItem: temp)
     fetch()
   }
   
