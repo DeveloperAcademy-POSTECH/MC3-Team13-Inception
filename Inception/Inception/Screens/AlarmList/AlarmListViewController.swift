@@ -18,6 +18,7 @@ final class AlarmListViewController: UIViewController {
   @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
   
   let rowHeightOfTableView: CGFloat = 123
+  let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
   
   // MARK: - View Life Cycle
   
@@ -37,7 +38,7 @@ final class AlarmListViewController: UIViewController {
     savedTableView.dataSource = self
     
     presentTableHeight.constant = rowHeightOfTableView
-    savedTableHeight.constant = CGFloat(savedAlarm.count) * rowHeightOfTableView
+    savedTableHeight.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
@@ -94,6 +95,10 @@ extension AlarmListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView,
                  heightForRowAt indexPath: IndexPath) -> CGFloat {
     return rowHeightOfTableView 
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return headerHeight
   }
   
 }
