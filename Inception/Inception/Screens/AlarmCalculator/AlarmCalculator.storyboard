@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DA1-8c-alq">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--알람 추천-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController interfaceStyle="dark" id="Y6W-OH-hqX" customClass="AlarmCalculatorViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tyu-D2-GQ5">
+                                <rect key="frame" x="20" y="156" width="350" height="32"/>
+                                <segments>
+                                    <segment title="취침 시간 입력"/>
+                                    <segment title="기상 시간 입력"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViews:" destination="Y6W-OH-hqX" eventType="valueChanged" id="vbP-mr-TTL"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-4k-E5d">
+                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
+                                <connections>
+                                    <segue destination="Jlo-W6-gYX" kind="embed" id="1aI-nj-dCX"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-eG-DXQ">
+                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="wts-GS-jDy" kind="embed" id="Ic2-q5-TJz"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="3Fp-dU-0BS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PJJ-4k-E5d" secondAttribute="trailing" id="5WP-66-G0W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tyu-D2-GQ5" secondAttribute="trailing" constant="20" id="Mqd-yT-taj"/>
+                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="OHG-33-s80"/>
+                            <constraint firstItem="PJJ-4k-E5d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OYo-8v-EEA"/>
+                            <constraint firstItem="PJJ-4k-E5d" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="T51-GL-Ype"/>
+                            <constraint firstAttribute="bottom" secondItem="PJJ-4k-E5d" secondAttribute="bottom" id="Wtu-x0-SL2"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="PJJ-4k-E5d" secondAttribute="bottom" id="X8m-6l-NSb"/>
+                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="c8s-3Q-LeO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="알람 추천" id="gCc-Zi-Fms"/>
+                    <connections>
+                        <outlet property="bedTimeBasedView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
+                        <outlet property="wakeupTimeBasedView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="91.706161137440759"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8p0-oZ-PaL">
+            <objects>
+                <viewController id="wts-GS-jDy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WoR-hG-zwp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mmJ-Xi-tCl"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TzD-75-zLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="831"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bIO-A1-9Oe">
+            <objects>
+                <viewController id="Jlo-W6-gYX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8QF-ee-Ggy">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="B4Y-7N-xon"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-KQ-ReI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418" y="831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ubE-xC-TTB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DA1-8c-alq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7eX-qk-fEm">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="m4u-Dh-aQ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIR-95-91J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
