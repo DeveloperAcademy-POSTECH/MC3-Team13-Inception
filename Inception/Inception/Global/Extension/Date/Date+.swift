@@ -18,7 +18,7 @@ extension Date {
    */
   public func dateTo24HTimeString(_ format: Date) -> String {
     let timeFormatter = DateFormatter()
-    timeFormatter.dateFormat = "HH:MM"
+    timeFormatter.dateFormat = "HH:mm"
     return timeFormatter.string(from: format)
   }
   
@@ -63,15 +63,14 @@ extension Date {
   
   /**
    # dateToStringMMDD
-   date에서 mm.dd 형태로 날짜를 반환합니다.
+   date에서 MM.dd 형태로 날짜를 반환합니다.
    - Parameters:
      - format : 변형할 DateFormat / Date 타입
    - Note: date - > 07/22
    */
   public func dateToStringMMDD(_ format: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "mm.dd"
+    dateFormatter.dateFormat = "MM.dd"
     return dateFormatter.string(from: format)
   }
-  
 }

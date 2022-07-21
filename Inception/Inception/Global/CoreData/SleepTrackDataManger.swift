@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-class CoreDataManager {
-  static let shared: CoreDataManager = CoreDataManager()
+class SleepTrackDataManger {
+  static let shared: SleepTrackDataManger = SleepTrackDataManger()
   
   let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
   lazy var context = appDelegate?.persistentContainer.viewContext
@@ -20,7 +20,8 @@ class CoreDataManager {
     var models: [SleepRecordItem] = [SleepRecordItem]()
     
     if let context = context {
-      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "TrackedDate", ascending: true)
+      // 최근 날짜 순으로 sorting
+      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "trackedDate", ascending: false)
       let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest<NSManagedObject>(entityName: modelName)
       fetchRequest.sortDescriptors = [sortItem]
       
@@ -35,7 +36,7 @@ class CoreDataManager {
     return models
   }
   
-  func saveItem(trackedDate: String, bedTime: String, wakeupTime: String, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation, onSuccess: @escaping ((Bool) -> Void)) {
+  func saveItem(trackedDate: String, bedTime: String, wakeupTime: String, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: SleepRecordItem = NSManagedObject(entity: entity, insertInto: context) as? SleepRecordItem {
@@ -51,10 +52,20 @@ class CoreDataManager {
       }
     }
   }
+  
+  private func deleteItem(_ sleepRecord: SleepRecordItem) {
+    context?.delete(sleepRecord)
+  }
+  
+  func deleteAllItem() {
+    let allItems = getItems()
+    for item in allItems {
+      context?.delete(item)
+    }
+  }
 }
 
-
-extension CoreDataManager {
+extension SleepTrackDataManger {
     fileprivate func filteredRequest(id: Int64) -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult>
             = NSFetchRequest<NSFetchRequestResult>(entityName: modelName)
