@@ -32,8 +32,9 @@
                                     <segue destination="Jlo-W6-gYX" kind="embed" id="1aI-nj-dCX"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-eG-DXQ">
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-eG-DXQ">
                                 <rect key="frame" x="0.0" y="203" width="390" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="wts-GS-jDy" kind="embed" id="Ic2-q5-TJz"/>
                                 </connections>
@@ -44,24 +45,19 @@
                         <constraints>
                             <constraint firstItem="Tyu-D2-GQ5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="3Fp-dU-0BS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PJJ-4k-E5d" secondAttribute="trailing" id="5WP-66-G0W"/>
-                            <constraint firstAttribute="bottom" secondItem="WU6-eG-DXQ" secondAttribute="bottom" id="G4I-N6-sdm"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="WU6-eG-DXQ" secondAttribute="bottom" constant="402" id="JT1-Bf-0FQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tyu-D2-GQ5" secondAttribute="trailing" constant="20" id="Mqd-yT-taj"/>
                             <constraint firstItem="Tyu-D2-GQ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="OHG-33-s80"/>
                             <constraint firstItem="PJJ-4k-E5d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OYo-8v-EEA"/>
                             <constraint firstItem="PJJ-4k-E5d" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="T51-GL-Ype"/>
-                            <constraint firstItem="WU6-eG-DXQ" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="V7n-Be-OSd"/>
                             <constraint firstAttribute="bottom" secondItem="PJJ-4k-E5d" secondAttribute="bottom" id="Wtu-x0-SL2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WU6-eG-DXQ" secondAttribute="trailing" id="Wzm-Uz-ubV"/>
                             <constraint firstAttribute="bottomMargin" secondItem="PJJ-4k-E5d" secondAttribute="bottom" id="X8m-6l-NSb"/>
                             <constraint firstItem="Tyu-D2-GQ5" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="c8s-3Q-LeO"/>
-                            <constraint firstItem="WU6-eG-DXQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yt3-En-vzy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="알람 추천" id="gCc-Zi-Fms"/>
                     <connections>
-                        <outlet property="firstView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
-                        <outlet property="secondView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
+                        <outlet property="bedTimeBasedView" destination="WU6-eG-DXQ" id="2pY-Sr-GmU"/>
+                        <outlet property="wakeupTimeBasedView" destination="PJJ-4k-E5d" id="4nw-qK-5lg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzD-75-zLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="843"/>
+            <point key="canvasLocation" x="482" y="831"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bIO-A1-9Oe">
@@ -96,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGy-KQ-ReI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="843"/>
+            <point key="canvasLocation" x="1418" y="831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ubE-xC-TTB">
