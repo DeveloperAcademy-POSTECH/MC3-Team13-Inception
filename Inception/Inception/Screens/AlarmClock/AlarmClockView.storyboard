@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKI-xb-iAe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alarm Clock View Controller-->
+        <scene sceneID="eLg-GR-kBc">
+            <objects>
+                <viewController storyboardIdentifier="AlarmClockViewController" id="hKI-xb-iAe" customClass="AlarmClockViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iuC-2Y-QV8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K9-ux-KU7">
+                                <rect key="frame" x="181" y="139" width="52.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-Mm-2EE">
+                                <rect key="frame" x="84" y="584.5" width="246" height="119.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-RR-Puv">
+                                        <rect key="frame" x="0.0" y="0.0" width="246" height="52"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" subtitle="" cornerStyle="large" buttonSize="large">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="5분 후 다시 알림">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="AppleSDGothicNeo-SemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EK-hf-ZDX">
+                                        <rect key="frame" x="0.0" y="70" width="246" height="49.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large" buttonSize="large">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="알람 종료">
+                                                    <attributes>
+                                                        <font key="NSFont" size="16" name="AppleSDGothicNeo-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-o3-EMd">
+                                <rect key="frame" x="56" y="220.5" width="302" height="302"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67B-UP-4wV">
+                                        <rect key="frame" x="81.5" y="108" width="139.5" height="86.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w0-vG-wD5">
+                                                <rect key="frame" x="48.5" y="0.0" width="42" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jws-V0-j7m">
+                                                <rect key="frame" x="0.0" y="29" width="139.5" height="57.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6w0-vG-wD5" firstAttribute="centerX" secondItem="67B-UP-4wV" secondAttribute="centerX" id="RTV-vW-3mw"/>
+                                            <constraint firstItem="Jws-V0-j7m" firstAttribute="leading" secondItem="67B-UP-4wV" secondAttribute="leading" id="SL8-xo-bES"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jws-V0-j7m" secondAttribute="trailing" id="YWk-t7-sqk"/>
+                                            <constraint firstItem="6w0-vG-wD5" firstAttribute="top" secondItem="67B-UP-4wV" secondAttribute="top" id="fvJ-Eo-wbB"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jws-V0-j7m" secondAttribute="bottom" id="wlM-fn-eti"/>
+                                            <constraint firstItem="Jws-V0-j7m" firstAttribute="top" secondItem="6w0-vG-wD5" secondAttribute="bottom" id="zZ6-bo-9yM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="67B-UP-4wV" firstAttribute="centerX" secondItem="VcR-o3-EMd" secondAttribute="centerX" id="0VM-2e-GoK"/>
+                                    <constraint firstItem="67B-UP-4wV" firstAttribute="centerY" secondItem="VcR-o3-EMd" secondAttribute="centerY" id="FD6-oL-KOY"/>
+                                    <constraint firstAttribute="width" secondItem="VcR-o3-EMd" secondAttribute="height" multiplier="1:1" id="v5r-AW-Uh3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8eI-cX-89I"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VcR-o3-EMd" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="56" id="0n5-E3-nQG"/>
+                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="x1F-Mm-2EE" secondAttribute="trailing" constant="84" id="H1Z-Kg-gKU"/>
+                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="VcR-o3-EMd" secondAttribute="trailing" constant="56" id="H9a-uy-IyS"/>
+                            <constraint firstItem="x1F-Mm-2EE" firstAttribute="top" secondItem="VcR-o3-EMd" secondAttribute="bottom" constant="62" id="HMh-d0-Fyl"/>
+                            <constraint firstItem="x1F-Mm-2EE" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="84" id="Q28-6v-4KJ"/>
+                            <constraint firstItem="8K9-ux-KU7" firstAttribute="top" secondItem="8eI-cX-89I" secondAttribute="top" constant="95" id="Vql-pp-zWK"/>
+                            <constraint firstItem="8K9-ux-KU7" firstAttribute="centerX" secondItem="iuC-2Y-QV8" secondAttribute="centerX" id="YS3-7u-78y"/>
+                            <constraint firstItem="VcR-o3-EMd" firstAttribute="centerX" secondItem="iuC-2Y-QV8" secondAttribute="centerX" id="fpG-l7-bvK"/>
+                            <constraint firstItem="VcR-o3-EMd" firstAttribute="top" secondItem="8K9-ux-KU7" secondAttribute="bottom" constant="56" id="qpO-ht-zab"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="meridiemLabel" destination="6w0-vG-wD5" id="Meu-qq-0Q0"/>
+                        <outlet property="timeLabel" destination="Jws-V0-j7m" id="HiN-Wf-Tqy"/>
+                        <outlet property="titleLabel" destination="8K9-ux-KU7" id="vkR-od-bn5"/>
+                        <outlet property="wakeupTimeCircle" destination="VcR-o3-EMd" id="QQ8-BO-l4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Efk-hs-ViZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
