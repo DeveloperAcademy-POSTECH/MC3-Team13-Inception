@@ -15,20 +15,20 @@ class SleepTrackerTableViewController: UITableViewController {
   /// 테스트 기록 추가 버튼
   @IBAction func addTestRecord(_ sender: Any) {
     saveNewItem(sleepRecordItem: SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(-60*60*6.5), wakeuptimeDate: Date.now))
-    getAllItems()
+    fetch()
   }
   
   /// 테스트 전체 삭제 버튼
   @IBAction func deleteAllRecords(_ sender: Any) {
     SleepTrackDataManger.shared.deleteAllItem()
-    getAllItems()
+    fetch()
   }
 
   private var dailySleepRecords = [SleepRecordItem]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.getAllItems()
+    self.fetch()
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,7 +53,7 @@ class SleepTrackerTableViewController: UITableViewController {
     return cell
   }
 
-  private func getAllItems() {
+  private func fetch() {
     dailySleepRecords = SleepTrackDataManger.shared.getItems()
     tableView.reloadData()
   }
