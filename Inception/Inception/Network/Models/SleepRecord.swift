@@ -36,7 +36,7 @@ struct SleepRecord: Codable {
     return Date().dateToStringMMDD(wakeuptimeDate)
   }
   
-  init(sleepSatisfacation: SleepSatisfacation, bedtimeDate: Date, wakeuptimeDate: Date){
+  init(sleepSatisfacation: SleepSatisfacation, bedtimeDate: Date, wakeuptimeDate: Date) {
     self.sleepSatisfacation = sleepSatisfacation
     self.bedtimeDate = bedtimeDate
     self.wakeuptimeDate = wakeuptimeDate
