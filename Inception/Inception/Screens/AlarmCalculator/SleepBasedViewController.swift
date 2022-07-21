@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SleepBasedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SleepBasedViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   let data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
@@ -23,7 +23,9 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
     let nibName = UINib(nibName: "SleepBasedRecoCell", bundle: nil)
     tableView.register(nibName, forCellReuseIdentifier: "SleepBasedRecoCell")
   }
-  
+}
+
+extension SleepBasedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return data.count
   }
@@ -38,5 +40,8 @@ class SleepBasedViewController: UIViewController, UITableViewDataSource, UITable
     
     return cell
   }
+}
+
+extension SleepBasedViewController: UITableViewDelegate {
   
 }
