@@ -14,8 +14,8 @@ final class AlarmListViewController: UIViewController {
   @IBOutlet weak var clearPresentAlarmButton: UIButton!
   @IBOutlet weak var presentTableView: UITableView!
   @IBOutlet weak var savedTableView: UITableView!
-  @IBOutlet weak var presentTableHeight: NSLayoutConstraint!
-  @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
+  @IBOutlet weak var presentTableHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var savedTableHeightConstraint: NSLayoutConstraint!
   
   let rowHeightOfTableView: CGFloat = 123
   let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
@@ -37,8 +37,8 @@ final class AlarmListViewController: UIViewController {
     savedTableView.delegate = self
     savedTableView.dataSource = self
     
-    presentTableHeight.constant = rowHeightOfTableView
-    savedTableHeight.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
+    presentTableHeightConstraint.constant = rowHeightOfTableView
+    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false

@@ -138,9 +138,9 @@
                     <navigationItem key="navigationItem" title="알람 목록" largeTitleDisplayMode="always" id="xYU-Xh-arf"/>
                     <connections>
                         <outlet property="clearPresentAlarmButton" destination="EFa-CS-euF" id="4OZ-ZF-dZu"/>
-                        <outlet property="presentTableHeight" destination="wTp-1t-fNh" id="x1V-DT-K8W"/>
+                        <outlet property="presentTableHeightConstraint" destination="wTp-1t-fNh" id="x1V-DT-K8W"/>
                         <outlet property="presentTableView" destination="o4v-Tu-DsC" id="pQn-rE-0Tl"/>
-                        <outlet property="savedTableHeight" destination="ZZZ-Nz-aKH" id="O0K-1M-mrK"/>
+                        <outlet property="savedTableHeightConstraint" destination="ZZZ-Nz-aKH" id="O0K-1M-mrK"/>
                         <outlet property="savedTableView" destination="fGh-Kb-1Lr" id="xv4-nA-CNQ"/>
                     </connections>
                 </viewController>
