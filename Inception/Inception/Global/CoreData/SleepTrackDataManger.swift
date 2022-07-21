@@ -53,7 +53,7 @@ class SleepTrackDataManger {
     }
   }
   
-  private func deleteItem(_ sleepRecord: SleepRecordItem) {
+  func deleteItem(_ sleepRecord: SleepRecordItem) {
     context?.delete(sleepRecord)
   }
   
