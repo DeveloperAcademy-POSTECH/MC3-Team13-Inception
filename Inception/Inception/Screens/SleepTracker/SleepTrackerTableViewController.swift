@@ -25,6 +25,7 @@ class SleepTrackerTableViewController: UITableViewController {
   }
 
   private var dailySleepRecords = [SleepRecordItem]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.getAllItems()
