@@ -17,7 +17,7 @@ class SleepTrackerTableViewController: UITableViewController {
     let testAtualSleepTime = -60 * 60 * 6.5
     let temp = SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(testAtualSleepTime), wakeuptimeDate: Date.now)
     
-    saveNewItem(sleepRecordItem: temp)
+    create(sleepRecordItem: temp)
     fetch()
   }
   
@@ -57,15 +57,15 @@ class SleepTrackerTableViewController: UITableViewController {
   }
 
   private func fetch() {
-    dailySleepRecords = SleepTrackDataManger.shared.getItems()
+    dailySleepRecords = SleepTrackDataManger.shared.read()
     tableView.reloadData()
   }
 
   /// 데이터 등록 테스트 위한 임시 함수 (삭제 예정)
-  private func saveNewItem(sleepRecordItem: SleepRecord) {
+  private func create(sleepRecordItem: SleepRecord) {
     let dailyRecordItem = sleepRecordItem
 
-    SleepTrackDataManger.shared.saveItem(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeTime, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
+    SleepTrackDataManger.shared.create(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeTime, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
       print("saved = \(onSuccess)")
     }
   }

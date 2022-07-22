@@ -16,7 +16,7 @@ class SleepTrackDataManger {
   
   let modelName: String = "SleepRecordItem"
   
-  func getItems() -> [SleepRecordItem] {
+  func read() -> [SleepRecordItem] {
     var models: [SleepRecordItem] = [SleepRecordItem]()
     
     if let context = context {
@@ -36,7 +36,7 @@ class SleepTrackDataManger {
     return models
   }
   
-  func saveItem(trackedDate: String, bedTime: String, wakeupTime: String, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
+  func create(trackedDate: String, bedTime: String, wakeupTime: String, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: SleepRecordItem = NSManagedObject(entity: entity, insertInto: context) as? SleepRecordItem {
@@ -58,7 +58,7 @@ class SleepTrackDataManger {
   }
   
   func deleteAllItem() {
-    let allItems = getItems()
+    let allItems = read()
     for item in allItems {
       context?.delete(item)
     }

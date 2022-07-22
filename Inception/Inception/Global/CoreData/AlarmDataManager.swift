@@ -16,8 +16,8 @@ class AlarmDataManger {
   
   let modelName: String = "AlarmItem"
   
-  func getItems() -> [SleepRecordItem] {
-    var models: [SleepRecordItem] = [SleepRecordItem]()
+  func read() -> [AlarmItem] {
+    var models: [AlarmItem] = [AlarmItem]()
     
     if let context = context {
       let sortItem: NSSortDescriptor = NSSortDescriptor(key: "bedTime", ascending: false)
@@ -25,7 +25,7 @@ class AlarmDataManger {
       fetchRequest.sortDescriptors = [sortItem]
       
       do {
-        if let fetchResult: [SleepRecordItem] = try context.fetch(fetchRequest) as? [SleepRecordItem] {
+        if let fetchResult: [AlarmItem] = try context.fetch(fetchRequest) as? [AlarmItem] {
           models = fetchResult
         }
       } catch let error as NSError {
@@ -35,7 +35,7 @@ class AlarmDataManger {
     return models
   }
   
-  func saveItem(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
+  func create(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: AlarmItem = NSManagedObject(entity: entity, insertInto: context) as? AlarmItem {
@@ -50,12 +50,12 @@ class AlarmDataManger {
     }
   }
   
-  func deleteItem(_ sleepRecord: SleepRecordItem) {
-    context?.delete(sleepRecord)
+  func delete(_ alarm: AlarmItem) {
+    context?.delete(alarm)
   }
   
-  func deleteAllItem() {
-    let allItems = getItems()
+  func deleteAll() {
+    let allItems = read()
     for item in allItems {
       context?.delete(item)
     }
