@@ -27,18 +27,30 @@ final class AlarmListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setNavigationItem()
+    configureCellForTable()
+    setDelegateAndDataSourceForTable()
+    initPropertyOfTable()
+  }
+  
+  func setNavigationItem() {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
-    
+  }
+  
+  func configureCellForTable() {
     let nib = UINib(nibName: alarmListCellIdentifier, bundle: nil)
     presentTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
     savedTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
-    
+  }
+  
+  func setDelegateAndDataSourceForTable() {
     presentTableView.delegate = self
     presentTableView.dataSource = self
-    
     savedTableView.delegate = self
     savedTableView.dataSource = self
-    
+  }
+  
+  func initPropertyOfTable() {
     presentTableHeightConstraint.constant = rowHeightOfTableView
     savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
     
