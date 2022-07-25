@@ -32,4 +32,13 @@ struct Alarm: Codable {
   var expectedSleepHour: Int {
     return Date().minuteInterval(from: bedtimeDate, to: wakeuptimeDate)
   }
+  
+  init(isOn: Bool, bedtimeDate: Date, wakeuptimeDate: Date){
+    self.isOn = isOn
+    self.bedtimeDate = bedtimeDate
+    self.wakeuptimeDate = wakeuptimeDate
+  }
 }
+
+var presentAlarm: Alarm = Alarm(isOn: true, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))
+var savedAlarm: [Alarm] = [Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)),Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))]

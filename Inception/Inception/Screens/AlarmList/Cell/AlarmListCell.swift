@@ -56,4 +56,12 @@ class AlarmListCell: UITableViewCell {
       sleepHourIcon.tintColor = .systemOrange
     }
   }
+  
+  func alarmCellUpdate(with alarm: Alarm) {
+    bedtimeTime.text = alarm.bedtimeTime
+    bedtimeMeridiem.text = alarm.bedtimeMeridiem
+    wakeuptimeTime.text = alarm.wakeuptimeTime
+    wakeuptimeMeridiem.text = alarm.wakeuptimeMeridiem
+    sleepHourField.text = String(Float(alarm.expectedSleepHour / 60)) + " 시간"
+  }
 }
