@@ -29,21 +29,14 @@ class AlarmListCell: UITableViewCell {
     sleepHourIcon.image = UIImage(systemName: "bed.double.fill", withConfiguration: configuration)
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
+  func alarmCellUpdate(with alarm: Alarm, isSetAlarm: Bool) {
+    bedtimeTime.text = alarm.bedtimeTime
+    bedtimeMeridiem.text = alarm.bedtimeMeridiem
+    wakeuptimeTime.text = alarm.wakeuptimeTime
+    wakeuptimeMeridiem.text = alarm.wakeuptimeMeridiem
+    sleepHourField.text = String(Float(alarm.expectedSleepHour / 60)) + " 시간"
     
-    if !selected {
-      bedtimeTitle.textColor = .white.withAlphaComponent(0.3)
-      bedtimeMeridiem.textColor = .white.withAlphaComponent(0.3)
-      bedtimeTime.textColor = .white.withAlphaComponent(0.3)
-      
-      wakeuptimeTitle.textColor = .white.withAlphaComponent(0.3)
-      wakeuptimeMeridiem.textColor = .white.withAlphaComponent(0.3)
-      wakeuptimeTime.textColor = .white.withAlphaComponent(0.3)
-      
-      sleepHourField.textColor = .systemOrange.withAlphaComponent(0.5)
-      sleepHourIcon.tintColor = .systemOrange.withAlphaComponent(0.5)
-    }else {
+    if isSetAlarm {
       bedtimeTitle.textColor = .white
       bedtimeMeridiem.textColor = .white
       bedtimeTime.textColor = .white
@@ -54,14 +47,19 @@ class AlarmListCell: UITableViewCell {
       
       sleepHourField.textColor = .systemOrange
       sleepHourIcon.tintColor = .systemOrange
+    } else {
+      bedtimeTitle.textColor = .white.withAlphaComponent(0.3)
+      bedtimeMeridiem.textColor = .white.withAlphaComponent(0.3)
+      bedtimeTime.textColor = .white.withAlphaComponent(0.3)
+      
+      wakeuptimeTitle.textColor = .white.withAlphaComponent(0.3)
+      wakeuptimeMeridiem.textColor = .white.withAlphaComponent(0.3)
+      wakeuptimeTime.textColor = .white.withAlphaComponent(0.3)
+      
+      sleepHourField.textColor = .systemOrange.withAlphaComponent(0.5)
+      sleepHourIcon.tintColor = .systemOrange.withAlphaComponent(0.5)
     }
+    
   }
   
-  func alarmCellUpdate(with alarm: Alarm) {
-    bedtimeTime.text = alarm.bedtimeTime
-    bedtimeMeridiem.text = alarm.bedtimeMeridiem
-    wakeuptimeTime.text = alarm.wakeuptimeTime
-    wakeuptimeMeridiem.text = alarm.wakeuptimeMeridiem
-    sleepHourField.text = String(Float(alarm.expectedSleepHour / 60)) + " 시간"
-  }
 }

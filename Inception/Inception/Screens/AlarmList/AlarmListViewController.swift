@@ -88,13 +88,13 @@ extension AlarmListViewController: UITableViewDataSource {
     
     if tableView == self.presentTableView {
       if presentAlarm != nil {
-        cell.alarmCellUpdate(with: presentAlarm)
+        cell.alarmCellUpdate(with: presentAlarm, isSetAlarm: true)
         return cell
       }
     }
     else if tableView == self.savedTableView {
       if savedAlarm.count > 0 {
-        cell.alarmCellUpdate(with: savedAlarm[indexPath.row])
+        cell.alarmCellUpdate(with: savedAlarm[indexPath.row], isSetAlarm: false)
         return cell
       }
     }
