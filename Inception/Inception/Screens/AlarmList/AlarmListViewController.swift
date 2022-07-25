@@ -118,6 +118,12 @@ extension AlarmListViewController: UITableViewDataSource {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if tableView == savedTableView {
+      cell.alpha = 0.7
+    }
+  }
+  
   func tableView(_ tableView: UITableView,
                  commit editingStyle: UITableViewCell.EditingStyle,
                  forRowAt indexPath: IndexPath) {
