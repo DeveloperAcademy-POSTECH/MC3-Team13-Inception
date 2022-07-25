@@ -124,8 +124,9 @@ extension AlarmListViewController: UITableViewDataSource {
     if tableView == self.savedTableView {
       if editingStyle == .delete {
         savedAlarm.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * rowHeightOfTableView
+        let indexSet = IndexSet(arrayLiteral: indexPath.section)
+        tableView.deleteSections(indexSet, with: .automatic)
+        savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
       }
     }
   }
