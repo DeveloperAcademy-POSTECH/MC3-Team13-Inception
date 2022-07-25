@@ -15,7 +15,7 @@ extension SleepRecordItem {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SleepRecordItem> {
         return NSFetchRequest<SleepRecordItem>(entityName: "SleepRecordItem")
     }
-
+  @NSManaged public var id : UUID
     @NSManaged public var trackedDate: String?
     @NSManaged public var bedTime: String?
     @NSManaged public var wakeupTime: String?

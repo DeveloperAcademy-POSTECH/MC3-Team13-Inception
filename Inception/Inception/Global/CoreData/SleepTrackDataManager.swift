@@ -53,6 +53,20 @@ class SleepTrackDataManager {
     }
   }
   
+  func updateSleepRecord(_ sleepRecord: SleepRecordItem, _ newSleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
+    let allItems = fetchSleepRecord()
+    for item in allItems {
+      if item.id == sleepRecord.id {
+        item.bedTime = newSleepRecord.bedTime
+        item.wakeupTime = newSleepRecord.wakeupTime
+        item.sleepSatisfaction = newSleepRecord.sleepSatisfaction
+      }
+    }
+    contextSave { success in
+      onSuccess(success)
+    }
+  }
+  
   func deleteSleepRecord(_ sleepRecord: SleepRecordItem) {
     context?.delete(sleepRecord)
   }
