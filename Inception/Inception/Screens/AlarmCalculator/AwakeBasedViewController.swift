@@ -44,5 +44,7 @@ extension AwakeBasedViewController: UITableViewDataSource {
 }
 
 extension AwakeBasedViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 120 + 16 // cell size: 120, top padding: 8, bottom padding: 8
+  }
 }
