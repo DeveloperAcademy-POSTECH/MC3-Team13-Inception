@@ -16,7 +16,7 @@ class AlarmDataManger {
   
   let modelName: String = "AlarmItem"
   
-  func read() -> [AlarmItem] {
+  func fetchAlarmItem() -> [AlarmItem] {
     var models: [AlarmItem] = [AlarmItem]()
     
     if let context = context {
@@ -35,7 +35,7 @@ class AlarmDataManger {
     return models
   }
   
-  func create(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
+  func createAlarmItem(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: AlarmItem = NSManagedObject(entity: entity, insertInto: context) as? AlarmItem {
@@ -50,12 +50,12 @@ class AlarmDataManger {
     }
   }
   
-  func delete(_ alarm: AlarmItem) {
+  func deleteAlarm(_ alarm: AlarmItem) {
     context?.delete(alarm)
   }
   
-  func deleteAll() {
-    let allItems = read()
+  func deleteAllAlarm() {
+    let allItems = fetchAlarmItem()
     for item in allItems {
       context?.delete(item)
     }

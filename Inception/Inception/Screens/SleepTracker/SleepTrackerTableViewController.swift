@@ -23,7 +23,7 @@ class SleepTrackerTableViewController: UITableViewController {
   
   /// 테스트 전체 삭제 버튼
   @IBAction func deleteAllRecords(_ sender: Any) {
-    SleepTrackDataManger.shared.deleteAllItem()
+    SleepTrackDataManger.shared.deleteAllSleepRecord()
     fetch()
   }
 
@@ -57,7 +57,7 @@ class SleepTrackerTableViewController: UITableViewController {
   }
 
   private func fetch() {
-    dailySleepRecords = SleepTrackDataManger.shared.read()
+    dailySleepRecords = SleepTrackDataManger.shared.fetchSleepRecord()
     tableView.reloadData()
   }
 
@@ -65,7 +65,7 @@ class SleepTrackerTableViewController: UITableViewController {
   private func create(sleepRecordItem: SleepRecord) {
     let dailyRecordItem = sleepRecordItem
 
-    SleepTrackDataManger.shared.create(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeTime, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
+    SleepTrackDataManger.shared.createSleepRecord(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeTime, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
       print("saved = \(onSuccess)")
     }
   }
