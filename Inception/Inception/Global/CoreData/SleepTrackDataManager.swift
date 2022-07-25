@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-class SleepTrackDataManger {
-  static let shared: SleepTrackDataManger = SleepTrackDataManger()
+class SleepTrackDataManager {
+  static let shared: SleepTrackDataManager = SleepTrackDataManager()
   
   let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
   lazy var context = appDelegate?.persistentContainer.viewContext
@@ -65,7 +65,7 @@ class SleepTrackDataManger {
   }
 }
 
-extension SleepTrackDataManger {
+extension SleepTrackDataManager {
     fileprivate func filteredRequest(id: Int64) -> NSFetchRequest<NSFetchRequestResult> {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult>
             = NSFetchRequest<NSFetchRequestResult>(entityName: modelName)
