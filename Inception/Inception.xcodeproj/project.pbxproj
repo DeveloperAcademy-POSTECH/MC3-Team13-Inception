@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */; };
 		84D7C3362885446200F1A0C5 /* SleepBasedRecoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */; };
 		84D7C33828854AC400F1A0C5 /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33728854AC400F1A0C5 /* AlarmTime.swift */; };
@@ -18,10 +19,19 @@
 		A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */; };
 		90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */; };
 		90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */; };
+
 		77449BE428847A0C0051147B /* SleepTrackerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77449BE328847A0C0051147B /* SleepTrackerStoryboard.storyboard */; };
 		77449BE62884CFDA0051147B /* DailySleepTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77449BE52884CFDA0051147B /* DailySleepTrack.swift */; };
 		77449BE82884D0040051147B /* SleepTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77449BE72884D0040051147B /* SleepTrackerTableViewController.swift */; };
 		77449BEA2884D2690051147B /* DailySleepTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77449BE92884D2690051147B /* DailySleepTrackerTableViewCell.swift */; };
+
+		77791E0D288953450042E56B /* AlarmItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77791E0B288953450042E56B /* AlarmItem+CoreDataClass.swift */; };
+		77791E0E288953450042E56B /* AlarmItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77791E0C288953450042E56B /* AlarmItem+CoreDataProperties.swift */; };
+		77791E10288953680042E56B /* AlarmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77791E0F288953680042E56B /* AlarmDataManager.swift */; };
+		7793F9ED2887F0B30094D69B /* SleepTrackDataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F9EC2887F0B30094D69B /* SleepTrackDataManger.swift */; };
+		7793F9F2288804720094D69B /* SleepRecordItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F9F0288804720094D69B /* SleepRecordItem+CoreDataClass.swift */; };
+		7793F9F3288804720094D69B /* SleepRecordItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F9F1288804720094D69B /* SleepRecordItem+CoreDataProperties.swift */; };
+
 		A71944A728845374004FF1BE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71944A628845374004FF1BE /* UIButton+.swift */; };
 		A7257FDE28879A4C001A496D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDD28879A4C001A496D /* Alarm.swift */; };
 		A7257FE028879D60001A496D /* SleepRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDF28879D60001A496D /* SleepRecord.swift */; };
@@ -33,8 +43,10 @@
 		A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */; };
 		A7F246DB2883DE580099E6CE /* SleepSatisfacation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */; };
 		A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246DC2883EBA30099E6CE /* EmojiButton.swift */; };
+
 		B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */; };
 		B8900A3E2883FD7A00EE03DF /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8900A3D2883FD7A00EE03DF /* AlarmList.storyboard */; };
+
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -45,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
 		84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedViewController.swift; sourceTree = "<group>"; };
 		84D7C3352885446200F1A0C5 /* SleepBasedRecoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBasedRecoCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		84D7C33728854AC400F1A0C5 /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
@@ -56,10 +69,17 @@
 		A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCalculatorViewController.swift; sourceTree = "<group>"; };
 		90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
 		90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmClockView.storyboard; sourceTree = "<group>"; };
+
 		77449BE328847A0C0051147B /* SleepTrackerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepTrackerStoryboard.storyboard; sourceTree = "<group>"; };
 		77449BE52884CFDA0051147B /* DailySleepTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySleepTrack.swift; sourceTree = "<group>"; };
 		77449BE72884D0040051147B /* SleepTrackerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackerTableViewController.swift; sourceTree = "<group>"; };
 		77449BE92884D2690051147B /* DailySleepTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepTrackerTableViewCell.swift; sourceTree = "<group>"; };
+		77791E0B288953450042E56B /* AlarmItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		77791E0C288953450042E56B /* AlarmItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		77791E0F288953680042E56B /* AlarmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDataManager.swift; sourceTree = "<group>"; };
+		7793F9EC2887F0B30094D69B /* SleepTrackDataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTrackDataManger.swift; sourceTree = "<group>"; };
+		7793F9F0288804720094D69B /* SleepRecordItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepRecordItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7793F9F1288804720094D69B /* SleepRecordItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepRecordItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A71944A628845374004FF1BE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		A7257FDD28879A4C001A496D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		A7257FDF28879D60001A496D /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
@@ -71,8 +91,10 @@
 		A7F246D82883DD430099E6CE /* SleepSatisfacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSatisfacationViewController.swift; sourceTree = "<group>"; };
 		A7F246DA2883DE580099E6CE /* SleepSatisfacation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepSatisfacation.storyboard; sourceTree = "<group>"; };
 		A7F246DC2883EBA30099E6CE /* EmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButton.swift; sourceTree = "<group>"; };
+
 		B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		B8900A3D2883FD7A00EE03DF /* AlarmList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmList.storyboard; sourceTree = "<group>"; };
+
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7793F9E32887EFA50094D69B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
+				7793F9EC2887F0B30094D69B /* SleepTrackDataManger.swift */,
+				77791E0F288953680042E56B /* AlarmDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A719450F28856C58004FF1BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +183,6 @@
 				B8B9D0A32881311300F98980 /* Main.storyboard */,
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0AE2881311500F98980 /* Info.plist */,
-				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
 			);
 			indentWidth = 2;
 			path = Inception;
@@ -161,6 +192,7 @@
 		B8B9D0B52881312C00F98980 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7793F9E32887EFA50094D69B /* CoreData */,
 				B8B9D0C2288132B300F98980 /* Resource */,
 				B8B9D0C12881329900F98980 /* Extension */,
 			);
@@ -178,6 +210,10 @@
 		B8B9D0B72881317000F98980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7793F9F0288804720094D69B /* SleepRecordItem+CoreDataClass.swift */,
+				7793F9F1288804720094D69B /* SleepRecordItem+CoreDataProperties.swift */,
+				77791E0B288953450042E56B /* AlarmItem+CoreDataClass.swift */,
+				77791E0C288953450042E56B /* AlarmItem+CoreDataProperties.swift */,
 				A7257FDD28879A4C001A496D /* Alarm.swift */,
 				A7257FDF28879D60001A496D /* SleepRecord.swift */,
 			);
@@ -373,16 +409,24 @@
 				A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */,
 				B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
+
+				7793F9F3288804720094D69B /* SleepRecordItem+CoreDataProperties.swift in Sources */,
+				7793F9F2288804720094D69B /* SleepRecordItem+CoreDataClass.swift in Sources */,
+
 				A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */,
 				84D7C3362885446200F1A0C5 /* SleepBasedRecoCell.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
 				84D7C33C288559DD00F1A0C5 /* AwakeBasedRecoCell.swift in Sources */,
+
 				A7257FE32887B076001A496D /* Date+.swift in Sources */,
 				B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */,
+				77791E0D288953450042E56B /* AlarmItem+CoreDataClass.swift in Sources */,
 				A7257FE028879D60001A496D /* SleepRecord.swift in Sources */,
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
 				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
+				77791E10288953680042E56B /* AlarmDataManager.swift in Sources */,
 				A71944A728845374004FF1BE /* UIButton+.swift in Sources */,
+				7793F9ED2887F0B30094D69B /* SleepTrackDataManger.swift in Sources */,
 				A7257FDE28879A4C001A496D /* Alarm.swift in Sources */,
 				77449BE62884CFDA0051147B /* DailySleepTrack.swift in Sources */,
 				77449BE82884D0040051147B /* SleepTrackerTableViewController.swift in Sources */,
@@ -390,6 +434,9 @@
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
 				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
 				A71944A728845374004FF1BE /* UIButton+.swift in Sources */,
+
+				77791E0E288953450042E56B /* AlarmItem+CoreDataProperties.swift in Sources */,
+
 				B8B9D0A82881311300F98980 /* Inception.xcdatamodeld in Sources */,
 				A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */,
 				A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */,

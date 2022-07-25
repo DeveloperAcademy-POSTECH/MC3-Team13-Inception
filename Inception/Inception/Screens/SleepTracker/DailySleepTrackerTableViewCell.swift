@@ -15,11 +15,11 @@ class DailySleepTrackerTableViewCell: UITableViewCell {
   @IBOutlet weak var sleepLengthLabel: UILabel!
   @IBOutlet weak var sleepConditionLabel: UIImageView!
 
-  func update(with dailySleepRecord : DailySleepTrack) {
-    dateLabel.text = dailySleepRecord.date
+  func update(with dailySleepRecord: SleepRecordItem) {
+    dateLabel.text = dailySleepRecord.trackedDate
     bedTimeLabel.text = dailySleepRecord.bedTime
-    wakeTimeLabel.text = dailySleepRecord.wakeTime
-    sleepLengthLabel.text = dailySleepRecord.sleepLength
-    sleepConditionLabel.image = UIImage(systemName: dailySleepRecord.sleepCondition.rawValue)
+    wakeTimeLabel.text = dailySleepRecord.wakeupTime
+    sleepLengthLabel.text = dailySleepRecord.actualSleepHour
+    sleepConditionLabel.image = UIImage(systemName: dailySleepRecord.sleepSatisfaction!)
   }
 }
