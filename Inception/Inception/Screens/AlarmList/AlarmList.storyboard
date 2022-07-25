@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="704"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-ox-ai6" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="704"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1003"/>
                                         <subviews>
-                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="b8Y-G0-AfH">
-                                                <rect key="frame" x="16" y="24" width="358" height="680"/>
+                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="b8Y-G0-AfH" userLabel="First Stack View">
+                                                <rect key="frame" x="16" y="24" width="358" height="979"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-kL-yQ4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="477.66666666666669"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-kL-yQ4" userLabel="Present Stack View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="624.66666666666663"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k9N-em-WbH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="31"/>
@@ -41,11 +41,33 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-CS-euF">
                                                                         <rect key="frame" x="281.66666666666669" y="0.0" width="76.333333333333314" height="31"/>
                                                                         <buttonConfiguration key="configuration" style="gray" title="알람 해제" cornerStyle="capsule"/>
+                                                                        <connections>
+                                                                            <action selector="clearPresentAlarm:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ARj-Iq-XbQ"/>
+                                                                            <action selector="clearPresentAlarm:" destination="Y6W-OH-hqX" eventType="touchDown" id="T3u-am-ppZ"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5F-a3-RHR">
+                                                                <rect key="frame" x="0.0" y="55" width="358" height="123"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWe-8b-6ga">
+                                                                        <rect key="frame" x="66.666666666666686" y="44.666666666666686" width="225" height="33.666666666666657"/>
+                                                                        <string key="text">저장된 알람 혹은 새로운 알람을 선택하면
+현재 알람으로 등록됩니다</string>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="TWe-8b-6ga" firstAttribute="centerX" secondItem="Y5F-a3-RHR" secondAttribute="centerX" id="Bqm-gg-UlD"/>
+                                                                    <constraint firstItem="TWe-8b-6ga" firstAttribute="centerY" secondItem="Y5F-a3-RHR" secondAttribute="centerY" id="CvT-Bn-n3X"/>
+                                                                    <constraint firstAttribute="height" constant="123" id="FGA-N2-oCz"/>
+                                                                </constraints>
+                                                            </view>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o4v-Tu-DsC">
-                                                                <rect key="frame" x="0.0" y="55.000000000000028" width="358" height="422.66666666666674"/>
+                                                                <rect key="frame" x="0.0" y="202.00000000000003" width="358" height="422.66666666666674"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="422.66666666666674" id="wTp-1t-fNh"/>
@@ -67,8 +89,8 @@
                                                             </tableView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-WC-DUl">
-                                                        <rect key="frame" x="0.0" y="501.66666666666657" width="358" height="178.33333333333331"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Hye-WC-DUl" userLabel="Saved Stack View">
+                                                        <rect key="frame" x="0.0" y="648.66666666666663" width="358" height="330.33333333333337"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장된 알람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt6-qm-WM2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="26.333333333333332"/>
@@ -76,8 +98,36 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Kb-1Lr">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBF-1h-ui8">
                                                                 <rect key="frame" x="0.0" y="50.333333333333371" width="358" height="128"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NG4-ac-fkc">
+                                                                        <rect key="frame" x="48.333333333333343" y="33" width="261.33333333333326" height="62"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장된 알람이 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-To-pC5">
+                                                                                <rect key="frame" x="53.000000000000014" y="0.0" width="155.33333333333337" height="20.333333333333332"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc1-Nz-Jzx">
+                                                                                <rect key="frame" x="0.0" y="28.333333333333368" width="261.33333333333331" height="33.666666666666657"/>
+                                                                                <string key="text">현재 사용중이지 않은 알람이 이곳에 저장됩니다
+첫 번째 탭에서 알람을 추가 해보세요</string>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="NG4-ac-fkc" firstAttribute="centerY" secondItem="FBF-1h-ui8" secondAttribute="centerY" id="YlJ-ed-Ccl"/>
+                                                                    <constraint firstItem="NG4-ac-fkc" firstAttribute="centerX" secondItem="FBF-1h-ui8" secondAttribute="centerX" id="yUI-pN-3xL"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Kb-1Lr">
+                                                                <rect key="frame" x="0.0" y="202.33333333333337" width="358" height="128"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="128" id="ZZZ-Nz-aKH"/>
@@ -138,8 +188,10 @@
                     <navigationItem key="navigationItem" title="알람 목록" largeTitleDisplayMode="always" id="xYU-Xh-arf"/>
                     <connections>
                         <outlet property="clearPresentAlarmButton" destination="EFa-CS-euF" id="4OZ-ZF-dZu"/>
+                        <outlet property="presentTableEmptyView" destination="Y5F-a3-RHR" id="bbQ-XG-GCD"/>
                         <outlet property="presentTableHeightConstraint" destination="wTp-1t-fNh" id="x1V-DT-K8W"/>
                         <outlet property="presentTableView" destination="o4v-Tu-DsC" id="pQn-rE-0Tl"/>
+                        <outlet property="savedTableEmptyView" destination="FBF-1h-ui8" id="zup-mx-jex"/>
                         <outlet property="savedTableHeightConstraint" destination="ZZZ-Nz-aKH" id="O0K-1M-mrK"/>
                         <outlet property="savedTableView" destination="fGh-Kb-1Lr" id="xv4-nA-CNQ"/>
                     </connections>
