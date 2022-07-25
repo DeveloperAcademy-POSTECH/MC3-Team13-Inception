@@ -8,39 +8,53 @@
 import UIKit
 
 final class AlarmListViewController: UIViewController {
-
+  
   // MARK: - Properties
-
+  
   @IBOutlet weak var clearPresentAlarmButton: UIButton!
   @IBOutlet weak var presentTableView: UITableView!
   @IBOutlet weak var savedTableView: UITableView!
-  @IBOutlet weak var presentTableHeight: NSLayoutConstraint!
-  @IBOutlet weak var savedTableHeight: NSLayoutConstraint!
-
-  var presentAlarms = ["10:00"]
-  var savedAlarms = ["10:00", "11:00", "12:00","10:00", "11:00",
-                     "12:00","10:00", "11:00", "12:00","10:00",
-                     "11:00", "12:00","10:00", "11:00", "12:00"]
-
-  let rowHeightOfTableView: CGFloat = 44
-
+  @IBOutlet weak var presentTableHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var savedTableHeightConstraint: NSLayoutConstraint!
+  
+  let rowHeightOfTableView: CGFloat = 123
+  let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
+  
+  let alarmListCellIdentifier: String = "AlarmListCell"
+  
   // MARK: - View Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setNavigationItem()
+    configureCellForTable()
+    setDelegateAndDataSourceForTable()
+    initPropertyOfTable()
+  }
+  
+  func setNavigationItem() {
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
+  }
+  
+  func configureCellForTable() {
+    let nib = UINib(nibName: alarmListCellIdentifier, bundle: nil)
+    presentTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
+    savedTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
+  }
+  
+  func setDelegateAndDataSourceForTable() {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonDidTap))
     
     presentTableView.delegate = self
     presentTableView.dataSource = self
-    presentTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    
     savedTableView.delegate = self
     savedTableView.dataSource = self
-    savedTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    
-    presentTableHeight.constant = CGFloat(presentAlarms.count) * rowHeightOfTableView
-    savedTableHeight.constant = CGFloat(savedAlarms.count) * rowHeightOfTableView
+  }
+  
+  func initPropertyOfTable() {
+    presentTableHeightConstraint.constant = rowHeightOfTableView
+    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
@@ -65,32 +79,38 @@ final class AlarmListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension AlarmListViewController: UITableViewDataSource {
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
     if tableView == presentTableView {
-      return presentAlarms.count
+      return 1
     }
     else if tableView == savedTableView {
-      return savedAlarms.count
+      return savedAlarm.count
     }
     return 0
   }
-
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    var content = cell.defaultContentConfiguration()
-
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: alarmListCellIdentifier,
+      for: indexPath) as? AlarmListCell
+    else { return UITableViewCell() }
+    
+    cell.layer.cornerRadius = 11
+    
     if tableView == self.presentTableView {
-      if presentAlarms.count > 0 {
-        content.text = savedAlarms[indexPath.row]
-        cell.contentConfiguration = content
+      if presentAlarm != nil {
+        cell.alarmCellUpdate(with: presentAlarm)
         return cell
       }
     }
     else if tableView == self.savedTableView {
-      if savedAlarms.count > 0 {
-        content.text = savedAlarms[indexPath.row]
-        cell.contentConfiguration = content
+      if savedAlarm.count > 0 {
+        cell.alarmCellUpdate(with: savedAlarm[indexPath.row])
         return cell
       }
     }
@@ -119,6 +139,10 @@ extension AlarmListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView,
                  heightForRowAt indexPath: IndexPath) -> CGFloat {
     return rowHeightOfTableView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return headerHeight
   }
   
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

@@ -51,7 +51,7 @@
                                                                     <constraint firstAttribute="height" constant="422.66666666666674" id="wTp-1t-fNh"/>
                                                                 </constraints>
                                                                 <prototypes>
-                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qZA-9U-mPo">
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmListCell" id="qZA-9U-mPo">
                                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="358" height="43.666667938232422"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZA-9U-mPo" id="D13-30-uMA">
@@ -76,15 +76,15 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Kb-1Lr">
+                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGh-Kb-1Lr">
                                                                 <rect key="frame" x="0.0" y="50.333333333333371" width="358" height="128"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="128" id="ZZZ-Nz-aKH"/>
                                                                 </constraints>
                                                                 <prototypes>
-                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="d0m-PY-uFW">
-                                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="358" height="43.666667938232422"/>
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmListCell" id="d0m-PY-uFW">
+                                                                        <rect key="frame" x="0.0" y="49" width="358" height="43.666667938232422"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d0m-PY-uFW" id="Z4e-dZ-Qzx">
                                                                             <rect key="frame" x="0.0" y="0.0" width="358" height="43.666667938232422"/>
@@ -138,9 +138,9 @@
                     <navigationItem key="navigationItem" title="알람 목록" largeTitleDisplayMode="always" id="xYU-Xh-arf"/>
                     <connections>
                         <outlet property="clearPresentAlarmButton" destination="EFa-CS-euF" id="4OZ-ZF-dZu"/>
-                        <outlet property="presentTableHeight" destination="wTp-1t-fNh" id="x1V-DT-K8W"/>
+                        <outlet property="presentTableHeightConstraint" destination="wTp-1t-fNh" id="x1V-DT-K8W"/>
                         <outlet property="presentTableView" destination="o4v-Tu-DsC" id="pQn-rE-0Tl"/>
-                        <outlet property="savedTableHeight" destination="ZZZ-Nz-aKH" id="O0K-1M-mrK"/>
+                        <outlet property="savedTableHeightConstraint" destination="ZZZ-Nz-aKH" id="O0K-1M-mrK"/>
                         <outlet property="savedTableView" destination="fGh-Kb-1Lr" id="xv4-nA-CNQ"/>
                     </connections>
                 </viewController>
