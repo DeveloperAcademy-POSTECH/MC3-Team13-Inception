@@ -34,7 +34,10 @@ final class AlarmListViewController: UIViewController {
   }
   
   func setNavigationItem() {
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집")
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집",
+                                                             style: .plain,
+                                                             target: self,
+                                                             action: #selector(editButtonDidTap))
   }
   
   func configureCellForTable() {
@@ -44,8 +47,6 @@ final class AlarmListViewController: UIViewController {
   }
   
   func setDelegateAndDataSourceForTable() {
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집", style: .plain, target: self, action: #selector(editButtonDidTap))
-    
     presentTableView.delegate = self
     presentTableView.dataSource = self
     savedTableView.delegate = self
@@ -61,17 +62,17 @@ final class AlarmListViewController: UIViewController {
     
     presentTableView.allowsSelection = false
   }
-
+  
   @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
     if savedTableView.isEditing {
-            // Edit mode off
-            savedTableView.setEditing(false, animated: true)
-            sender.title = "편집"
-        } else {
-            // Edit mode on
-            savedTableView.setEditing(true, animated: true)
-            sender.title = "완료"
-        }
+      // Edit mode off
+      savedTableView.setEditing(false, animated: true)
+      sender.title = "편집"
+    } else {
+      // Edit mode on
+      savedTableView.setEditing(true, animated: true)
+      sender.title = "완료"
+    }
   }
   
 }
@@ -122,10 +123,9 @@ extension AlarmListViewController: UITableViewDataSource {
                  forRowAt indexPath: IndexPath) {
     if tableView == self.savedTableView {
       if editingStyle == .delete {
-        savedAlarms.remove(at: indexPath.row)
+        savedAlarm.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        
-        savedTableHeight.constant = CGFloat(savedAlarms.count) * rowHeightOfTableView
+        savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * rowHeightOfTableView
       }
     }
   }
