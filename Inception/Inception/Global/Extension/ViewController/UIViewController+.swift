@@ -12,7 +12,8 @@ extension UIViewController {
     let identifier: String = String(describing: self)
     
     let storyboard = UIStoryboard(name: identifier, bundle: nil)
-    guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as? ViewController else { fatalError() }
+    guard let viewController = storyboard.instantiateViewController(withIdentifier: identifier)
+            as? ViewController else { fatalError() }
     
     return viewController
   }
