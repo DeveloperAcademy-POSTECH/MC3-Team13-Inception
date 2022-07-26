@@ -10,7 +10,7 @@ import UIKit
 class AwakeBasedViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
-  var isEmpty = true
+  var isSearch = false
   var setTime = Date()
   var data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
               AlarmTime(sleepHour: "6.0 시간", bedTime: "오후 12:00", wakeupTime: "오전 08:00"),
@@ -38,7 +38,7 @@ class AwakeBasedViewController: UIViewController {
     let formatter = DateFormatter()
     formatter.dateFormat = "a hh:mm"
     
-    isEmpty = false
+    isSearch = true
     
     data[0].bedTime = formatter.string(from: setTime+27000)
     data[1].bedTime = formatter.string(from: setTime+21600)
@@ -51,10 +51,10 @@ class AwakeBasedViewController: UIViewController {
 
 extension AwakeBasedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if isEmpty {
-      return 0
-    } else {
+    if isSearch {
       return data.count
+    } else {
+      return 0
     }
   }
   
