@@ -27,29 +27,14 @@ class AlarmClockViewController: UIViewController {
    
     drawGradientCircle()
     
-    
-    ///  앱이 켜질 경우 Notification에 대한 권한을 얻는 부분입니다
+    ///  앱이 처음 실행될 경우 Notification에 대한 권한을 얻는 부분입니다
     ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
     notificationScheduler.requestNotificationAuthorization()
   }
-  
-  // MARK : 시간 설정
+}
 
-  @objc private func setTime(){
-    let date = Date()
 
-    let dateFormatter = DateFormatter()
-    let meridiemFormatter = DateFormatter()
-
-    dateFormatter.dateFormat = "hh:mm"
-    meridiemFormatter.dateFormat = "a"
-
-    let currentTime = dateFormatter.string(from: date)
-    let meridiemSetter = meridiemFormatter.string(from: date)
-
-    self.timeLabel.text = currentTime
-    self.meridiemLabel.text = meridiemSetter
-  }
+extension AlarmClockViewController {
   
   // MARK : 그라데이션 원 그리기
   
@@ -75,5 +60,23 @@ class AlarmClockViewController: UIViewController {
     shape.fillColor = UIColor.clear.cgColor
     gradient.mask = shape
     wakeupTimeCircle.layer.addSublayer(gradient)
+  }
+  
+  // MARK : 시간 설정
+
+  @objc private func setTime(){
+    let date = Date()
+
+    let dateFormatter = DateFormatter()
+    let meridiemFormatter = DateFormatter()
+
+    dateFormatter.dateFormat = "hh:mm"
+    meridiemFormatter.dateFormat = "a"
+
+    let currentTime = dateFormatter.string(from: date)
+    let meridiemSetter = meridiemFormatter.string(from: date)
+
+    self.timeLabel.text = currentTime
+    self.meridiemLabel.text = meridiemSetter
   }
 }
