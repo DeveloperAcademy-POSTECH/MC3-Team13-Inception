@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Scheduler {
+struct Scheduler {
   let userNotificationCenter = UNUserNotificationCenter.current()
   
   // MARK : Notification 권한 요청
@@ -25,10 +25,11 @@ class Scheduler {
   
   // MARK : 기상 알림 등록
   
+  //편의에 따라 취사선택할 수 있도록 overloading 하였습니다
   func makeMorningNotification(minutes: Double) {
-    let seconds = minutes * 60
+    self.removeAllAlarm()
     
-    self.removeNotification()
+    let seconds = minutes * 60
     
     let content = UNMutableNotificationContent()
     
@@ -36,12 +37,10 @@ class Scheduler {
     content.body = "웨엥웨엥 일어날 시간입니다"
     content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
-    /// 알림이 일정한 간격을 두고 3번 반복되도록 설정
     for index in 0...2 {
-      let alarmInterval: Double = seconds + Double(index) * 30.0
-      let identifier: String = "morningAlarm \(index)"
+      let identifier: String = "morning-alarm-\(index)"
       
-      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: alarmInterval, repeats: false)
+      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
       let request = UNNotificationRequest(identifier: identifier,
                                           content: content,
                                           trigger: trigger)
@@ -54,9 +53,45 @@ class Scheduler {
     }
   }
   
+  func makeMorningNotification(wakeuptimeTime: Date) {
+    self.removeAllAlarm()
+    
+    lazy var wakeupTimeDate = DateComponents()
+    
+    let content = UNMutableNotificationContent()
+    
+    let wakeupTimeString = Date().dateTo24HTimeString(wakeuptimeTime)
+    let wakeupTimeList = wakeupTimeString.split(separator: ":")
+    guard let hour = Int(wakeupTimeList[0]),
+          let minute = Int(wakeupTimeList[1]) else { return }
+    
+    wakeupTimeDate.hour = hour
+    wakeupTimeDate.minute = minute
+    
+    content.title = "우리앱"
+    content.body = "웨엥웨엥 일어날 시간입니다"
+    content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
+    
+    for index in 0...2 {
+      let identifier: String = "morning-alarm-\(index)"
+      
+      let trigger = UNCalendarNotificationTrigger(dateMatching: wakeupTimeDate, repeats: true)
+      let request = UNNotificationRequest(identifier: identifier,
+                                          content: content,
+                                          trigger: trigger)
+      
+      self.userNotificationCenter.add(request) { error in
+        if error != nil {
+          print("somthing went wrong")
+        }
+      }
+    }
+  }
+  
+  
   // MARK : 취침 알림 등록
   
-  func makeSleepNotification(minutes : Double) {
+  func makeSleepAlarm(minutes : Double) {
     let seconds = minutes * 60
     
     let content = UNMutableNotificationContent()
@@ -78,7 +113,7 @@ class Scheduler {
   
   // MARK : 알림 삭제
   
-  func removeNotification() {
+  func removeAllAlarm() {
     userNotificationCenter.removeAllPendingNotificationRequests()
   }
 }
