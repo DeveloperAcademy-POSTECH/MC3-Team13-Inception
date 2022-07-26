@@ -15,7 +15,7 @@ extension AlarmItem {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<AlarmItem> {
         return NSFetchRequest<AlarmItem>(entityName: "AlarmItem")
     }
-
+  @NSManaged public var id : UUID
     @NSManaged public var isOn: Bool
     @NSManaged public var bedTime: Date?
     @NSManaged public var wakeupTime: Date?

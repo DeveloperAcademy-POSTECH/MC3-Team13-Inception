@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AlarmItem" representedClassName="AlarmItem" syncable="YES" codeGenerationType="class">
-        <attribute name="bedTime" optional="YES"/>
+    <entity name="AlarmItem" representedClassName="AlarmItem" syncable="YES">
+        <attribute name="bedTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isOn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="wakeupTime" optional="YES"/>
+        <attribute name="wakeupTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="SleepRecordItem" representedClassName="SleepRecordItem" syncable="YES">
         <attribute name="actualSleepHour" optional="YES" attributeType="String"/>
         <attribute name="bedTime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="sleepSatisfaction" optional="YES" attributeType="String" customClassName="SleepSatisfacation"/>
         <attribute name="trackedDate" optional="YES" attributeType="String"/>
         <attribute name="wakeupTime" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SleepRecordItem" positionX="-18" positionY="27" width="128" height="104"/>
-        <element name="AlarmItem" positionX="-18" positionY="63" width="128" height="74"/>
+        <element name="AlarmItem" positionX="-18" positionY="63" width="128" height="89"/>
+        <element name="SleepRecordItem" positionX="-18" positionY="27" width="128" height="119"/>
     </elements>
 </model>
