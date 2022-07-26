@@ -195,5 +195,4 @@ extension AlarmListViewController: UITableViewDelegate {
     return UITableViewCell.EditingStyle.none
   }
   
-  
 }
