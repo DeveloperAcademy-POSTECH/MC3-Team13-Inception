@@ -34,10 +34,11 @@ class Scheduler {
     
     content.title = "우리앱"
     content.body = "웨엥웨엥 일어날 시간입니다"
+    content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
     /// 알림이 일정한 간격을 두고 3번 반복되도록 설정
     for index in 0...2 {
-      let alarmInterval: Double = seconds + Double(index) * 10.0
+      let alarmInterval: Double = seconds + Double(index) * 30.0
       let identifier: String = "morningAlarm \(index)"
       
       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: alarmInterval, repeats: false)
@@ -59,6 +60,7 @@ class Scheduler {
     let seconds = minutes * 60
     
     let content = UNMutableNotificationContent()
+    
     content.title = "우리앱"
     content.body = "이제 잠들 시간 입니다"
     
