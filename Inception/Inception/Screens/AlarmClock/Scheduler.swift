@@ -92,9 +92,9 @@ struct Scheduler {
   // MARK : 취침 알림 등록
   
   func makeSleepAlarm(bedTime: Date) {
-    if Date() < bedTime {
-      let fifteenMinute = 15 * 60
-      let bedTimeInterval = Date().minuteInterval(from: Date(), to: bedTime) * 60 - fifteenMinute
+    let fifteenMinute = TimeInterval(15 * 60)
+    if Date() < bedTime - fifteenMinute {
+      let bedTimeInterval = Date().secondInterval(from: Date(), to: bedTime) - fifteenMinute
       
       let content = UNMutableNotificationContent()
       
