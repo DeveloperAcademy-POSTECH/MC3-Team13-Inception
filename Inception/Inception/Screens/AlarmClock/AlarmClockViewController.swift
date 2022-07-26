@@ -8,6 +8,8 @@
 import UIKit
 
 class AlarmClockViewController: UIViewController {
+  let notificationScheduler: Scheduler = Scheduler()
+  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var wakeupTimeCircle: UIView!
   @IBOutlet weak var meridiemLabel: UILabel!
@@ -19,17 +21,19 @@ class AlarmClockViewController: UIViewController {
     titleLabel.numberOfLines = 0
     titleLabel.text = "개운한 아침을 위해" + "\n지금 기상하세요"
     
-    // MARK: 시간 설정
-    
     setTime()
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTime),
                          userInfo: nil, repeats : true)
-    
-    // MARK: 그라데이션 원 그리기
-    
+   
     drawGradientCircle()
+    
+    
+    ///  앱이 켜질 경우 Notification에 대한 권한을 얻는 부분입니다
+    ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
+    notificationScheduler.requestNotificationAuthorization()
   }
   
+  // MARK : 시간 설정
 
   @objc private func setTime(){
     let date = Date()
@@ -46,6 +50,8 @@ class AlarmClockViewController: UIViewController {
     self.timeLabel.text = currentTime
     self.meridiemLabel.text = meridiemSetter
   }
+  
+  // MARK : 그라데이션 원 그리기
   
   private func drawGradientCircle() {
     let lineWidth: CGFloat = 3
