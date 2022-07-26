@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AlarmListViewController: UIViewController {
+final class AlarmListViewController: UIViewController, Storyboarded {
   
   // MARK: - Properties
   
