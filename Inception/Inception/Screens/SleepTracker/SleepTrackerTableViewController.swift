@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SleepTrackerTableViewController: UITableViewController {
+class SleepTrackerTableViewController: UITableViewController, Storyboarded {
   
   /// 기록 없을 때 나오는 빈 화면
   @IBOutlet var recordEmptyView: UIView!

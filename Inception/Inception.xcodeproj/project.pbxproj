@@ -24,9 +24,9 @@
 		A7257FDE28879A4C001A496D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDD28879A4C001A496D /* Alarm.swift */; };
 		A7257FE028879D60001A496D /* SleepRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDF28879D60001A496D /* SleepRecord.swift */; };
 		A7257FE32887B076001A496D /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FE22887B076001A496D /* Date+.swift */; };
+		A738E867288F94B000076F19 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A738E866288F94B000076F19 /* Storyboarded.swift */; };
 		A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */; };
 		A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */; };
-		A75A4F96288EB3A800751D4F /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75A4F95288EB3A800751D4F /* UIViewController+.swift */; };
 		A7DD1AFD288E8ECF008D08A5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */; };
 		A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D32883DC0A0099E6CE /* UIView+.swift */; };
 		A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D62883DC190099E6CE /* UIStackView+.swift */; };
@@ -64,9 +64,9 @@
 		A7257FDD28879A4C001A496D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		A7257FDF28879D60001A496D /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
 		A7257FE22887B076001A496D /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		A738E866288F94B000076F19 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListCell.xib; sourceTree = "<group>"; };
 		A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
-		A75A4F95288EB3A800751D4F /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A7F246D32883DC0A0099E6CE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Inception/Global/Extension/View/UIView+.swift"; sourceTree = SOURCE_ROOT; };
 		A7F246D62883DC190099E6CE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -115,12 +115,12 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		A75A4F94288EB37F00751D4F /* ViewController */ = {
+		A738E865288F94A800076F19 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A75A4F95288EB3A800751D4F /* UIViewController+.swift */,
+				A738E866288F94B000076F19 /* Storyboarded.swift */,
 			);
-			path = ViewController;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		A7DD1AFB288E8EBD008D08A5 /* TabBar */ = {
@@ -181,6 +181,7 @@
 		B8B9D0B52881312C00F98980 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				A738E865288F94A800076F19 /* Protocol */,
 				B8B9D0C2288132B300F98980 /* Resource */,
 				B8B9D0C12881329900F98980 /* Extension */,
 			);
@@ -295,7 +296,6 @@
 			children = (
 				A7257FE12887AFF5001A496D /* Date */,
 				A7F246D52883DC100099E6CE /* View */,
-				A75A4F94288EB37F00751D4F /* ViewController */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -389,7 +389,6 @@
 			files = (
 				84D7C33828854AC400F1A0C5 /* AlarmTime.swift in Sources */,
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
-				A75A4F96288EB3A800751D4F /* UIViewController+.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
@@ -411,6 +410,7 @@
 				77449BE82884D0040051147B /* SleepTrackerTableViewController.swift in Sources */,
 				77449BEA2884D2690051147B /* DailySleepTrackerTableViewCell.swift in Sources */,
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
+				A738E867288F94B000076F19 /* Storyboarded.swift in Sources */,
 				A7DD1AFD288E8ECF008D08A5 /* TabBarController.swift in Sources */,
 				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
 				A71944A728845374004FF1BE /* UIButton+.swift in Sources */,
