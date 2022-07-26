@@ -85,12 +85,14 @@ final class AlarmListViewController: UIViewController {
   
   @IBAction func clearPresentAlarm(_ sender: UIButton) {
     if !presentAlarm.isEmpty {
+      savedTableEmptyView.isHidden = true
       presentTableView.isHidden = true
       presentTableEmptyView.isHidden = false
-      savedTableEmptyView.isHidden = true
+      
       savedAlarm.append(presentAlarm.removeLast())
       savedTableView.reloadData()
       savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
+      
       sender.isEnabled = false
     }
   }
@@ -145,7 +147,7 @@ extension AlarmListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if tableView == savedTableView {
-      cell.alpha = 0.7
+      cell.contentView.alpha = 0.8
     }
   }
   
