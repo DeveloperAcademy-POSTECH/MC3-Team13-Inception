@@ -147,9 +147,6 @@
                                                                 </connections>
                                                             </tableView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="fGh-Kb-1Lr" firstAttribute="top" secondItem="jt6-qm-WM2" secondAttribute="bottom" id="gs9-cM-MxV"/>
-                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>

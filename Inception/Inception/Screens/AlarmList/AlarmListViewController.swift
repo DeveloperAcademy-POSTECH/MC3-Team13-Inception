@@ -60,8 +60,7 @@ final class AlarmListViewController: UIViewController {
   
   func initPropertyOfTable() {
     presentTableHeightConstraint.constant = rowHeightOfTableView
-    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) *
-    (rowHeightOfTableView + 24)
+    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
@@ -125,7 +124,10 @@ extension AlarmListViewController: UITableViewDataSource {
     return 1
   }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(
       withIdentifier: alarmListCellID,
       for: indexPath) as? AlarmListCell
@@ -145,7 +147,10 @@ extension AlarmListViewController: UITableViewDataSource {
     return cell
   }
   
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+  func tableView(
+    _ tableView: UITableView,
+    willDisplay cell: UITableViewCell,
+    forRowAt indexPath: IndexPath) {
     if tableView == savedTableView {
       cell.contentView.alpha = 0.8
     }
@@ -177,6 +182,9 @@ extension AlarmListViewController: UITableViewDelegate {
     _ tableView: UITableView,
     heightForHeaderInSection section: Int
   ) -> CGFloat {
+    if section == 0 {
+      return 0
+    }
     return headerHeight
   }
   
