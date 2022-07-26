@@ -91,24 +91,28 @@ struct Scheduler {
   
   // MARK : 취침 알림 등록
   
-  func makeSleepAlarm(minutes : Double) {
-    let seconds = minutes * 60
-    
-    let content = UNMutableNotificationContent()
-    
-    content.title = "우리앱"
-    content.body = "이제 잠들 시간 입니다"
-    
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-    let request = UNNotificationRequest(identifier: "sleep-notification",
-                                        content: content,
-                                        trigger: trigger)
-    
-    self.userNotificationCenter.add(request) { error in
-      if error != nil {
-        print("somthing went wrong")
+  func makeSleepAlarm(bedTime: Date) {
+    if Date() < bedTime {
+      let fifteenMinute = 15 * 60
+      let bedTimeInterval = Date().minuteInterval(from: Date(), to: bedTime) * 60 - fifteenMinute
+      
+      let content = UNMutableNotificationContent()
+      
+      content.title = "우리앱"
+      content.body = "이제 잠들 시간 입니다"
+      
+      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(bedTimeInterval),
+                                                      repeats: false)
+      let request = UNNotificationRequest(identifier: "sleep-notification",
+                                          content: content,
+                                          trigger: trigger)
+      
+      self.userNotificationCenter.add(request) { error in
+        if error != nil {
+          print("somthing went wrong")
+        }
       }
-    }
+    } else { return }
   }
   
   // MARK : 알림 삭제
