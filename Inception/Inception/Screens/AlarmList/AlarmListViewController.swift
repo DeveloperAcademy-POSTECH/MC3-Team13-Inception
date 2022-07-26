@@ -22,7 +22,7 @@ final class AlarmListViewController: UIViewController {
   let rowHeightOfTableView: CGFloat = 123
   let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
   
-  let alarmListCellIdentifier: String = "AlarmListCell"
+  let alarmListCellID: String = "AlarmListCell"
   
   // MARK: - View Life Cycle
   
@@ -46,9 +46,9 @@ final class AlarmListViewController: UIViewController {
   }
   
   func configureCellForTable() {
-    let nib = UINib(nibName: alarmListCellIdentifier, bundle: nil)
-    presentTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
-    savedTableView.register(nib, forCellReuseIdentifier: alarmListCellIdentifier)
+    let nib = UINib(nibName: alarmListCellID, bundle: nil)
+    presentTableView.register(nib, forCellReuseIdentifier: alarmListCellID)
+    savedTableView.register(nib, forCellReuseIdentifier: alarmListCellID)
   }
   
   func setDelegateAndDataSourceForTable() {
@@ -60,7 +60,8 @@ final class AlarmListViewController: UIViewController {
   
   func initPropertyOfTable() {
     presentTableHeightConstraint.constant = rowHeightOfTableView
-    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
+    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) *
+    (rowHeightOfTableView + 24)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
@@ -72,11 +73,9 @@ final class AlarmListViewController: UIViewController {
   
   @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
     if savedTableView.isEditing {
-      // Edit mode off
       savedTableView.setEditing(false, animated: true)
       sender.title = "편집"
     } else {
-      // Edit mode on
       savedTableView.setEditing(true, animated: true)
       sender.title = "완료"
     }
@@ -91,7 +90,7 @@ final class AlarmListViewController: UIViewController {
       savedTableEmptyView.isHidden = true
       savedAlarm.append(presentAlarm.removeLast())
       savedTableView.reloadData()
-      savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
+      savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
       sender.isEnabled = false
     }
   }
@@ -126,20 +125,17 @@ extension AlarmListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: alarmListCellIdentifier,
+      withIdentifier: alarmListCellID,
       for: indexPath) as? AlarmListCell
     else { return UITableViewCell() }
-    
-    cell.layer.cornerRadius = 11
     
     if tableView == self.presentTableView {
       if !presentAlarm.isEmpty {
         cell.alarmCellUpdate(with: presentAlarm[indexPath.row])
         return cell
       }
-    }
-    else if tableView == self.savedTableView {
-      if savedAlarm.count > 0 {
+    } else if tableView == self.savedTableView {
+      if !savedAlarm.isEmpty {
         cell.alarmCellUpdate(with: savedAlarm[indexPath.row])
         return cell
       }
@@ -156,13 +152,11 @@ extension AlarmListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView,
                  commit editingStyle: UITableViewCell.EditingStyle,
                  forRowAt indexPath: IndexPath) {
-    if tableView == self.savedTableView {
-      if editingStyle == .delete {
-        savedAlarm.remove(at: indexPath.row)
-        let indexSet = IndexSet(arrayLiteral: indexPath.section)
-        tableView.deleteSections(indexSet, with: .automatic)
-        savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 15)
-      }
+    if editingStyle == .delete {
+      savedAlarm.remove(at: indexPath.row)
+      let indexSet = IndexSet(arrayLiteral: indexPath.section)
+      tableView.deleteSections(indexSet, with: .fade)
+      savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
     }
   }
   
@@ -177,7 +171,10 @@ extension AlarmListViewController: UITableViewDelegate {
     return rowHeightOfTableView
   }
   
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+  func tableView(
+    _ tableView: UITableView,
+    heightForHeaderInSection section: Int
+  ) -> CGFloat {
     return headerHeight
   }
   
@@ -187,5 +184,6 @@ extension AlarmListViewController: UITableViewDelegate {
     }
     return UITableViewCell.EditingStyle.none
   }
+  
   
 }

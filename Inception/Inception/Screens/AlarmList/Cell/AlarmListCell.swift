@@ -24,6 +24,7 @@ class AlarmListCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    self.contentView.layer.cornerRadius = 11
     
     let configuration = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 12))
     sleepHourIcon.image = UIImage(systemName: "bed.double.fill", withConfiguration: configuration)
