@@ -94,6 +94,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="sfV-kW-UQ4"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="changeTimePicker:" destination="wts-GS-jDy" eventType="valueChanged" id="pvw-dT-L34"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAE-wy-m8R">
                                                     <rect key="frame" x="95" y="105" width="200" height="50"/>
@@ -109,6 +112,9 @@
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="searchAlarm:" destination="wts-GS-jDy" eventType="touchUpInside" id="dWS-ae-6kt"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠에 드는 시간으로부터 90분 주기의 기상 알람을 추천합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2J-uc-AQg">
                                                     <rect key="frame" x="51" y="165" width="288" height="15"/>
@@ -206,6 +212,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="xnZ-V2-gdq"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="changeTimePicker:" destination="Jlo-W6-gYX" eventType="valueChanged" id="NBl-L2-XpY"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOn-5Q-Cfv">
                                                     <rect key="frame" x="95" y="105" width="200" height="50"/>
@@ -221,6 +230,9 @@
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="searchAlarm:" destination="Jlo-W6-gYX" eventType="touchUpInside" id="yx1-z1-JjR"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠에 드는 시간으로부터 90분 주기의 기상 알람을 추천합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-hz-6pj">
                                                     <rect key="frame" x="51" y="165" width="288" height="15"/>

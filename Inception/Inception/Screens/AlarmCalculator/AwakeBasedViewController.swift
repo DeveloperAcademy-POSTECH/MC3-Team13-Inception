@@ -10,7 +10,9 @@ import UIKit
 class AwakeBasedViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
-  let data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
+  var isEmpty = true
+  var setTime = Date()
+  var data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
               AlarmTime(sleepHour: "6.0 시간", bedTime: "오후 12:00", wakeupTime: "오전 08:00"),
               AlarmTime(sleepHour: "4.5 시간", bedTime: "오전 01:00", wakeupTime: "오전 08:00")]
   
@@ -24,11 +26,36 @@ class AwakeBasedViewController: UIViewController {
     tableView.register(nibName, forCellReuseIdentifier: "AwakeBasedRecoCell")
   }
   
+  @IBAction func changeTimePicker(_ sender: UIDatePicker) {
+    let timePickerView = sender
+    let formatter = DateFormatter()
+    formatter.dateFormat = "a hh:mm"
+    
+    setTime = timePickerView.date
+  }
+  
+  @IBAction func searchAlarm(_ sender: UIButton) {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "a hh:mm"
+    
+    isEmpty = false
+    
+    data[0].bedTime = formatter.string(from: setTime+27000)
+    data[1].bedTime = formatter.string(from: setTime+21600)
+    data[2].bedTime = formatter.string(from: setTime+16200)
+    
+    tableView.reloadData()
+  }
+  
 }
 
 extension AwakeBasedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return data.count
+    if isEmpty {
+      return 0
+    } else {
+      return data.count
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
