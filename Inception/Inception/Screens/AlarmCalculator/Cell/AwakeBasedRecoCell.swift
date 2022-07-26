@@ -16,6 +16,19 @@ class AwakeBasedRecoCell: UITableViewCell {
   @IBOutlet weak var wakeupTime: UILabel!
   @IBOutlet weak var addButton: UIButton!
   
+  @IBAction func addAlarm(_ sender: UIButton) {
+    let alert = UIAlertController(title: "현재 알람으로 설정할까요?", message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?", preferredStyle: UIAlertController.Style.alert)
+    let okAction = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
+      print("tanny log--> 변경하기 동작")
+    }
+    let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
+    alert.addAction(cancel)
+    alert.addAction(okAction)
+    alert.preferredAction = okAction
+    
+    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+  }
+  
   func update(with recoAlarmTime: AlarmTime) {
     sleepHour.text = recoAlarmTime.sleepHour
     bedTime.text = recoAlarmTime.bedTime

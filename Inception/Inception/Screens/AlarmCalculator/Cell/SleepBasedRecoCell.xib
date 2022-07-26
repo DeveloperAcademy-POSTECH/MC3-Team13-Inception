@@ -53,6 +53,9 @@
                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="addAlarm:" destination="eEv-BC-OcN" eventType="touchUpInside" id="T44-t2-ifM"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전 07:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkX-YX-2Na">
                         <rect key="frame" x="55" y="79" width="115" height="30"/>
