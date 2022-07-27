@@ -156,17 +156,6 @@ extension AlarmListViewController: UITableViewDataSource {
     }
   }
   
-  func tableView(_ tableView: UITableView,
-                 commit editingStyle: UITableViewCell.EditingStyle,
-                 forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
-      savedAlarm.remove(at: indexPath.row)
-      let indexSet = IndexSet(arrayLiteral: indexPath.section)
-      tableView.deleteSections(indexSet, with: .fade)
-      savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
-    }
-  }
-  
 }
 
 // MARK: - UITableViewDelegate
@@ -188,11 +177,37 @@ extension AlarmListViewController: UITableViewDelegate {
     return headerHeight
   }
   
-  func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    if tableView == self.savedTableView {
-      return UITableViewCell.EditingStyle.delete
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    
+    var actions = [UIContextualAction]()
+    var config = UISwipeActionsConfiguration(actions: actions)
+    
+    if tableView == presentTableView {
+      return config
     }
-    return UITableViewCell.EditingStyle.none
+    else if tableView == savedTableView {
+      let delete = UIContextualAction(style: .normal, title: nil) { [weak self] (contextualAction, view, completion) in
+        
+        savedAlarm.remove(at: indexPath.row)
+        let indexSet = IndexSet(arrayLiteral: indexPath.section)
+        tableView.deleteSections(indexSet, with: .fade)
+        self!.savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (self!.rowHeightOfTableView + 24)
+        
+        completion(true)
+      }
+      
+      let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
+      delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
+      delete.backgroundColor = .systemBackground
+      delete.title = "Delete"
+      
+      actions.append(delete)
+      
+      config = UISwipeActionsConfiguration(actions: actions)
+      config.performsFirstActionWithFullSwipe = false
+      
+      return config
+    }
+    return config
   }
-  
 }

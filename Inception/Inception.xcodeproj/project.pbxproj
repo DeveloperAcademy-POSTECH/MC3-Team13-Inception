@@ -35,6 +35,7 @@
 		A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */; };
 		B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */; };
 		B8900A3E2883FD7A00EE03DF /* AlarmList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8900A3D2883FD7A00EE03DF /* AlarmList.storyboard */; };
+		B8A6C33F2890CB42003E3E4C /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A6C33E2890CB42003E3E4C /* UIImage+.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
 		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
@@ -73,6 +74,7 @@
 		A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCalculatorViewController.swift; sourceTree = "<group>"; };
 		B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		B8900A3D2883FD7A00EE03DF /* AlarmList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmList.storyboard; sourceTree = "<group>"; };
+		B8A6C33E2890CB42003E3E4C /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A7F246D32883DC0A0099E6CE /* UIView+.swift */,
 				A7F246D62883DC190099E6CE /* UIStackView+.swift */,
 				A71944A628845374004FF1BE /* UIButton+.swift */,
+				B8A6C33E2890CB42003E3E4C /* UIImage+.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
+				B8A6C33F2890CB42003E3E4C /* UIImage+.swift in Sources */,
 				A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */,
 				B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
