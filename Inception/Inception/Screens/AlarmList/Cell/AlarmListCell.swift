@@ -30,22 +30,6 @@ class AlarmListCell: UITableViewCell {
     sleepHourIcon.image = UIImage(systemName: "bed.double.fill", withConfiguration: configuration)
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    bedtimeTitle.textColor = .white
-    bedtimeMeridiem.textColor = .white
-    bedtimeTime.textColor = .white
-    
-    wakeuptimeTitle.textColor = .white
-    wakeuptimeMeridiem.textColor = .white
-    wakeuptimeTime.textColor = .white
-    
-    sleepHourField.textColor = .systemOrange
-    sleepHourIcon.tintColor = .systemOrange
-
-  }
-  
   func alarmCellUpdate(with alarm: Alarm) {
     bedtimeTime.text = alarm.bedtimeTime
     bedtimeMeridiem.text = alarm.bedtimeMeridiem
