@@ -22,13 +22,13 @@ class SleepBasedRecoCell: UITableViewCell {
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
       preferredStyle: UIAlertController.Style.alert
     )
-    let okAction = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
-      // MARK: - '변경하기' 버튼 Action
+    let confirm = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
+      // TODO: - '변경하기' 버튼 Action
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
-    alert.addAction(okAction)
-    alert.preferredAction = okAction
+    alert.addAction(confirm)
+    alert.preferredAction = confirm
     
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
