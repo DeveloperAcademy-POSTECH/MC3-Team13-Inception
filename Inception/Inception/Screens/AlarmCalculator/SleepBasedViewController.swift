@@ -10,11 +10,8 @@ import UIKit
 class SleepBasedViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
-  var isSearch = false
-  var setTime = Date()
-  var data = [AlarmTime(sleepHour: "7.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 08:00"),
-              AlarmTime(sleepHour: "6.0 시간", bedTime: "오후 11:00", wakeupTime: "오전 07:00"),
-              AlarmTime(sleepHour: "4.5 시간", bedTime: "오후 11:00", wakeupTime: "오전 06:00")]
+  private var setTime = Date()
+  private var recoAlarms = [Alarm]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,21 +25,19 @@ class SleepBasedViewController: UIViewController {
   
   @IBAction func changeTimePicker(_ sender: UIDatePicker) {
     let timePickerView = sender
-    let formatter = DateFormatter()
-    formatter.dateFormat = "a hh:mm"
     
-    setTime = timePickerView.date
+    if timePickerView.date < Date() - 60 { // Date()는 초단위가 계속 올라가므로 엣지 케이스 처리 불가해서 -1분
+      setTime = timePickerView.date + 60*60*24
+    } else {
+      setTime = timePickerView.date
+    }
   }
   
   @IBAction func searchAlarm(_ sender: UIButton) {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "a hh:mm"
-    
-    isSearch = true
-    
-    data[0].wakeupTime = formatter.string(from: setTime+27000)
-    data[1].wakeupTime = formatter.string(from: setTime+21600)
-    data[2].wakeupTime = formatter.string(from: setTime+16200)
+    recoAlarms.removeAll()
+    for hour in stride(from: 9.0, to: 4.0, by: -1.5) {
+      recoAlarms.append(Alarm(isOn: false, bedtimeDate: setTime, wakeuptimeDate: setTime + (60*60*hour) + 900))
+    }
     
     tableView.reloadData()
   }
@@ -51,11 +46,7 @@ class SleepBasedViewController: UIViewController {
 
 extension SleepBasedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if isSearch {
-      return data.count
-    } else {
-      return 0
-    }
+    return recoAlarms.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +55,7 @@ extension SleepBasedViewController: UITableViewDataSource {
       for: indexPath
     ) as! SleepBasedRecommendCell
     
-    cell.update(with: data[indexPath.row])
+    cell.update(with: recoAlarms[indexPath.row])
     
     return cell
   }

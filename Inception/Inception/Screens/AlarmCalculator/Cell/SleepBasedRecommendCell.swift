@@ -33,10 +33,10 @@ class SleepBasedRecommendCell: UITableViewCell {
     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
   }
   
-  func update(with recoAlarmTime: AlarmTime) {
-    sleepHour.text = recoAlarmTime.sleepHour
-    bedTime.text = recoAlarmTime.bedTime
-    wakeupTime.text = recoAlarmTime.wakeupTime
+  func update(with recoAlarmTime: Alarm) {
+    sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour - 15) / 60.0) + " 시간"
+    bedTime.text = recoAlarmTime.bedtimeMeridiem + " " + recoAlarmTime.bedtimeTime
+    wakeupTime.text = recoAlarmTime.wakeuptimeMeridiem + " " + recoAlarmTime.wakeuptimeTime
   }
   
   override func layoutSubviews() {
