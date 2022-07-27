@@ -22,8 +22,8 @@ class AwakeBasedViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     
-    let nibName = UINib(nibName: "AwakeBasedRecoCell", bundle: nil)
-    tableView.register(nibName, forCellReuseIdentifier: "AwakeBasedRecoCell")
+    let nibName = UINib(nibName: "AwakeBasedRecommendCell", bundle: nil)
+    tableView.register(nibName, forCellReuseIdentifier: "AwakeBasedRecommendCell")
   }
   
   @IBAction func changeTimePicker(_ sender: UIDatePicker) {
@@ -59,10 +59,10 @@ extension AwakeBasedViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: AwakeBasedRecoCell = tableView.dequeueReusableCell(
-      withIdentifier: "AwakeBasedRecoCell",
+    let cell: AwakeBasedRecommendCell = tableView.dequeueReusableCell(
+      withIdentifier: "AwakeBasedRecommendCell",
       for: indexPath
-    ) as! AwakeBasedRecoCell
+    ) as! AwakeBasedRecommendCell
     
     cell.update(with: data[indexPath.row])
     

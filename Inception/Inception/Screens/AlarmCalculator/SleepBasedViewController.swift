@@ -22,8 +22,8 @@ class SleepBasedViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     
-    let nibName = UINib(nibName: "SleepBasedRecoCell", bundle: nil)
-    tableView.register(nibName, forCellReuseIdentifier: "SleepBasedRecoCell")
+    let nibName = UINib(nibName: "SleepBasedRecommendCell", bundle: nil)
+    tableView.register(nibName, forCellReuseIdentifier: "SleepBasedRecommendCell")
   }
   
   @IBAction func changeTimePicker(_ sender: UIDatePicker) {
@@ -59,10 +59,10 @@ extension SleepBasedViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: SleepBasedRecoCell = tableView.dequeueReusableCell(
-      withIdentifier: "SleepBasedRecoCell",
+    let cell: SleepBasedRecommendCell = tableView.dequeueReusableCell(
+      withIdentifier: "SleepBasedRecommendCell",
       for: indexPath
-    ) as! SleepBasedRecoCell
+    ) as! SleepBasedRecommendCell
     
     cell.update(with: data[indexPath.row])
     
