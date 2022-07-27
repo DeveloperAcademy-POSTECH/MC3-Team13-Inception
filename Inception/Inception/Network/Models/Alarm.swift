@@ -40,5 +40,5 @@ struct Alarm: Codable {
   }
 }
 
-var presentAlarm: Alarm = Alarm(isOn: true, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))
+var presentAlarm: [Alarm] = [Alarm(isOn: true, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))]
 var savedAlarm: [Alarm] = [Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)),Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))]
