@@ -87,14 +87,14 @@ extension AlarmListViewController: UITableViewDataSource {
     cell.layer.cornerRadius = 11
     
     if tableView == self.presentTableView {
-      if presentAlarm != nil {
-        cell.alarmCellUpdate(with: presentAlarm, isSetAlarm: true)
+      if presentAlarm != nil { // TODO: dummydata로 인한 경고 / coredata 로 변경예정
+        cell.alarmCellUpdate(with: presentAlarm)
         return cell
       }
     }
     else if tableView == self.savedTableView {
       if savedAlarm.count > 0 {
-        cell.alarmCellUpdate(with: savedAlarm[indexPath.row], isSetAlarm: false)
+        cell.alarmCellUpdate(with: savedAlarm[indexPath.row])
         return cell
       }
     }
