@@ -31,6 +31,14 @@ class AlarmClockViewController: UIViewController {
     ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
     notificationScheduler.requestNotificationAuthorization()
   }
+  @IBAction func snoozeButtonTap(_ sender: Any) {
+    notificationScheduler.makeMorningNotification(minutes: 5)
+    /// 5분 뒤 버튼이 탭된 이후 알림을 받기 위해 앱을 종료하는 코드입니다
+    UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        exit(0)
+    }
+  }
 }
 
 
