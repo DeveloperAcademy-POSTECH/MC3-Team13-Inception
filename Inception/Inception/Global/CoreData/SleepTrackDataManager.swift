@@ -13,11 +13,11 @@ class SleepTrackDataManager {
   
   let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
   lazy var context = appDelegate?.persistentContainer.viewContext
-  
   let modelName: String = "SleepRecordItem"
   
+  var sleepRecords: [SleepRecordItem] = [SleepRecordItem]()
+  
   func fetchSleepRecord() -> [SleepRecordItem] {
-    var models: [SleepRecordItem] = [SleepRecordItem]()
     
     if let context = context {
       // 최근 날짜 순으로 sorting
@@ -27,13 +27,13 @@ class SleepTrackDataManager {
       
       do {
         if let fetchResult: [SleepRecordItem] = try context.fetch(fetchRequest) as? [SleepRecordItem] {
-          models = fetchResult
+          sleepRecords = fetchResult
         }
       } catch let error as NSError {
         print("Fetch 실패..: \(error), \(error.userInfo)")
       }
     }
-    return models
+    return sleepRecords
   }
   
   func createSleepRecord(trackedDate: String, bedTime: String, wakeupTime: Date, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
