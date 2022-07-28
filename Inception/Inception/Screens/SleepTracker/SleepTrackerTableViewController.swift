@@ -32,6 +32,10 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.fetch()
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집",
+                                                             style: .plain,
+                                                             target: self,
+                                                             action: #selector(editButtonDidTap))
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,6 +60,31 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     return cell
   }
 
+  override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    var actions = [UIContextualAction]()
+    var config = UISwipeActionsConfiguration(actions: actions)
+    
+    let delete = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
+      self.dailySleepRecords.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+      SleepTrackDataManager.shared.deleteSleepRecord(self.dailySleepRecords[indexPath.row]) { onSuccess in
+        print("deleted = \(onSuccess)")
+      }
+    }
+
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
+    delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
+    delete.backgroundColor = .systemBackground
+    delete.title = "Delete"
+
+    actions.append(delete)
+
+    config = UISwipeActionsConfiguration(actions: actions)
+    config.performsFirstActionWithFullSwipe = false
+
+    return config
+  }
+  
   private func fetch() {
     dailySleepRecords = SleepTrackDataManager.shared.fetchSleepRecord()
     tableView.reloadData()
@@ -69,4 +98,16 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       print("saved = \(onSuccess)")
     }
   }
+  
+  @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
+    if tableView.isEditing {
+      tableView.setEditing(false, animated: true)
+      sender.title = "편집"
+    } else {
+      tableView.setEditing(true, animated: true)
+      sender.title = "완료"
+    }
+  }
+  
+  
 }
