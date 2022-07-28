@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlarmCalculatorViewController: UIViewController {
+class AlarmCalculatorViewController: UIViewController, Storyboarded {
   
   @IBOutlet weak var bedTimeBasedView: UIView!
   @IBOutlet weak var wakeupTimeBasedView: UIView!

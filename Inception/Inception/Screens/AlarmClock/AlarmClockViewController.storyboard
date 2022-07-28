@@ -11,7 +11,7 @@
         <!--Alarm Clock View Controller-->
         <scene sceneID="eLg-GR-kBc">
             <objects>
-                <viewController storyboardIdentifier="AlarmClockViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hKI-xb-iAe" customClass="AlarmClockViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmClockViewController" id="hKI-xb-iAe" customClass="AlarmClockViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iuC-2Y-QV8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
