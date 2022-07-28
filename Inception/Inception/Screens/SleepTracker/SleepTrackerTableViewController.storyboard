@@ -11,7 +11,7 @@
         <!--수면 기록-->
         <scene sceneID="826-Ph-Jnu">
             <objects>
-                <tableViewController autoresizesArchivedViewToFullSize="NO" id="tUe-Om-Jhh" customClass="SleepTrackerTableViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SleepTrackerTableViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tUe-Om-Jhh" customClass="SleepTrackerTableViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="N1v-qi-UZa">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
