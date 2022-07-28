@@ -87,6 +87,11 @@
                     <constraint firstItem="gV1-6a-K26" firstAttribute="top" secondItem="auZ-Rb-I1m" secondAttribute="bottom" constant="20" id="yGg-ge-ZWY"/>
                     <constraint firstItem="ZK6-gy-PMS" firstAttribute="leading" secondItem="1mI-qo-4We" secondAttribute="leading" constant="20" id="zRu-xL-YTJ"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                        <integer key="value" value="11"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addButton" destination="DcP-0i-1nO" id="aZE-Ek-rfQ"/>
