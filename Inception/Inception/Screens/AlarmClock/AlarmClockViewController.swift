@@ -31,14 +31,43 @@ class AlarmClockViewController: UIViewController {
     ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
     notificationScheduler.requestNotificationAuthorization()
   }
+  
   @IBAction func snoozeButtonTap(_ sender: Any) {
     notificationScheduler.makeMorningNotification(minutes: 5)
     /// 5분 뒤 버튼이 탭된 이후 알림을 받기 위해 앱을 종료하는 코드입니다
+    /// 출처: https://zeddios.tistory.com/1252 [ZeddiOS:티스토리]
     UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         exit(0)
     }
   }
+  
+  @IBAction func turnOffButtonTap(_ sender: Any) {
+    notificationScheduler.removeAllAlarm()
+    let actualWakeupTimeDate = Date()
+    
+    /* TODO: CoreDate isOn Alarm 메서드로 설정된 알람 bedtime 받아오기 */
+    
+    lazy var sleepRecord: SleepRecord = SleepRecord(sleepSatisfacation: .none,
+                                               bedtimeDate: Date(),
+                                               wakeuptimeDate: actualWakeupTimeDate)
+    
+    SleepTrackDataManager.shared.createSleepRecord(trackedDate: sleepRecord.trackedDate,
+                                                   bedTime: sleepRecord.bedtimeTime,
+                                                   wakeupTime: sleepRecord.wakeuptimeTime,
+                                                   actualSleepHour: String(sleepRecord.actualSleepHour),
+                                                   sleepSatisfaction: sleepRecord.sleepSatisfacation.rawValue,
+                                                   onSuccess: { onSucess in
+      print("onSucess : \(onSucess)")
+    })
+    /* TODO: 화면 전환 및 SleepRecord 인스턴스 전달 */
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    guard let satisfactionVC = storyboard.instantiateViewController(withIdentifier: "SleepSatisfacationViewController") as? SleepSatisfacationViewController else { return }
+    satisfactionVC.sleepRecord = sleepRecord
+    satisfactionVC.modalPresentationStyle = .fullScreen
+    present(satisfactionVC, animated: true, completion: nil)
+  }
+  
 }
 
 

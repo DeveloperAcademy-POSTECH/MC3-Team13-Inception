@@ -59,6 +59,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="turnOffButtonTap:" destination="hKI-xb-iAe" eventType="touchUpInside" id="m7w-be-EBs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
