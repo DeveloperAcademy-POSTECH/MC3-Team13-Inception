@@ -20,7 +20,7 @@ class AlarmDataManger {
     var models: [AlarmItem] = [AlarmItem]()
     
     if let context = context {
-      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "bedTime", ascending: false)
+      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "isOn", ascending: false)
       let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest<NSManagedObject>(entityName: modelName)
       fetchRequest.sortDescriptors = [sortItem]
       
