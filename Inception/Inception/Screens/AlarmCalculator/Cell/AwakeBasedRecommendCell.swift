@@ -30,7 +30,7 @@ class AwakeBasedRecommendCell: UITableViewCell {
     alert.addAction(confirm)
     alert.preferredAction = confirm
     
-    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+    UIApplication.firstKeyWindowForConnectedScenes?.rootViewController?.present(alert, animated: true, completion: nil)
   }
   
   func update(with recoAlarmTime: Alarm) {
