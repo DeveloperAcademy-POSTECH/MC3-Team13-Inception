@@ -132,6 +132,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+
                     <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj">
                         <rightBarButtonItems>
                             <barButtonItem style="plain" systemItem="add" id="667-AB-dAr">
