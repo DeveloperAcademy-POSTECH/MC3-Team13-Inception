@@ -65,11 +65,11 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     var config = UISwipeActionsConfiguration(actions: actions)
     
     let delete = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
-      self.dailySleepRecords.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .fade)
       SleepTrackDataManager.shared.deleteSleepRecord(self.dailySleepRecords[indexPath.row]) { onSuccess in
         print("deleted = \(onSuccess)")
       }
+      self.dailySleepRecords.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
     let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
