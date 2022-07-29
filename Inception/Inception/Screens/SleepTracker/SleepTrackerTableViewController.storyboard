@@ -132,7 +132,6 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-
                     <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="trash" id="hBH-5g-Z67">
                             <connections>

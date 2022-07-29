@@ -20,7 +20,7 @@ class AlarmDataManger {
     var models: [AlarmItem] = [AlarmItem]()
     
     if let context = context {
-      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "isOn", ascending: false)
+      let sortItem: NSSortDescriptor = NSSortDescriptor(key: "wakeupTime", ascending: false)
       let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest<NSManagedObject>(entityName: modelName)
       fetchRequest.sortDescriptors = [sortItem]
       
@@ -36,6 +36,11 @@ class AlarmDataManger {
   }
   
   func createAlarmItem(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
+    if let _ = fetchPresentAlarm() {
+      offPresentAlarm() { onSuccess in
+        
+      }
+    }
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: AlarmItem = NSManagedObject(entity: entity, insertInto: context) as? AlarmItem {
@@ -50,14 +55,55 @@ class AlarmDataManger {
     }
   }
   
-  func deleteAlarm(_ alarm: AlarmItem) {
+  func deleteAlarm(_ alarm: AlarmItem, onSuccess: @escaping ((Bool) -> Void)) {
     context?.delete(alarm)
+    contextSave { success in
+      onSuccess(success)
+    }
   }
   
   func deleteAllAlarm() {
     let allItems = fetchAlarmItem()
     for item in allItems {
       context?.delete(item)
+    }
+  }
+  
+  func fetchPresentAlarm() -> AlarmItem? {
+    let fetchRequest: NSFetchRequest<AlarmItem> = AlarmItem.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: "isOn == YES")
+    
+    return try? context?.fetch(fetchRequest).first
+  }
+  
+  func fetchSavedAlarm() -> [AlarmItem]? {
+    let fetchRequest: NSFetchRequest<AlarmItem> = AlarmItem.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: "isOn == NO")
+    
+    return try? context?.fetch(fetchRequest)
+  }
+  
+  func updatePresentAlarm(newPresentAlarm: AlarmItem, onSuccess: @escaping ((Bool) -> Void)) {
+    if let nowPresentAlarm = fetchPresentAlarm() {
+      nowPresentAlarm.isOn = false
+      contextSave { success in
+        onSuccess(success)
+      }
+    }
+    else {
+      newPresentAlarm.isOn = true
+      contextSave { success in
+        onSuccess(success)
+      }
+    }
+  }
+  
+  func offPresentAlarm(onSuccess: @escaping ((Bool) -> Void)) {
+    if let nowPresentAlarm = fetchPresentAlarm() {
+      nowPresentAlarm.isOn = false
+      contextSave { success in
+        onSuccess(success)
+      }
     }
   }
 }
