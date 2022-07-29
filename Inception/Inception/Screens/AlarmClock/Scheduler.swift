@@ -9,7 +9,7 @@ import UIKit
 
 struct Scheduler {
   let userNotificationCenter = UNUserNotificationCenter.current()
-  
+  let musicPlayTime = 29
   // MARK : Notification 권한 요청
   
   func requestNotificationAuthorization() {
@@ -38,7 +38,7 @@ struct Scheduler {
     content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
     for index in 0...2 {
-      let alarmInterval: Double = seconds + Double(index) * 30.0
+      let alarmInterval: Double = seconds + Double(index) * Double(musicPlayTime)
       let identifier: String = "morning-alarm-\(index)"
       
       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: alarmInterval, repeats: false)
@@ -77,7 +77,7 @@ struct Scheduler {
     for index in 0...2 {
       let identifier: String = "morning-alarm-\(index)"
       
-      wakeupTimeDate.second = 15 * index
+      wakeupTimeDate.second = 15 * musicPlayTime
       
       let trigger = UNCalendarNotificationTrigger(dateMatching: wakeupTimeDate, repeats: true)
       let request = UNNotificationRequest(identifier: identifier,
