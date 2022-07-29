@@ -24,37 +24,10 @@ class AlarmListCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    self.contentView.layer.cornerRadius = 11
     
     let configuration = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 12))
     sleepHourIcon.image = UIImage(systemName: "bed.double.fill", withConfiguration: configuration)
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    if !selected {
-      bedtimeTitle.textColor = .white.withAlphaComponent(0.3)
-      bedtimeMeridiem.textColor = .white.withAlphaComponent(0.3)
-      bedtimeTime.textColor = .white.withAlphaComponent(0.3)
-      
-      wakeuptimeTitle.textColor = .white.withAlphaComponent(0.3)
-      wakeuptimeMeridiem.textColor = .white.withAlphaComponent(0.3)
-      wakeuptimeTime.textColor = .white.withAlphaComponent(0.3)
-      
-      sleepHourField.textColor = .systemOrange.withAlphaComponent(0.5)
-      sleepHourIcon.tintColor = .systemOrange.withAlphaComponent(0.5)
-    }else {
-      bedtimeTitle.textColor = .white
-      bedtimeMeridiem.textColor = .white
-      bedtimeTime.textColor = .white
-      
-      wakeuptimeTitle.textColor = .white
-      wakeuptimeMeridiem.textColor = .white
-      wakeuptimeTime.textColor = .white
-      
-      sleepHourField.textColor = .systemOrange
-      sleepHourIcon.tintColor = .systemOrange
-    }
   }
   
   func alarmCellUpdate(with alarm: Alarm) {
@@ -64,4 +37,5 @@ class AlarmListCell: UITableViewCell {
     wakeuptimeMeridiem.text = alarm.wakeuptimeMeridiem
     sleepHourField.text = String(Float(alarm.expectedSleepHour / 60)) + " 시간"
   }
+  
 }
