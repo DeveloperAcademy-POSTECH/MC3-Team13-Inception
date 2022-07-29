@@ -49,8 +49,8 @@ class AlarmClockViewController: UIViewController {
     /* TODO: CoreDate isOn Alarm 메서드로 설정된 알람 bedtime 받아오기 */
     
     lazy var sleepRecord: SleepRecord = SleepRecord(sleepSatisfacation: .none,
-                                               bedtimeDate: Date(),
-                                               wakeuptimeDate: actualWakeupTimeDate)
+                                                    bedtimeDate: Date(),
+                                                    wakeuptimeDate: actualWakeupTimeDate)
     
     SleepTrackDataManager.shared.createSleepRecord(trackedDate: sleepRecord.trackedDate,
                                                    bedTime: sleepRecord.bedtimeTime,
@@ -67,7 +67,6 @@ class AlarmClockViewController: UIViewController {
     satisfactionVC.modalPresentationStyle = .fullScreen
     present(satisfactionVC, animated: true, completion: nil)
   }
-  
 }
 
 

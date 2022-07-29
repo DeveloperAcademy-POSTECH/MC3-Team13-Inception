@@ -38,9 +38,10 @@ struct Scheduler {
     content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
     for index in 0...2 {
+      let alarmInterval: Double = seconds + Double(index) * 30.0
       let identifier: String = "morning-alarm-\(index)"
       
-      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: alarmInterval, repeats: false)
       let request = UNNotificationRequest(identifier: identifier,
                                           content: content,
                                           trigger: trigger)
@@ -67,6 +68,7 @@ struct Scheduler {
     
     wakeupTimeDate.hour = hour
     wakeupTimeDate.minute = minute
+    wakeupTimeDate.second = 0
     
     content.title = "우리앱"
     content.body = "웨엥웨엥 일어날 시간입니다"
@@ -74,6 +76,8 @@ struct Scheduler {
     
     for index in 0...2 {
       let identifier: String = "morning-alarm-\(index)"
+      
+      wakeupTimeDate.second = 15 * index
       
       let trigger = UNCalendarNotificationTrigger(dateMatching: wakeupTimeDate, repeats: true)
       let request = UNNotificationRequest(identifier: identifier,
