@@ -27,6 +27,7 @@ class AlarmClockViewController: UIViewController {
    
     drawGradientCircle()
     
+    /* TODO: 앱에 처음 들어왔을 경우 Notification 권한 받기 */
     ///  앱이 처음 실행될 경우 Notification에 대한 권한을 얻는 부분입니다
     ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
     notificationScheduler.requestNotificationAuthorization()
@@ -60,7 +61,7 @@ class AlarmClockViewController: UIViewController {
                                                    onSuccess: { onSucess in
       print("onSucess : \(onSucess)")
     })
-    /* TODO: 화면 전환 및 SleepRecord 인스턴스 전달 */
+    
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     guard let satisfactionVC = storyboard.instantiateViewController(withIdentifier: "SleepSatisfacationViewController") as? SleepSatisfacationViewController else { return }
     satisfactionVC.sleepRecord = sleepRecord
