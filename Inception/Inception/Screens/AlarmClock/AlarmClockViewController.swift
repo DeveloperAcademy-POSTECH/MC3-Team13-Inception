@@ -26,10 +26,6 @@ class AlarmClockViewController: UIViewController {
                          userInfo: nil, repeats : true)
    
     drawGradientCircle()
-    
-    ///  앱이 처음 실행될 경우 Notification에 대한 권한을 얻는 부분입니다
-    ///  추후에 main의 ViewController 부분으로 옮길 예정입니다
-    notificationScheduler.requestNotificationAuthorization()
   }
   
   @IBAction func snoozeButtonTap(_ sender: Any) {

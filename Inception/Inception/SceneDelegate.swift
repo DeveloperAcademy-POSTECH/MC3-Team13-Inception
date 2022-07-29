@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   var window: UIWindow?
-  
+  let notificationCenter = Scheduler()
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /* TABBAR */
     let tabbar = TabBarController()
     self.window?.rootViewController = tabbar
+    notificationCenter.requestNotificationAuthorization()
     
     guard let _ = (scene as? UIWindowScene) else { return }
     
