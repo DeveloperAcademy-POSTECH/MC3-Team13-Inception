@@ -22,6 +22,11 @@ class AlarmListCell: UITableViewCell {
   @IBOutlet weak var sleepHourField: UILabel!
   @IBOutlet weak var sleepHourIcon: UIImageView!
   
+  override func layoutSubviews() {
+      super.layoutSubviews()
+
+      contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+  }
   override func awakeFromNib() {
     super.awakeFromNib()
     self.contentView.layer.cornerRadius = 11

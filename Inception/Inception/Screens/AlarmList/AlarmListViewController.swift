@@ -18,7 +18,7 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   @IBOutlet weak var presentTableEmptyView: UIView!
   @IBOutlet weak var savedTableEmptyView: UIView!
   
-  let rowHeightOfTableView: CGFloat = 123
+  let rowHeightOfTableView: CGFloat = 139
   let headerHeight: CGFloat = CGFloat.leastNormalMagnitude
   
   let alarmListCellID: String = "AlarmListCell"
@@ -122,6 +122,10 @@ final class AlarmListViewController: UIViewController, Storyboarded {
 extension AlarmListViewController: UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
+   return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if tableView == presentTableView {
       if presentAlarm.isEmpty {
         presentTableEmptyView.isHidden = false
@@ -137,10 +141,6 @@ extension AlarmListViewController: UITableViewDataSource {
       return savedAlarm.count
     }
     return 0
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
   }
   
   func tableView(
@@ -219,6 +219,18 @@ extension AlarmListViewController: UITableViewDelegate {
     
             completion(true)
           }
+        }
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        self.savedTableHeightConstraint.constant = CGFloat(self.manager.fetchSavedAlarm()?.count ?? 1) * (self.rowHeightOfTableView + 24)
+
+        completion(true)
+      }
+      
+//      let delete = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
+//        SleepTrackDataManager.shared.deleteSleepRecord(self.dailySleepRecords[indexPath.row]) { onSuccess in
+//          print("deleted = \(onSuccess)")
+//        }
+//
       let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
       delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
       delete.backgroundColor = .systemBackground
