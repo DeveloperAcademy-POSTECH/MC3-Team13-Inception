@@ -30,12 +30,18 @@ class AlarmListCell: UITableViewCell {
     sleepHourIcon.image = UIImage(systemName: "bed.double.fill", withConfiguration: configuration)
   }
   
-  func alarmCellUpdate(with alarm: Alarm) {
-    bedtimeTime.text = alarm.bedtimeTime
-    bedtimeMeridiem.text = alarm.bedtimeMeridiem
-    wakeuptimeTime.text = alarm.wakeuptimeTime
-    wakeuptimeMeridiem.text = alarm.wakeuptimeMeridiem
-    sleepHourField.text = String(Float(alarm.expectedSleepHour / 60)) + " 시간"
+  func alarmCellUpdate(with alarm: AlarmItem) {
+    
+    let convert = Alarm(isOn: alarm.isOn, bedtimeDate: alarm.bedTime!, wakeuptimeDate: alarm.wakeupTime!)
+    bedtimeTime.text = convert.bedtimeTime
+    bedtimeMeridiem.text = convert.bedtimeMeridiem
+    wakeuptimeTime.text = convert.wakeuptimeTime
+    wakeuptimeMeridiem.text = convert.wakeuptimeMeridiem
+    sleepHourField.text = String(Float(convert.expectedSleepHour / 60)) + " 시간"
+    
   }
   
 }
+
+
+

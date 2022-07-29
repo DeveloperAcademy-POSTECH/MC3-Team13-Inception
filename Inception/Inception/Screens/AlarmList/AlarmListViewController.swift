@@ -1,10 +1,9 @@
-//
+
 //  AlarmListViewController.swift
 //  Inception
 //
 //  Created by Mijoo Kim on 2022/07/17.
 //
-
 import UIKit
 
 final class AlarmListViewController: UIViewController, Storyboarded {
@@ -24,11 +23,15 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   
   let alarmListCellID: String = "AlarmListCell"
   
+  private var presentAlarm = [AlarmItem]()
+  private var savedAlarm = [AlarmItem]()
   let manager = AlarmDataManger.shared
+  
   // MARK: - View Life Cycle
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.fetchAlarms()
     presentTableEmptyView.isHidden = true
     savedTableEmptyView.isHidden = true
     
@@ -37,12 +40,27 @@ final class AlarmListViewController: UIViewController, Storyboarded {
     setDelegateAndDataSourceForTable()
     initPropertyOfTable()
   }
+  override func viewDidAppear(_ animated: Bool) {
+    self.fetchAlarms()
+  }
   
   func setNavigationItem() {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "편집",
                                                              style: .plain,
                                                              target: self,
                                                              action: #selector(editButtonDidTap))
+  }
+  
+  func fetchAlarms() {
+    if let fetchPresentAlarm = manager.fetchPresentAlarm() {
+      presentAlarm.append(fetchPresentAlarm)
+      presentTableView.reloadData()
+    }
+    if let fetchSavedAlarm = manager.fetchSavedAlarm() {
+      savedAlarm = fetchSavedAlarm
+      savedTableView.reloadData()
+    }
+    setDelegateAndDataSourceForTable()
   }
   
   func configureCellForTable() {
@@ -60,7 +78,7 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   
   func initPropertyOfTable() {
     presentTableHeightConstraint.constant = rowHeightOfTableView
-    savedTableHeightConstraint.constant =  CGFloat(manager.fetchSavedAlarm()!.count) * (rowHeightOfTableView + 24)
+    savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
     
     presentTableView.isScrollEnabled = false
     savedTableView.isScrollEnabled = false
@@ -83,53 +101,40 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   // MARK: - Clear Present Alarm and Show Empty View
   
   @IBAction func clearPresentAlarm(_ sender: UIButton) {
-    if let _ = manager.fetchPresentAlarm() {
+    if !presentAlarm.isEmpty {
       savedTableEmptyView.isHidden = true
       presentTableView.isHidden = true
       presentTableEmptyView.isHidden = false
-//      manager.updatePresentAlarm(newPresentAlarm: manager.fetchPresentAlarm()!){ onSuccess in
-//        print("야호")
-//        let alarms = AlarmDataManger.shared.fetchAlarmItem()
-//          alarms.forEach{print("[ALL] bedTime:\($0.bedTime!):\($0.isOn)")}
-//      }
       manager.offPresentAlarm() { onSuccess in
       }
-      savedTableHeightConstraint.constant = CGFloat(manager.fetchSavedAlarm()!.count) * (rowHeightOfTableView + 24)
+      fetchAlarms()
+//      savedAlarm.append(presentAlarm.removeLast())
+//      savedTableView.reloadData()
+      savedTableHeightConstraint.constant = CGFloat(savedAlarm.count) * (rowHeightOfTableView + 24)
       
       sender.isEnabled = false
-      self.manager.fetchAlarmItem().forEach {
-        print("\($0.bedTime!) | \($0.wakeupTime!) | \($0.isOn)")
-      }
-      return
     }
-    
-    
-    
-    presentTableView.reloadData()
-    savedTableView.reloadData()
   }
-  
   
 }
 
 // MARK: - UITableViewDataSource
-
 extension AlarmListViewController: UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     if tableView == presentTableView {
-      if manager.fetchPresentAlarm() == nil {
+      if presentAlarm.isEmpty {
         presentTableEmptyView.isHidden = false
         return 0
       }
-      return 1
+      return presentAlarm.count
     }
     else if tableView == savedTableView {
-      guard let savedAlarms = manager.fetchSavedAlarm() else {
+      if savedAlarm.isEmpty {
         savedTableEmptyView.isHidden = false
         return 0
       }
-      return savedAlarms.count
+      return savedAlarm.count
     }
     return 0
   }
@@ -146,16 +151,17 @@ extension AlarmListViewController: UITableViewDataSource {
       withIdentifier: alarmListCellID,
       for: indexPath) as? AlarmListCell
     else { return UITableViewCell() }
-    
+
     if tableView == self.presentTableView {
-      if let presentAlarm = manager.fetchPresentAlarm() {
-        cell.alarmCellUpdate(with: Alarm(isOn: presentAlarm.isOn, bedtimeDate: presentAlarm.bedTime!, wakeuptimeDate: presentAlarm.wakeupTime!))
+      if !presentAlarm.isEmpty {
+        cell.alarmCellUpdate(with: presentAlarm[indexPath.row])
+        print(presentAlarm)
         return cell
       }
     } else if tableView == self.savedTableView {
-      if let savedAlarms = manager.fetchSavedAlarm() {
-        let convert = savedAlarms[indexPath.row]
-        cell.alarmCellUpdate(with: Alarm(isOn: convert.isOn, bedtimeDate: convert.bedTime!, wakeuptimeDate: convert.wakeupTime!) )
+      if !savedAlarm.isEmpty {
+        print(indexPath.section)
+        cell.alarmCellUpdate(with: savedAlarm[indexPath.section])
         return cell
       }
     }
@@ -174,7 +180,6 @@ extension AlarmListViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-
 extension AlarmListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView,
@@ -193,34 +198,27 @@ extension AlarmListViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var actions = [UIContextualAction]()
+        var config = UISwipeActionsConfiguration(actions: actions)
     
-    var actions = [UIContextualAction]()
-    var config = UISwipeActionsConfiguration(actions: actions)
-    
-    if tableView == presentTableView {
-      return config
-    }
-    else if tableView == savedTableView {
-      let delete = UIContextualAction(style: .normal, title: nil) {(_,_, completion) in
-
-        //self.savedAlarm.remove(at: indexPath.row)
-        if let savedAlarms = self.manager.fetchSavedAlarm() {
-          self.manager.deleteAlarm(savedAlarms[indexPath.row]){ onSuccess in
-            print("delete Alarm : \(onSuccess)")
-          }
+        if tableView == presentTableView {
+          return config
         }
-        let indexSet = IndexSet(arrayLiteral: indexPath.section)
-        tableView.deleteSections(indexSet, with: .fade)
-        self.savedTableHeightConstraint.constant = CGFloat(self.manager.fetchSavedAlarm()?.count ?? 1) * (self.rowHeightOfTableView + 24)
-
-        completion(true)
-      }
-      
-//      let delete = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
-//        SleepTrackDataManager.shared.deleteSleepRecord(self.dailySleepRecords[indexPath.row]) { onSuccess in
-//          print("deleted = \(onSuccess)")
-//        }
-//
+        else if tableView == savedTableView {
+          let delete = UIContextualAction(style: .normal, title: nil) {(_,_, completion) in
+    
+            //self.savedAlarm.remove(at: indexPath.row)
+            if let savedAlarms = self.manager.fetchSavedAlarm() {
+              self.manager.deleteAlarm(savedAlarms[indexPath.row]){ onSuccess in
+                print("delete Alarm : \(onSuccess)")
+              }
+            }
+            let indexSet = IndexSet(arrayLiteral: indexPath.section)
+            tableView.deleteSections(indexSet, with: .fade)
+            self.savedTableHeightConstraint.constant = CGFloat(self.savedAlarm.count) * (self.rowHeightOfTableView + 24)
+    
+            completion(true)
+          }
       let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
       delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
       delete.backgroundColor = .systemBackground
