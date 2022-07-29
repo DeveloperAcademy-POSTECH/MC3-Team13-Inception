@@ -103,16 +103,7 @@ extension AlarmClockViewController {
   @objc private func setTime(){
     let date = Date()
 
-    let dateFormatter = DateFormatter()
-    let meridiemFormatter = DateFormatter()
-
-    dateFormatter.dateFormat = "hh:mm"
-    meridiemFormatter.dateFormat = "a"
-
-    let currentTime = dateFormatter.string(from: date)
-    let meridiemSetter = meridiemFormatter.string(from: date)
-
-    self.timeLabel.text = currentTime
-    self.meridiemLabel.text = meridiemSetter
+    self.timeLabel.text = date.dateTo12HTimeString(date)
+    self.meridiemLabel.text = date.dateToMeridiemString(date)
   }
 }
