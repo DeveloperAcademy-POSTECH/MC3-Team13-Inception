@@ -10,8 +10,8 @@ import Foundation
 struct Alarm: Codable {
   var id: String = UUID().uuidString
   var isOn: Bool
-  private let bedtimeDate: Date
-  private let wakeuptimeDate: Date
+  let bedtimeDate: Date
+  let wakeuptimeDate: Date
   
   var bedtimeTime: String {
     return Date().dateTo12HTimeString(bedtimeDate)

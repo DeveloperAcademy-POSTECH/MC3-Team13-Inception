@@ -8,6 +8,9 @@
 import UIKit
 
 class AwakeBasedRecommendCell: UITableViewCell {
+  private var cellBedTime = Date()
+  private var cellWakeupTime = Date()
+  
   @IBOutlet weak var sleepIcon: UIImageView!
   @IBOutlet weak var sleepHour: UILabel!
   @IBOutlet weak var bedTimeLabel: UILabel!
@@ -23,7 +26,11 @@ class AwakeBasedRecommendCell: UITableViewCell {
       preferredStyle: UIAlertController.Style.alert
     )
     let confirm = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
-      // TODO: - '변경하기' 버튼 Action
+      // MARK: - '변경하기' 버튼 Action
+      AlarmDataManger.shared.createAlarmItem(
+        bedTime: self.cellBedTime,
+        wakeupTime: self.cellWakeupTime
+      ) { Bool in }
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
@@ -37,6 +44,9 @@ class AwakeBasedRecommendCell: UITableViewCell {
     sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour - 15) / 60.0) + " 시간"
     bedTime.text = recoAlarmTime.bedtimeMeridiem + " " + recoAlarmTime.bedtimeTime
     wakeupTime.text = recoAlarmTime.wakeuptimeMeridiem + " " + recoAlarmTime.wakeuptimeTime
+    
+    cellBedTime = recoAlarmTime.bedtimeDate
+    cellWakeupTime = recoAlarmTime.wakeuptimeDate
   }
   
   override func layoutSubviews() {
