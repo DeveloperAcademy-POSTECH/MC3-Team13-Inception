@@ -11,8 +11,6 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -80,8 +78,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-  /// 앱이 foreground 안에 있더라도 Notification을 받을 수 있도록 함
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.banner, .list, .sound])
   }
+  
+  func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+    let storyBoard: UIStoryboard = UIStoryboard(name: "AlarmClockView", bundle: nil)
+    let presentViewController = storyBoard.instantiateViewController(withIdentifier: "AlarmClockViewController") as! AlarmClockViewController
+
+    guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else { return }
+    presentViewController.modalPresentationStyle = .fullScreen
+    rootViewController.present(presentViewController, animated: false, completion: nil)
+
+    completionHandler()
+  }
+  
 }
