@@ -18,9 +18,9 @@ class SleepTrackDataManager {
   var sleepRecords: [SleepRecordItem] = [SleepRecordItem]()
   
   func fetchSleepRecord() -> [SleepRecordItem] {
-    
+
     if let context = context {
-      // 최근 날짜 순으로 sorting
+      // 최근 날짜 순으로 정렬
       let sortItem: NSSortDescriptor = NSSortDescriptor(key: "wakeupTime", ascending: false)
       let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest<NSManagedObject>(entityName: modelName)
       fetchRequest.sortDescriptors = [sortItem]
@@ -37,6 +37,7 @@ class SleepTrackDataManager {
   }
   
   func createSleepRecord(trackedDate: String, bedTime: String, wakeupTime: Date, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
+    
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
       if let item: SleepRecordItem = NSManagedObject(entity: entity, insertInto: context) as? SleepRecordItem {
@@ -52,6 +53,7 @@ class SleepTrackDataManager {
       }
     }
   }
+  
   func updateFirstItemSleepSatisfaction(sleepSatisfaction: SleepSatisfacation,onSuccess: @escaping ((Bool) -> Void)) {
     let firstItem = sleepRecords.first!
     firstItem.sleepSatisfaction = sleepSatisfaction.rawValue
@@ -63,19 +65,20 @@ class SleepTrackDataManager {
   func getFirstItemId() -> UUID? {
     return sleepRecords.first?.id ?? nil
   }
-  func updateSleepRecord(_ sleepRecord: SleepRecordItem, _ newSleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
-    let allItems = fetchSleepRecord()
-    for item in allItems {
-      if item.id == sleepRecord.id {
-        item.bedTime = newSleepRecord.bedTime
-        item.wakeupTime = newSleepRecord.wakeupTime
-        item.sleepSatisfaction = newSleepRecord.sleepSatisfaction
-      }
-    }
-    contextSave { success in
-      onSuccess(success)
-    }
-  }
+//
+//  func updateSleepRecord(_ sleepRecord: SleepRecordItem, _ newSleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
+//    let allItems = fetchSleepRecord()
+//    for item in allItems {
+//      if item.id == sleepRecord.id {
+//        item.bedTime = newSleepRecord.bedTime
+//        item.wakeupTime = newSleepRecord.wakeupTime
+//        item.sleepSatisfaction = newSleepRecord.sleepSatisfaction
+//      }
+//    }
+//    contextSave { success in
+//      onSuccess(success)
+//    }
+//  }
   
   func deleteSleepRecord(_ sleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
     context?.delete(sleepRecord)
@@ -93,13 +96,7 @@ class SleepTrackDataManager {
 }
 
 extension SleepTrackDataManager {
-    fileprivate func filteredRequest(id: Int64) -> NSFetchRequest<NSFetchRequestResult> {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult>
-            = NSFetchRequest<NSFetchRequestResult>(entityName: modelName)
-        fetchRequest.predicate = NSPredicate(format: "id = %@", NSNumber(value: id))
-        return fetchRequest
-    }
-    
+  
     fileprivate func contextSave(onSuccess: ((Bool) -> Void)) {
         do {
             try context?.save()
