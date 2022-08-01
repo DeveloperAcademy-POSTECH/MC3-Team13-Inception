@@ -42,10 +42,10 @@ class AlarmClockViewController: UIViewController {
     notificationScheduler.removeAllAlarm()
     let actualWakeupTimeDate = Date()
     
-    /* TODO: CoreDate isOn Alarm 메서드로 설정된 알람 bedtime 받아오기 */
-    
+    guard let presentAlarm = AlarmDataManger.shared.fetchPresentAlarm() else { return }
+
     lazy var sleepRecord: SleepRecord = SleepRecord(sleepSatisfacation: .none,
-                                                    bedtimeDate: Date(),
+                                                    bedtimeDate: presentAlarm.bedTime!,
                                                     wakeuptimeDate: actualWakeupTimeDate)
     
     SleepTrackDataManager.shared.createSleepRecord(trackedDate: sleepRecord.trackedDate,
