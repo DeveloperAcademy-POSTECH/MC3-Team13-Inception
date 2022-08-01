@@ -42,7 +42,10 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     return 1
   }
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(
+    _ tableView: UITableView,
+    numberOfRowsInSection section: Int
+  ) -> Int {
     if dailySleepRecords.isEmpty {
       tableView.isScrollEnabled = false
       tableView.backgroundView = recordEmptyView
@@ -53,14 +56,20 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     return dailySleepRecords.count
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "sleepTracker", for: indexPath)  as! DailySleepTrackerTableViewCell
     let dailySleepRecord = dailySleepRecords[indexPath.row]
     cell.update(with: dailySleepRecord)
     return cell
   }
 
-  override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  override func tableView(
+    _ tableView: UITableView,
+    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+  ) -> UISwipeActionsConfiguration? {
     var actions = [UIContextualAction]()
     var config = UISwipeActionsConfiguration(actions: actions)
     
@@ -72,7 +81,9 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
-    let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0,
+                                                  weight: .bold,
+                                                  scale: .large)
     delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
     delete.backgroundColor = .systemBackground
     delete.title = "Delete"
