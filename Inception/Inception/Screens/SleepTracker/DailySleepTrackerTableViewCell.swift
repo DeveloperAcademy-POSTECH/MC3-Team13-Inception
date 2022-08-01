@@ -18,7 +18,7 @@ class DailySleepTrackerTableViewCell: UITableViewCell {
   func update(with dailySleepRecord: SleepRecordItem) {
     dateLabel.text = dailySleepRecord.trackedDate
     bedTimeLabel.text = dailySleepRecord.bedTime
-    wakeTimeLabel.text = dailySleepRecord.wakeupTime
+    wakeTimeLabel.text = Date().dateTo12HTimeString(dailySleepRecord.wakeupTime!)
     sleepLengthLabel.text = dailySleepRecord.actualSleepHour
     sleepConditionLabel.image = UIImage(systemName: dailySleepRecord.sleepSatisfaction!)
   }
