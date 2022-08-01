@@ -8,9 +8,10 @@
 import UIKit
 
 class SleepBasedRecommendCell: UITableViewCell {
+  private let notificationCenter: Scheduler = Scheduler()
   private var cellBedTime = Date()
   private var cellWakeupTime = Date()
-
+  
   @IBOutlet weak var sleepIcon: UIImageView!
   @IBOutlet weak var sleepHour: UILabel!
   @IBOutlet weak var bedTimeLabel: UILabel!
@@ -25,12 +26,17 @@ class SleepBasedRecommendCell: UITableViewCell {
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
       preferredStyle: UIAlertController.Style.alert
     )
-    let confirm = UIAlertAction(title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기" , style: .default) { UIAlertAction in
-      // TODO: - '변경하기' 버튼 Action
-      AlarmDataManger.shared.createAlarmItem(bedTime: self.cellBedTime, wakeupTime: self.cellWakeupTime) { onSuccess in
-        print("Successed!")
-      }
+    let confirm = UIAlertAction(
+    title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
+    style: .default
+    ) { UIAlertAction in
+      AlarmDataManger.shared.createAlarmItem(
+        bedTime: self.cellBedTime,
+        wakeupTime: self.cellWakeupTime
+      ) { onSuccess in }
       
+      self.notificationCenter.makeSleepAlarm(bedTime: self.cellBedTime)
+      self.notificationCenter.makeMorningNotification(wakeuptimeTime: self.cellWakeupTime)
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
@@ -44,6 +50,7 @@ class SleepBasedRecommendCell: UITableViewCell {
     sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour) / 60.0) + " 시간"
     bedTime.text = recoAlarmTime.bedtimeMeridiem + " " + recoAlarmTime.bedtimeTime
     wakeupTime.text = recoAlarmTime.wakeuptimeMeridiem + " " + recoAlarmTime.wakeuptimeTime
+    
     cellBedTime = recoAlarmTime.bedtimeDate
     cellWakeupTime = recoAlarmTime.wakeuptimeDate
   }
