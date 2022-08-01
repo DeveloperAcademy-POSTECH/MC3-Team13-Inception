@@ -17,9 +17,9 @@
 		7793F9ED2887F0B30094D69B /* SleepTrackDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7793F9EC2887F0B30094D69B /* SleepTrackDataManager.swift */; };
 		77F6F2012897A2EC00263BBB /* SleepRecordItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F6F1FF2897A2EB00263BBB /* SleepRecordItem+CoreDataClass.swift */; };
 		77F6F2022897A2EC00263BBB /* SleepRecordItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F6F2002897A2EC00263BBB /* SleepRecordItem+CoreDataProperties.swift */; };
+		840B85F92897BE69005757F7 /* alarmSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 90C1921A288F897400304262 /* alarmSound.m4a */; };
 		84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3332885414C00F1A0C5 /* SleepBasedViewController.swift */; };
 		84D7C3362885446200F1A0C5 /* SleepBasedRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C3352885446200F1A0C5 /* SleepBasedRecommendCell.swift */; };
-
 		84D7C33C288559DD00F1A0C5 /* AwakeBasedRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33B288559DD00F1A0C5 /* AwakeBasedRecommendCell.swift */; };
 		84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7C33D28855AD500F1A0C5 /* AwakeBasedViewController.swift */; };
 		84D7C34228864EDA00F1A0C5 /* SleepBasedRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34028864EDA00F1A0C5 /* SleepBasedRecommendCell.xib */; };
@@ -417,6 +417,7 @@
 				A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				77449BE428847A0C0051147B /* SleepTrackerTableViewController.storyboard in Resources */,
+				840B85F92897BE69005757F7 /* alarmSound.m4a in Resources */,
 				A7F246DB2883DE580099E6CE /* SleepSatisfacationViewController.storyboard in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
 				A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */,

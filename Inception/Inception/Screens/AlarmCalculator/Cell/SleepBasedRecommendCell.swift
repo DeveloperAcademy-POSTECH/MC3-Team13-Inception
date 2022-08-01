@@ -8,6 +8,7 @@
 import UIKit
 
 class SleepBasedRecommendCell: UITableViewCell {
+  private let notificationCenter: Scheduler = Scheduler()
   private var cellBedTime = Date()
   private var cellWakeupTime = Date()
   
@@ -33,6 +34,9 @@ class SleepBasedRecommendCell: UITableViewCell {
         bedTime: self.cellBedTime,
         wakeupTime: self.cellWakeupTime
       ) { onSuccess in }
+      
+      self.notificationCenter.makeSleepAlarm(bedTime: self.cellBedTime)
+      self.notificationCenter.makeMorningNotification(wakeuptimeTime: self.cellWakeupTime)
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
