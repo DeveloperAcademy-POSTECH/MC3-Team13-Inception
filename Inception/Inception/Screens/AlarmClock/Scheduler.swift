@@ -77,7 +77,7 @@ struct Scheduler {
     for index in 0...2 {
       let identifier: String = "morning-alarm-\(index)"
       
-      wakeupTimeDate.second = 15 * musicPlayTime
+      wakeupTimeDate.second = musicPlayTime * index
       
       let trigger = UNCalendarNotificationTrigger(dateMatching: wakeupTimeDate, repeats: true)
       let request = UNNotificationRequest(identifier: identifier,
