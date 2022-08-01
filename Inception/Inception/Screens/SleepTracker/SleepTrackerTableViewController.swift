@@ -55,6 +55,7 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     _ tableView: UITableView,
     trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
   ) -> UISwipeActionsConfiguration? {
+  
     var actions = [UIContextualAction]()
     var config = UISwipeActionsConfiguration(actions: actions)
     
@@ -69,6 +70,7 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0,
                                                   weight: .bold,
                                                   scale: .large)
+
     delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
     delete.backgroundColor = .systemBackground
     delete.title = "Delete"
@@ -95,4 +97,16 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       sender.title = "완료"
     }
   }
+  
+  @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
+    if tableView.isEditing {
+      tableView.setEditing(false, animated: true)
+      sender.title = "편집"
+    } else {
+      tableView.setEditing(true, animated: true)
+      sender.title = "완료"
+    }
+  }
+  
+  
 }

@@ -132,7 +132,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
+
                     <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj"/>
+
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="654.5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

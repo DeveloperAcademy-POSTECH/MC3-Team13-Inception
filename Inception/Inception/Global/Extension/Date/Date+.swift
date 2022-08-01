@@ -62,6 +62,19 @@ extension Date {
   }
   
   /**
+   # minuteInterval
+   2개의 date 의 시간간격(초단위)를 계산합니다.
+   - Parameters:
+     - from : 현재 시간
+     - to : 취침 시간
+   - Note: 300(초)
+   */
+  public func secondInterval(from currentTime : Date, to bedtime: Date) -> TimeInterval {
+    return bedtime.timeIntervalSince(currentTime)
+  }
+  
+  
+  /**
    # dateToStringMMDD
    date에서 MM.dd 형태로 날짜를 반환합니다.
    - Parameters:

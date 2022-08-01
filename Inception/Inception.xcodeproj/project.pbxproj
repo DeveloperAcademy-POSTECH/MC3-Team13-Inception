@@ -25,8 +25,14 @@
 		84D7C34228864EDA00F1A0C5 /* SleepBasedRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34028864EDA00F1A0C5 /* SleepBasedRecommendCell.xib */; };
 		84D7C34628864FF200F1A0C5 /* AwakeBasedRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7C34428864FF200F1A0C5 /* AwakeBasedRecommendCell.xib */; };
 		84E97A3828920EAB0079D7A6 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E97A3728920EAB0079D7A6 /* UIApplication+.swift */; };
+
 		90A8B3C7288441FC002E1D84 /* AlarmClockViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8B3C6288441FC002E1D84 /* AlarmClockViewController.storyboard */; };
 		90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */; };
+
+		90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */; };
+		90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */; };
+		90BBDE6A2893843200137E75 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C19216288F846500304262 /* Scheduler.swift */; };
+
 		A71944A728845374004FF1BE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71944A628845374004FF1BE /* UIButton+.swift */; };
 		A7257FDE28879A4C001A496D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDD28879A4C001A496D /* Alarm.swift */; };
 		A7257FE028879D60001A496D /* SleepRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7257FDF28879D60001A496D /* SleepRecord.swift */; };
@@ -73,8 +79,12 @@
 		84D7C34028864EDA00F1A0C5 /* SleepBasedRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepBasedRecommendCell.xib; sourceTree = "<group>"; };
 		84D7C34428864FF200F1A0C5 /* AwakeBasedRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AwakeBasedRecommendCell.xib; sourceTree = "<group>"; };
 		84E97A3728920EAB0079D7A6 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
-		90A8B3C6288441FC002E1D84 /* AlarmClockViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmClockViewController.storyboard; sourceTree = "<group>"; };
+		90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmClockView.storyboard; sourceTree = "<group>"; };
 		90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
+
+		90C19216288F846500304262 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		90C1921A288F897400304262 /* alarmSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarmSound.m4a; sourceTree = "<group>"; };
+
 		A71944A628845374004FF1BE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		A7257FDD28879A4C001A496D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		A7257FDF28879D60001A496D /* SleepRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecord.swift; sourceTree = "<group>"; };
@@ -205,6 +215,7 @@
 				B8B9D0A12881311300F98980 /* ViewController.swift */,
 				B8B9D0A32881311300F98980 /* Main.storyboard */,
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
+				90C1921A288F897400304262 /* alarmSound.m4a */,
 				B8B9D0AE2881311500F98980 /* Info.plist */,
 			);
 			indentWidth = 2;
@@ -303,8 +314,9 @@
 		B8B9D0BE2881324700F98980 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
-				90A8B3C6288441FC002E1D84 /* AlarmClockViewController.storyboard */,
+				90A8B3C6288441FC002E1D84 /* AlarmClockView.storyboard */,
 				90A8B3C82884420A002E1D84 /* AlarmClockViewController.swift */,
+				90C19216288F846500304262 /* Scheduler.swift */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -406,7 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A8B3C7288441FC002E1D84 /* AlarmClockViewController.storyboard in Resources */,
+				90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */,
 				84D7C34628864FF200F1A0C5 /* AwakeBasedRecommendCell.xib in Resources */,
 				84D7C34228864EDA00F1A0C5 /* SleepBasedRecommendCell.xib in Resources */,
 				B8900A3E2883FD7A00EE03DF /* AlarmListViewController.storyboard in Resources */,
@@ -427,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BBDE6A2893843200137E75 /* Scheduler.swift in Sources */,
 				84D7C33828854AC400F1A0C5 /* AlarmTime.swift in Sources */,
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,

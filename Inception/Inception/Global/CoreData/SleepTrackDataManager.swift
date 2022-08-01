@@ -68,10 +68,6 @@ class SleepTrackDataManager {
       onSuccess(success)
     }
   }
-  
-  func getFirstItemId() -> UUID? {
-    return sleepRecords.first?.id ?? nil
-  }
 
   func deleteSleepRecord(_ sleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
     context?.delete(sleepRecord)
