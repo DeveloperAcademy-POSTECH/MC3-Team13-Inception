@@ -83,6 +83,17 @@ class AlarmDataManger {
     }
   }
   
+  func changePresentAlarm(target: AlarmItem, onSuccess: @escaping ((Bool) -> Void)) {
+    if let currentPresent = fetchPresentAlarm() {
+      currentPresent.isOn = false
+    }
+    target.isOn = true
+    fetchAlarmItem()
+    contextSave { success in
+      onSuccess(success)
+    }
+  }
+  
   // MARK: DELETE
   func deleteAlarm(_ alarm: AlarmItem, onSuccess: @escaping ((Bool) -> Void)) {
     context?.delete(alarm)

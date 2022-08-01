@@ -246,7 +246,6 @@ extension AlarmListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-    selectedCell.contentView.backgroundColor = UIColor.red
     let alert = UIAlertController(
       title: "현재 알람으로 설정할까요?",
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
@@ -256,26 +255,12 @@ extension AlarmListViewController: UITableViewDelegate {
       title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
       style: .default
     ) { UIAlertAction in
-      let alarm = self.savedAlarm[indexPath.row]
-      self.notificationCenter.makeSleepAlarm(bedTime: alarm.bedTime!)
-      self.notificationCenter.makeMorningNotification(wakeuptimeTime: alarm.wakeupTime!)
-      self.manager.offPresentAlarm { success in
-        print(success)
-      }
-      if !self.presentAlarm.isEmpty {
-        self.savedAlarm.append(self.presentAlarm.removeLast())
-        self.presentAlarm.append(self.savedAlarm.remove(at: indexPath.row))
-        self.reloadTables {
-          self.settingClearButton()
-        }
-      }
-      else {
-        self.presentAlarm.append(self.savedAlarm.first!)
-        self.reloadTables {
-          self.settingClearButton()
-        }
-      }
       
+      self.manager.changePresentAlarm(target: self.savedAlarm[indexPath.row]) { success in
+      }
+      self.reloadTables {
+        self.settingClearButton()
+      }
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
