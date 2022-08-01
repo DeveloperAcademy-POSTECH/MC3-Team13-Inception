@@ -45,11 +45,10 @@
 		A9D3D4772883F95800EDF412 /* AlarmCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D3D4762883F95800EDF412 /* AlarmCalculatorViewController.swift */; };
 		B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */; };
 		B8900A3E2883FD7A00EE03DF /* AlarmListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8900A3D2883FD7A00EE03DF /* AlarmListViewController.storyboard */; };
+		B89D2B3028969A8B009E3FB1 /* alarmSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 90C1921A288F897400304262 /* alarmSound.m4a */; };
 		B8A6C33F2890CB42003E3E4C /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A6C33E2890CB42003E3E4C /* UIImage+.swift */; };
 		B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09D2881311300F98980 /* AppDelegate.swift */; };
 		B8B9D0A02881311300F98980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D09F2881311300F98980 /* SceneDelegate.swift */; };
-		B8B9D0A22881311300F98980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A12881311300F98980 /* ViewController.swift */; };
-		B8B9D0A52881311300F98980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0A32881311300F98980 /* Main.storyboard */; };
 		B8B9D0A82881311300F98980 /* Inception.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */; };
 		B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0A92881311500F98980 /* Assets.xcassets */; };
 		B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */; };
@@ -99,8 +98,6 @@
 		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8B9D0A12881311300F98980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B8B9D0A42881311300F98980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8B9D0A72881311300F98980 /* Inception.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Inception.xcdatamodel; sourceTree = "<group>"; };
 		B8B9D0A92881311500F98980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8B9D0AC2881311500F98980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,16 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7793F9E32887EFA50094D69B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
-				7793F9EC2887F0B30094D69B /* SleepTrackDataManager.swift */,
-				77791E0F288953680042E56B /* AlarmDataManager.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		84E97A3628920E440079D7A6 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +166,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B89D2B312896A367009E3FB1 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9D09D2881311300F98980 /* AppDelegate.swift */,
+				B8B9D09F2881311300F98980 /* SceneDelegate.swift */,
+				B8B9D0AE2881311500F98980 /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		B89D2B322896A420009E3FB1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7793F9EC2887F0B30094D69B /* SleepTrackDataManager.swift */,
+				77791E0F288953680042E56B /* AlarmDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		B8B9D0912881311300F98980 = {
 			isa = PBXGroup;
 			children = (
@@ -203,13 +209,6 @@
 				B8B9D0B82881317E00F98980 /* Screens */,
 				B8B9D0B62881314600F98980 /* Network */,
 				B8B9D0B52881312C00F98980 /* Global */,
-				B8B9D09D2881311300F98980 /* AppDelegate.swift */,
-				B8B9D09F2881311300F98980 /* SceneDelegate.swift */,
-				B8B9D0A12881311300F98980 /* ViewController.swift */,
-				B8B9D0A32881311300F98980 /* Main.storyboard */,
-				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
-				90C1921A288F897400304262 /* alarmSound.m4a */,
-				B8B9D0AE2881311500F98980 /* Info.plist */,
 			);
 			indentWidth = 2;
 			path = Inception;
@@ -219,9 +218,9 @@
 		B8B9D0B52881312C00F98980 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				A738E865288F94A800076F19 /* Protocol */,
-				7793F9E32887EFA50094D69B /* CoreData */,
+				B89D2B312896A367009E3FB1 /* Supports */,
 				B8B9D0C2288132B300F98980 /* Resource */,
+				A738E865288F94A800076F19 /* Protocol */,
 				B8B9D0C12881329900F98980 /* Extension */,
 			);
 			path = Global;
@@ -230,6 +229,7 @@
 		B8B9D0B62881314600F98980 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B89D2B322896A420009E3FB1 /* Manager */,
 				B8B9D0B72881317000F98980 /* Models */,
 			);
 			path = Network;
@@ -238,6 +238,7 @@
 		B8B9D0B72881317000F98980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
 				7793F9F0288804720094D69B /* SleepRecordItem+CoreDataClass.swift */,
 				7793F9F1288804720094D69B /* SleepRecordItem+CoreDataProperties.swift */,
 				77791E0B288953450042E56B /* AlarmItem+CoreDataClass.swift */,
@@ -251,6 +252,7 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				A7DD1AFB288E8EBD008D08A5 /* TabBar */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
@@ -348,9 +350,18 @@
 		B8B9D0C2288132B300F98980 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B8F272C828976FCA00490FBD /* Sounds */,
 				B8B9D0A92881311500F98980 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B8F272C828976FCA00490FBD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				90C1921A288F897400304262 /* alarmSound.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,8 +430,8 @@
 				A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				77449BE428847A0C0051147B /* SleepTrackerTableViewController.storyboard in Resources */,
+				B89D2B3028969A8B009E3FB1 /* alarmSound.m4a in Resources */,
 				A7F246DB2883DE580099E6CE /* SleepSatisfacationViewController.storyboard in Resources */,
-				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
 				A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +448,6 @@
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
-				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
 				B8A6C33F2890CB42003E3E4C /* UIImage+.swift in Sources */,
 				A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */,
 				B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */,
@@ -477,14 +487,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B8B9D0A32881311300F98980 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8B9D0A42881311300F98980 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -619,10 +621,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83576S3D7F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_FILE = Inception/Global/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AlarmCalculatorViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -648,10 +650,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83576S3D7F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_FILE = Inception/Global/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AlarmCalculatorViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
