@@ -67,8 +67,11 @@ class SleepTrackDataManager {
     }
   }
   
-  func deleteSleepRecord(_ sleepRecord: SleepRecordItem) {
+  func deleteSleepRecord(_ sleepRecord: SleepRecordItem, onSuccess: @escaping ((Bool) -> Void)) {
     context?.delete(sleepRecord)
+    contextSave { success in
+      onSuccess(success)
+    }
   }
   
   func deleteAllSleepRecord() {
