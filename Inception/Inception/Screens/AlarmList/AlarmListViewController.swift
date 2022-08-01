@@ -42,7 +42,17 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    reloadTables(completion: settingClearButton)
+    hideSavedListEmptyView {
+      reloadTables(completion: settingClearButton)
+    }
+  }
+  
+  func hideSavedListEmptyView(completion: () -> ()) {
+    completion()
+    if !savedAlarm.isEmpty {
+    savedTableEmptyView.isHidden = true
+    super.viewDidLoad()
+    }
   }
   
   func setNavigationItem() {
