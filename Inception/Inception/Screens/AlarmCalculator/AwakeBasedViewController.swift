@@ -35,7 +35,7 @@ class AwakeBasedViewController: UIViewController {
   
   @IBAction func searchAlarm(_ sender: UIButton) {
     recoAlarms.removeAll()
-    for hour in stride(from: 9.0, to: 4.0, by: -1.5) {
+    for hour in stride(from: 4.5, to: 9.5, by: 1.5) {
       if Date() < setTime - (60*60*hour) - 900 {
         recoAlarms.append(Alarm(isOn: false, bedtimeDate: setTime - (60*60*hour) - 900, wakeuptimeDate: setTime))
       }
