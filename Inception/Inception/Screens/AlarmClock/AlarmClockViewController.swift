@@ -51,7 +51,7 @@ class AlarmClockViewController: UIViewController {
     SleepTrackDataManager.shared.createSleepRecord(trackedDate: sleepRecord.trackedDate,
                                                    bedTime: sleepRecord.bedtimeTime,
                                                    wakeupTime: sleepRecord.wakeuptimeDate,
-                                                   actualSleepHour: String(sleepRecord.actualSleepHour),
+                                                   actualSleepHour: Int16(sleepRecord.actualSleepHour),
                                                    sleepSatisfaction: sleepRecord.sleepSatisfacation.rawValue,
                                                    onSuccess: { onSucess in
       print("onSucess : \(onSucess)")
