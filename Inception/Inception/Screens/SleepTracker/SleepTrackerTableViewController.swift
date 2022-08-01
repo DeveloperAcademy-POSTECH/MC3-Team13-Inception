@@ -20,12 +20,6 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     create(sleepRecordItem: temp)
     fetch()
   }
-  
-  /// 테스트 전체 삭제 버튼
-  @IBAction func deleteAllRecords(_ sender: Any) {
-    SleepTrackDataManager.shared.deleteAllSleepRecord()
-    fetch()
-  }
 
   private var dailySleepRecords = [SleepRecordItem]()
   
