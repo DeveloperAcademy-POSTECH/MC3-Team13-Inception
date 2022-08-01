@@ -46,6 +46,3 @@ class AlarmListCell: UITableViewCell {
   }
   
 }
-
-
-
