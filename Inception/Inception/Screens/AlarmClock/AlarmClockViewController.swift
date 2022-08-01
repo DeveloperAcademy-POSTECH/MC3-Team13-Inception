@@ -57,7 +57,7 @@ class AlarmClockViewController: UIViewController {
       print("onSucess : \(onSucess)")
     })
     /* TODO: 화면 전환 및 SleepRecord 인스턴스 전달 */
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let storyboard = UIStoryboard(name: "SleepSatisfacationViewController", bundle: nil)
     guard let satisfactionVC = storyboard.instantiateViewController(withIdentifier: "SleepSatisfacationViewController") as? SleepSatisfacationViewController else { return }
     satisfactionVC.sleepRecord = sleepRecord
     satisfactionVC.modalPresentationStyle = .fullScreen

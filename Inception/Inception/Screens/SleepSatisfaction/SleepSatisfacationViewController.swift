@@ -188,11 +188,11 @@ extension SleepSatisfacationViewController {
     
     switch sender.tag {
     case 1 :
-      sleepSatisfacationSelection = .bad
+      sleepSatisfacationSelection = SleepSatisfacation.bad
     case 2 :
-      sleepSatisfacationSelection = .soso
+      sleepSatisfacationSelection = SleepSatisfacation.soso
     case 3 :
-      sleepSatisfacationSelection = .good
+      sleepSatisfacationSelection = SleepSatisfacation.good
     default:
       print("There's no selection.")
     }
@@ -201,6 +201,10 @@ extension SleepSatisfacationViewController {
   @objc func saveButtonDidTap(_ sender: UIButton) {
     //TODO: 수면기록 저장
     print("수면기록 저장하기 with \(sleepSatisfacationSelection)")
+    SleepTrackDataManager.shared.fetchSleepRecord()
+    SleepTrackDataManager.shared.updateFirstItemSleepSatisfaction(sleepSatisfaction: sleepSatisfacationSelection) { onSuccess in
+      print("onSucess: \(onSuccess)")
+    }
     self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
   }
   
