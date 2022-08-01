@@ -133,20 +133,8 @@
                     </tableView>
                     <toolbarItems/>
 
-                    <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj">
-                        <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="add" id="667-AB-dAr">
-                                <connections>
-                                    <action selector="addTestRecord:" destination="tUe-Om-Jhh" id="3eN-l5-wb8"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" systemItem="trash" id="hBH-5g-Z67">
-                                <connections>
-                                    <action selector="deleteAllRecords:" destination="tUe-Om-Jhh" id="wbW-Sz-dxN"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="수면 기록" id="Exm-gT-VDj"/>
+
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="654.5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

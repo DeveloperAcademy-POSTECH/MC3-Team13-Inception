@@ -18,7 +18,7 @@ struct SleepRecord: Codable {
   var id: String = UUID().uuidString
   var sleepSatisfacation: SleepSatisfacation
   private let bedtimeDate: Date
-  private let wakeuptimeDate: Date
+  let wakeuptimeDate: Date
   
   var bedtimeTime: String {
     return Date().dateTo24HTimeString(bedtimeDate)
