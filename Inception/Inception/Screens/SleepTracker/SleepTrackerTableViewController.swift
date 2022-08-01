@@ -12,15 +12,6 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
   /// 기록 없을 때 나오는 빈 화면
   @IBOutlet var recordEmptyView: UIView!
   
-  /// 테스트 기록 추가 버튼
-  @IBAction func addTestRecord(_ sender: Any) {
-    let testAtualSleepTime = -60 * 60 * 6.5
-    let temp = SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(testAtualSleepTime), wakeuptimeDate: Date.now)
-    
-    create(sleepRecordItem: temp)
-    fetch()
-  }
-
   private var dailySleepRecords = [SleepRecordItem]()
   
   override func viewDidLoad() {
@@ -95,15 +86,6 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     tableView.reloadData()
   }
 
-  /// 데이터 등록 테스트 위한 임시 함수 (삭제 예정)
-  private func create(sleepRecordItem: SleepRecord) {
-    let dailyRecordItem = sleepRecordItem
-
-    SleepTrackDataManager.shared.createSleepRecord(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeDate, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
-      print("saved = \(onSuccess)")
-    }
-  }
-  
   @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
     if tableView.isEditing {
       tableView.setEditing(false, animated: true)
@@ -113,6 +95,4 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       sender.title = "완료"
     }
   }
-  
-  
 }
