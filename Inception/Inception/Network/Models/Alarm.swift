@@ -30,7 +30,7 @@ struct Alarm: Codable {
   }
   
   var expectedSleepHour: Int {
-    return Date().minuteInterval(from: bedtimeDate, to: wakeuptimeDate)
+    return Date().minuteInterval(from: bedtimeDate.addingTimeInterval(60 * 15), to: wakeuptimeDate)
   }
   
   init(isOn: Bool, bedtimeDate: Date, wakeuptimeDate: Date){
