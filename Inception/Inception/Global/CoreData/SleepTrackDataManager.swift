@@ -39,7 +39,7 @@ class SleepTrackDataManager {
     trackedDate: String,
     bedTime: String,
     wakeupTime: Date,
-    actualSleepHour: String,
+    actualSleepHour: Int16,
     sleepSatisfaction: SleepSatisfacation.RawValue,
     onSuccess: @escaping ((Bool) -> Void)) {
     
