@@ -35,7 +35,13 @@ class SleepTrackDataManager {
     return sleepRecords
   }
   
-  func createSleepRecord(trackedDate: String, bedTime: String, wakeupTime: Date, actualSleepHour: String, sleepSatisfaction: SleepSatisfacation.RawValue, onSuccess: @escaping ((Bool) -> Void)) {
+  func createSleepRecord(
+    trackedDate: String,
+    bedTime: String,
+    wakeupTime: Date,
+    actualSleepHour: String,
+    sleepSatisfaction: SleepSatisfacation.RawValue,
+    onSuccess: @escaping ((Bool) -> Void)) {
     
     if let context = context,
        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
@@ -53,7 +59,9 @@ class SleepTrackDataManager {
     }
   }
   
-  func updateFirstItemSleepSatisfaction(sleepSatisfaction: SleepSatisfacation,onSuccess: @escaping ((Bool) -> Void)) {
+  func updateFirstItemSleepSatisfaction(
+    sleepSatisfaction: SleepSatisfacation,
+    onSuccess: @escaping ((Bool) -> Void)) {
     let firstItem = sleepRecords.first!
     firstItem.sleepSatisfaction = sleepSatisfaction.rawValue
     contextSave { success in
