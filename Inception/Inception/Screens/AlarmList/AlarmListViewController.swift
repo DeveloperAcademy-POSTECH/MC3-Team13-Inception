@@ -137,10 +137,6 @@ final class AlarmListViewController: UIViewController, Storyboarded {
 // MARK: - UITableViewDataSource
 extension AlarmListViewController: UITableViewDataSource {
   
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if tableView == presentTableView {
       if presentAlarm.isEmpty {
