@@ -34,14 +34,25 @@ class AwakeBasedViewController: UIViewController {
   }
   
   @IBAction func searchAlarm(_ sender: UIButton) {
-    recoAlarms.removeAll()
+    UIView.transition(
+      with: tableView,
+      duration: 0.3,
+      options: .transitionCrossDissolve,
+      animations: { self.recoAlarms.removeAll()},
+      completion: nil
+    )
     for hour in stride(from: 4.5, to: 9.5, by: 1.5) {
       if Date() < setTime - (60*60*hour) - 900 {
         recoAlarms.append(Alarm(isOn: false, bedtimeDate: setTime - (60*60*hour) - 900, wakeuptimeDate: setTime))
       }
     }
-    
-    tableView.reloadData()
+    UIView.transition(
+      with: tableView,
+      duration: 0.3,
+      options: .transitionCrossDissolve,
+      animations: {self.tableView.reloadData()},
+      completion: nil
+    )
     
     /* MARK: - 표시할 추천 알람이 하나도 없을 경우의 Alert */
     if recoAlarms.count == 0 {
