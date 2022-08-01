@@ -41,7 +41,7 @@ class AlarmListCell: UITableViewCell {
     bedtimeMeridiem.text = convert.bedtimeMeridiem
     wakeuptimeTime.text = convert.wakeuptimeTime
     wakeuptimeMeridiem.text = convert.wakeuptimeMeridiem
-    sleepHourField.text = String(Float(convert.expectedSleepHour / 60)) + " 시간"
+    sleepHourField.text = String(Float(convert.expectedSleepHour) / 60.0) + " 시간"
     
   }
   
