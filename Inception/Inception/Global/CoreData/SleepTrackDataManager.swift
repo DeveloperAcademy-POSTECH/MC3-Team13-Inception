@@ -20,7 +20,6 @@ class SleepTrackDataManager {
   func fetchSleepRecord() -> [SleepRecordItem] {
 
     if let context = context {
-      // 최근 날짜 순으로 정렬
       let sortItem: NSSortDescriptor = NSSortDescriptor(key: "wakeupTime", ascending: false)
       let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest<NSManagedObject>(entityName: modelName)
       fetchRequest.sortDescriptors = [sortItem]
