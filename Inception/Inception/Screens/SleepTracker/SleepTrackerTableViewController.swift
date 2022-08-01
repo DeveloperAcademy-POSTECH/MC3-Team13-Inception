@@ -12,21 +12,6 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
   /// 기록 없을 때 나오는 빈 화면
   @IBOutlet var recordEmptyView: UIView!
   
-  /// 테스트 기록 추가 버튼
-  @IBAction func addTestRecord(_ sender: Any) {
-    let testAtualSleepTime = -60 * 60 * 6.5
-    let temp = SleepRecord(sleepSatisfacation: SleepSatisfacation.good, bedtimeDate: Date.now.addingTimeInterval(testAtualSleepTime), wakeuptimeDate: Date.now)
-    
-    create(sleepRecordItem: temp)
-    fetch()
-  }
-  
-  /// 테스트 전체 삭제 버튼
-  @IBAction func deleteAllRecords(_ sender: Any) {
-    SleepTrackDataManager.shared.deleteAllSleepRecord()
-    fetch()
-  }
-
   private var dailySleepRecords = [SleepRecordItem]()
   
   override func viewDidLoad() {
@@ -42,7 +27,10 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     return 1
   }
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(
+    _ tableView: UITableView,
+    numberOfRowsInSection section: Int
+  ) -> Int {
     if dailySleepRecords.isEmpty {
       tableView.isScrollEnabled = false
       tableView.backgroundView = recordEmptyView
@@ -53,14 +41,21 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     return dailySleepRecords.count
   }
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "sleepTracker", for: indexPath)  as! DailySleepTrackerTableViewCell
     let dailySleepRecord = dailySleepRecords[indexPath.row]
     cell.update(with: dailySleepRecord)
     return cell
   }
 
-  override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  override func tableView(
+    _ tableView: UITableView,
+    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+  ) -> UISwipeActionsConfiguration? {
+  
     var actions = [UIContextualAction]()
     var config = UISwipeActionsConfiguration(actions: actions)
     
@@ -72,7 +67,10 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
-    let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0, weight: .bold, scale: .large)
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 17.0,
+                                                  weight: .bold,
+                                                  scale: .large)
+
     delete.image = UIImage(systemName: "trash", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysTemplate).addBackgroundCircle(.systemRed)
     delete.backgroundColor = .systemBackground
     delete.title = "Delete"
@@ -90,12 +88,13 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
     tableView.reloadData()
   }
 
-  /// 데이터 등록 테스트 위한 임시 함수 (삭제 예정)
-  private func create(sleepRecordItem: SleepRecord) {
-    let dailyRecordItem = sleepRecordItem
-
-    SleepTrackDataManager.shared.createSleepRecord(trackedDate: dailyRecordItem.trackedDate, bedTime: dailyRecordItem.bedtimeTime, wakeupTime: dailyRecordItem.wakeuptimeTime, actualSleepHour: "\(dailyRecordItem.actualSleepHour/60)h \(dailyRecordItem.actualSleepHour%60)m", sleepSatisfaction: sleepRecordItem.sleepSatisfacation.rawValue) { onSuccess in
-      print("saved = \(onSuccess)")
+  @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
+    if tableView.isEditing {
+      tableView.setEditing(false, animated: true)
+      sender.title = "편집"
+    } else {
+      tableView.setEditing(true, animated: true)
+      sender.title = "완료"
     }
   }
   

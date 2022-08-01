@@ -18,7 +18,7 @@ extension SleepRecordItem {
   @NSManaged public var id : UUID
     @NSManaged public var trackedDate: String?
     @NSManaged public var bedTime: String?
-    @NSManaged public var wakeupTime: String?
+    @NSManaged public var wakeupTime: Date?
     @NSManaged public var actualSleepHour: String?
     @NSManaged public var sleepSatisfaction: String?
 

@@ -10,8 +10,8 @@ import Foundation
 struct Alarm: Codable {
   var id: String = UUID().uuidString
   var isOn: Bool
-  private let bedtimeDate: Date
-  private let wakeuptimeDate: Date
+  let bedtimeDate: Date
+  let wakeuptimeDate: Date
   
   var bedtimeTime: String {
     return Date().dateTo12HTimeString(bedtimeDate)
@@ -30,7 +30,7 @@ struct Alarm: Codable {
   }
   
   var expectedSleepHour: Int {
-    return Date().minuteInterval(from: bedtimeDate, to: wakeuptimeDate)
+    return Date().minuteInterval(from: bedtimeDate.addingTimeInterval(60 * 15), to: wakeuptimeDate)
   }
   
   init(isOn: Bool, bedtimeDate: Date, wakeuptimeDate: Date){
@@ -40,5 +40,3 @@ struct Alarm: Codable {
   }
 }
 
-var presentAlarm: [Alarm] = [Alarm(isOn: true, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))]
-var savedAlarm: [Alarm] = [Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)), Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000)),Alarm(isOn: false, bedtimeDate: Date(), wakeuptimeDate: Date(timeIntervalSinceNow: 30000))]
