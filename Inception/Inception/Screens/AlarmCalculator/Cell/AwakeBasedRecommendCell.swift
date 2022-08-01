@@ -25,7 +25,10 @@ class AwakeBasedRecommendCell: UITableViewCell {
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
       preferredStyle: UIAlertController.Style.alert
     )
-    let confirm = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
+    let confirm = UIAlertAction(
+      title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
+      style: .default
+    ) { UIAlertAction in
       AlarmDataManger.shared.createAlarmItem(
         bedTime: self.cellBedTime,
         wakeupTime: self.cellWakeupTime
