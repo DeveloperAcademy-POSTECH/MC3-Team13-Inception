@@ -79,13 +79,7 @@ class SleepTrackDataManager {
       onSuccess(success)
     }
   }
-  
-  func deleteAllSleepRecord() {
-    let allItems = fetchSleepRecord()
-    for item in allItems {
-      context?.delete(item)
-    }
-  }
+
 }
 
 extension SleepTrackDataManager {
