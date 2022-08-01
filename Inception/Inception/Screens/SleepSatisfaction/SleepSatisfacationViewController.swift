@@ -141,8 +141,8 @@ final class SleepSatisfacationViewController: UIViewController {
       saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 84),
       saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -84),
       saveButton.heightAnchor.constraint(equalToConstant: 50),
-      skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 167),
-      skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -167),
+      skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 157),
+      skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -157),
     ])
     
     emojiStackView.addArrangedSubviews(emojiButton1, emojiButton2, emojiButton3)
@@ -167,6 +167,12 @@ final class SleepSatisfacationViewController: UIViewController {
     saveButton.backgroundColor = .systemOrange
     saveButton.setTitleColor(UIColor.black, for: .normal)
   }
+  
+}
+
+extension SleepSatisfacationViewController {
+  
+  // Button Event Handlers
   
   @objc private func emojiButtonDidTap(_ sender: EmojiButton) {
     
@@ -195,15 +201,13 @@ final class SleepSatisfacationViewController: UIViewController {
   @objc func saveButtonDidTap(_ sender: UIButton) {
     //TODO: 수면기록 저장
     print("수면기록 저장하기 with \(sleepSatisfacationSelection)")
+    self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
   }
   
   @objc func skipButtonDidTap(_ sender: UIButton) {
     //TODO: 화면 닫기
     print("수면기록 건너뛰기")
+    self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
   }
-  
-}
-
-extension SleepSatisfacationViewController {
   
 }
