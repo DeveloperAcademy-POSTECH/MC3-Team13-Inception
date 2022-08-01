@@ -97,16 +97,4 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
       sender.title = "완료"
     }
   }
-  
-  @objc private func editButtonDidTap(_ sender: UIBarButtonItem) {
-    if tableView.isEditing {
-      tableView.setEditing(false, animated: true)
-      sender.title = "편집"
-    } else {
-      tableView.setEditing(true, animated: true)
-      sender.title = "완료"
-    }
-  }
-  
-  
 }
