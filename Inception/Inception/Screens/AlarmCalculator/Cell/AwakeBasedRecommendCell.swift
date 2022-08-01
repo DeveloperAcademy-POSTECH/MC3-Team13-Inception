@@ -40,7 +40,7 @@ class AwakeBasedRecommendCell: UITableViewCell {
   }
   
   func update(with recoAlarmTime: Alarm) {
-    sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour - 15) / 60.0) + " 시간"
+    sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour) / 60.0) + " 시간"
     bedTime.text = recoAlarmTime.bedtimeMeridiem + " " + recoAlarmTime.bedtimeTime
     wakeupTime.text = recoAlarmTime.wakeuptimeMeridiem + " " + recoAlarmTime.wakeuptimeTime
     

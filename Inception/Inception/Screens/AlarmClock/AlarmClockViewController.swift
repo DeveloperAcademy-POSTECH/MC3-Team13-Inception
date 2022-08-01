@@ -8,6 +8,8 @@
 import UIKit
 
 class AlarmClockViewController: UIViewController {
+  let notificationScheduler: Scheduler = Scheduler()
+  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var wakeupTimeCircle: UIView!
   @IBOutlet weak var meridiemLabel: UILabel!
@@ -19,33 +21,54 @@ class AlarmClockViewController: UIViewController {
     titleLabel.numberOfLines = 0
     titleLabel.text = "개운한 아침을 위해" + "\n지금 기상하세요"
     
-    // MARK: 시간 설정
-    
     setTime()
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTime),
                          userInfo: nil, repeats : true)
-    
-    // MARK: 그라데이션 원 그리기
-    
+   
     drawGradientCircle()
   }
   
-
-  @objc private func setTime(){
-    let date = Date()
-
-    let dateFormatter = DateFormatter()
-    let meridiemFormatter = DateFormatter()
-
-    dateFormatter.dateFormat = "hh:mm"
-    meridiemFormatter.dateFormat = "a"
-
-    let currentTime = dateFormatter.string(from: date)
-    let meridiemSetter = meridiemFormatter.string(from: date)
-
-    self.timeLabel.text = currentTime
-    self.meridiemLabel.text = meridiemSetter
+  @IBAction func snoozeButtonTap(_ sender: Any) {
+    notificationScheduler.makeMorningNotification(minutes: 5)
+    /// 5분 뒤 버튼이 탭된 이후 알림을 받기 위해 앱을 종료하는 코드입니다
+    /// 출처: https://zeddios.tistory.com/1252 [ZeddiOS:티스토리]
+    UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        exit(0)
+    }
   }
+  
+  @IBAction func turnOffButtonTap(_ sender: Any) {
+    notificationScheduler.removeAllAlarm()
+    let actualWakeupTimeDate = Date()
+    
+    guard let presentAlarm = AlarmDataManger.shared.fetchPresentAlarm() else { return }
+
+    lazy var sleepRecord: SleepRecord = SleepRecord(sleepSatisfacation: .none,
+                                                    bedtimeDate: presentAlarm.bedTime!,
+                                                    wakeuptimeDate: actualWakeupTimeDate)
+    
+    SleepTrackDataManager.shared.createSleepRecord(trackedDate: sleepRecord.trackedDate,
+                                                   bedTime: sleepRecord.bedtimeTime,
+                                                   wakeupTime: sleepRecord.wakeuptimeDate,
+                                                   actualSleepHour: Int16(sleepRecord.actualSleepHour),
+                                                   sleepSatisfaction: sleepRecord.sleepSatisfacation.rawValue,
+                                                   onSuccess: { onSucess in
+      print("onSucess : \(onSucess)")
+    })
+    /* TODO: 화면 전환 및 SleepRecord 인스턴스 전달 */
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    guard let satisfactionVC = storyboard.instantiateViewController(withIdentifier: "SleepSatisfacationViewController") as? SleepSatisfacationViewController else { return }
+    satisfactionVC.sleepRecord = sleepRecord
+    satisfactionVC.modalPresentationStyle = .fullScreen
+    present(satisfactionVC, animated: true, completion: nil)
+  }
+}
+
+
+extension AlarmClockViewController {
+  
+  // MARK : 그라데이션 원 그리기
   
   private func drawGradientCircle() {
     let lineWidth: CGFloat = 3
@@ -69,5 +92,14 @@ class AlarmClockViewController: UIViewController {
     shape.fillColor = UIColor.clear.cgColor
     gradient.mask = shape
     wakeupTimeCircle.layer.addSublayer(gradient)
+  }
+  
+  // MARK : 시간 설정
+
+  @objc private func setTime(){
+    let date = Date()
+
+    self.timeLabel.text = date.dateTo12HTimeString(date)
+    self.meridiemLabel.text = date.dateToMeridiemString(date)
   }
 }

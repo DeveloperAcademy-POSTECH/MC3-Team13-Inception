@@ -9,6 +9,9 @@ import UIKit
 
 final class SleepSatisfacationViewController: UIViewController {
   
+  var sleepRecord: SleepRecord?
+  static let identifier = "SleepSatisfacationViewController"
+
   // MARK: Views
   
   private let stackView: UIStackView = {

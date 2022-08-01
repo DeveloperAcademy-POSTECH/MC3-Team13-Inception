@@ -25,11 +25,14 @@ class SleepBasedRecommendCell: UITableViewCell {
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
       preferredStyle: UIAlertController.Style.alert
     )
-    let confirm = UIAlertAction(title: "변경하기", style: .default) { UIAlertAction in
+    let confirm = UIAlertAction(
+    title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
+    style: .default
+    ) { UIAlertAction in
       AlarmDataManger.shared.createAlarmItem(
         bedTime: self.cellBedTime,
         wakeupTime: self.cellWakeupTime
-      ) { Bool in }
+      ) { onSuccess in }
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
@@ -40,7 +43,7 @@ class SleepBasedRecommendCell: UITableViewCell {
   }
   
   func update(with recoAlarmTime: Alarm) {
-    sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour - 15) / 60.0) + " 시간"
+    sleepHour.text = String(format: "%.1f", Float(recoAlarmTime.expectedSleepHour) / 60.0) + " 시간"
     bedTime.text = recoAlarmTime.bedtimeMeridiem + " " + recoAlarmTime.bedtimeTime
     wakeupTime.text = recoAlarmTime.wakeuptimeMeridiem + " " + recoAlarmTime.wakeuptimeTime
     
