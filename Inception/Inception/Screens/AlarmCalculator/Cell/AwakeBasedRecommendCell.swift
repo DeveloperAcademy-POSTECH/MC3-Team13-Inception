@@ -37,6 +37,11 @@ class AwakeBasedRecommendCell: UITableViewCell {
       
       self.notificationCenter.makeSleepAlarm(bedTime: self.cellBedTime)
       self.notificationCenter.makeMorningNotification(wakeuptimeTime: self.cellWakeupTime)
+      
+      if let tabBarController = self.window?.rootViewController as? UITabBarController {
+        let tabItem = tabBarController.tabBar.items?[1]
+        tabItem?.badgeValue = "new"
+      }
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)
