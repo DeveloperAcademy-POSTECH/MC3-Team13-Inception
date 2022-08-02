@@ -57,9 +57,8 @@ class AwakeBasedViewController: UIViewController {
     /* MARK: - 표시할 추천 알람이 하나도 없을 경우의 Alert */
     if recoAlarms.count == 0 {
       let alert = UIAlertController(
-        // TODO: - Alert 문구 및 버튼 text 논의
-        title: "표시할 알람 없음",
-        message: "현재 시간 이후 부터 기상 시간까지 일어나기 위한 권장 취침 시간이 없습니다.\n(권장 수면 시간은 최소 4.5시간 부터 최대 9시간 입니다.)",
+        title: "표시할 알람이 없습니다",
+        message: "권장 수면 시간에 맞는 알람이 없습니다\n(권장 수면 시간 : 4.5시간 ~ 9시간)",
         preferredStyle: UIAlertController.Style.alert
       )
       let confirm = UIAlertAction(title: "확인", style: .cancel, handler: nil)
