@@ -27,6 +27,8 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   private var savedAlarm = [AlarmItem]()
   let manager = AlarmDataManger.shared
   
+  private let notificationCenter: Scheduler = Scheduler()
+  
   // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,7 +42,17 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    reloadTables(completion: settingClearButton)
+    hideSavedListEmptyView {
+      reloadTables(completion: settingClearButton)
+    }
+  }
+  
+  func hideSavedListEmptyView(completion: () -> ()) {
+    completion()
+    if !savedAlarm.isEmpty {
+    savedTableEmptyView.isHidden = true
+    super.viewDidLoad()
+    }
   }
   
   func setNavigationItem() {
@@ -81,6 +93,7 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   }
   
   func fetchPresentAlarms(completion: () -> AlarmItem?) {
+    presentAlarm.removeAll()
     if let fetchPresentAlarm = completion() {
       presentAlarm.append(fetchPresentAlarm)
     }
@@ -239,5 +252,33 @@ extension AlarmListViewController: UITableViewDelegate {
       return config
     }
     return config
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+    let alert = UIAlertController(
+      title: "현재 알람으로 설정할까요?",
+      message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
+      preferredStyle: UIAlertController.Style.alert
+    )
+    let confirm = UIAlertAction(
+      title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
+      style: .default
+    ) { UIAlertAction in
+      
+      self.manager.changePresentAlarm(target: self.savedAlarm[indexPath.row]) { success in
+      }
+      self.reloadTables {
+        self.settingClearButton()
+      }
+    }
+    let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
+    alert.addAction(cancel)
+    alert.addAction(confirm)
+    alert.preferredAction = confirm
+    
+    UIApplication.firstKeyWindowForConnectedScenes?.rootViewController?.present(alert, animated: true, completion: nil)
+    
+    tableView.deselectRow(at: indexPath, animated: false)
   }
 }
