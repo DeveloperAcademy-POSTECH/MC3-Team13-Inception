@@ -60,6 +60,7 @@ final class AlarmListViewController: UIViewController, Storyboarded {
                                                              style: .plain,
                                                              target: self,
                                                              action: #selector(editButtonDidTap))
+    self.navigationController?.navigationBar.tintColor = .systemOrange
   }
   
   func configureCellForTable() {

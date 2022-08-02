@@ -21,6 +21,7 @@ class SleepTrackerTableViewController: UITableViewController, Storyboarded {
                                                              style: .plain,
                                                              target: self,
                                                              action: #selector(editButtonDidTap))
+    self.navigationController?.navigationBar.tintColor = .systemOrange
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
