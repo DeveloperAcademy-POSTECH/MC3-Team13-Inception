@@ -95,7 +95,7 @@
 		B8900A3B2883FD4700EE03DF /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		B8900A3D2883FD7A00EE03DF /* AlarmListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmListViewController.storyboard; sourceTree = "<group>"; };
 		B8A6C33E2890CB42003E3E4C /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		B8B9D09A2881311300F98980 /* Sleepie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleepie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8B9D09A2881311300F98980 /* Inception.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inception.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B9D09D2881311300F98980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8B9D09F2881311300F98980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B8B9D0A12881311300F98980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		B8B9D09B2881311300F98980 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8B9D09A2881311300F98980 /* Sleepie.app */,
+				B8B9D09A2881311300F98980 /* Inception.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,9 +354,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8B9D0992881311300F98980 /* Sleepie */ = {
+		B8B9D0992881311300F98980 /* Inception */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8B9D0B12881311500F98980 /* Build configuration list for PBXNativeTarget "Sleepie" */;
+			buildConfigurationList = B8B9D0B12881311500F98980 /* Build configuration list for PBXNativeTarget "Inception" */;
 			buildPhases = (
 				B8B9D0962881311300F98980 /* Sources */,
 				B8B9D0972881311300F98980 /* Frameworks */,
@@ -366,9 +366,9 @@
 			);
 			dependencies = (
 			);
-			name = Sleepie;
+			name = Inception;
 			productName = Inception;
-			productReference = B8B9D09A2881311300F98980 /* Sleepie.app */;
+			productReference = B8B9D09A2881311300F98980 /* Inception.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B8B9D0952881311300F98980 /* Build configuration list for PBXProject "Sleepie" */;
+			buildConfigurationList = B8B9D0952881311300F98980 /* Build configuration list for PBXProject "Inception" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -399,7 +399,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8B9D0992881311300F98980 /* Sleepie */,
+				B8B9D0992881311300F98980 /* Inception */,
 			);
 		};
 /* End PBXProject section */
@@ -669,7 +669,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B8B9D0952881311300F98980 /* Build configuration list for PBXProject "Sleepie" */ = {
+		B8B9D0952881311300F98980 /* Build configuration list for PBXProject "Inception" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8B9D0AF2881311500F98980 /* Debug */,
@@ -678,7 +678,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8B9D0B12881311500F98980 /* Build configuration list for PBXNativeTarget "Sleepie" */ = {
+		B8B9D0B12881311500F98980 /* Build configuration list for PBXNativeTarget "Inception" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8B9D0B22881311500F98980 /* Debug */,
