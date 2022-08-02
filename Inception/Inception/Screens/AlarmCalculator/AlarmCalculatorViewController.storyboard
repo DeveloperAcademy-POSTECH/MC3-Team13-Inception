@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tyu-D2-GQ5">
-                                <rect key="frame" x="20" y="156" width="350" height="32"/>
+                                <rect key="frame" x="16" y="156" width="358" height="32"/>
                                 <segments>
                                     <segment title="취침 시간 입력"/>
                                     <segment title="기상 시간 입력"/>
@@ -27,13 +27,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-4k-E5d">
-                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
+                                <rect key="frame" x="16" y="203" width="358" height="641"/>
                                 <connections>
                                     <segue destination="Jlo-W6-gYX" kind="embed" id="1aI-nj-dCX"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WU6-eG-DXQ">
-                                <rect key="frame" x="0.0" y="203" width="390" height="641"/>
+                                <rect key="frame" x="16" y="203" width="358" height="641"/>
                                 <connections>
                                     <segue destination="wts-GS-jDy" kind="embed" id="Ic2-q5-TJz"/>
                                 </connections>
@@ -43,17 +43,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tyu-D2-GQ5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="3Fp-dU-0BS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PJJ-4k-E5d" secondAttribute="trailing" id="5WP-66-G0W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PJJ-4k-E5d" secondAttribute="trailing" constant="16" id="5WP-66-G0W"/>
                             <constraint firstAttribute="bottom" secondItem="WU6-eG-DXQ" secondAttribute="bottom" id="G4I-N6-sdm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tyu-D2-GQ5" secondAttribute="trailing" constant="20" id="Mqd-yT-taj"/>
-                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="OHG-33-s80"/>
-                            <constraint firstItem="PJJ-4k-E5d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OYo-8v-EEA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tyu-D2-GQ5" secondAttribute="trailing" constant="16" id="Mqd-yT-taj"/>
+                            <constraint firstItem="Tyu-D2-GQ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OHG-33-s80"/>
+                            <constraint firstItem="PJJ-4k-E5d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OYo-8v-EEA"/>
                             <constraint firstItem="PJJ-4k-E5d" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="T51-GL-Ype"/>
                             <constraint firstItem="WU6-eG-DXQ" firstAttribute="top" secondItem="Tyu-D2-GQ5" secondAttribute="bottom" constant="16" id="V7n-Be-OSd"/>
                             <constraint firstAttribute="bottom" secondItem="PJJ-4k-E5d" secondAttribute="bottom" id="Wtu-x0-SL2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WU6-eG-DXQ" secondAttribute="trailing" id="Wzm-Uz-ubV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WU6-eG-DXQ" secondAttribute="trailing" constant="16" id="Wzm-Uz-ubV"/>
                             <constraint firstItem="Tyu-D2-GQ5" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="c8s-3Q-LeO"/>
-                            <constraint firstItem="WU6-eG-DXQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="yt3-En-vzy"/>
+                            <constraint firstItem="WU6-eG-DXQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="yt3-En-vzy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="알람 추천" id="gCc-Zi-Fms"/>
@@ -71,26 +71,26 @@
             <objects>
                 <viewController id="wts-GS-jDy" customClass="SleepBasedViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WoR-hG-zwp">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="exC-fr-NA9">
-                                <rect key="frame" x="0.0" y="44" width="390" height="597"/>
+                                <rect key="frame" x="0.0" y="44" width="358" height="597"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="FtB-77-gpr">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="208"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="208"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DW-SL-xy3" userLabel="Content View">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="200"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취침 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KT-Tn-VtU">
-                                                    <rect key="frame" x="150.66666666666666" y="20" width="89" height="29"/>
+                                                    <rect key="frame" x="134.66666666666666" y="20" width="89" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="QCf-6P-6hK">
-                                                    <rect key="frame" x="150" y="59" width="90" height="31"/>
+                                                    <rect key="frame" x="134" y="59" width="90" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="sfV-kW-UQ4"/>
                                                     </constraints>
@@ -99,7 +99,7 @@
                                                     </connections>
                                                 </datePicker>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAE-wy-m8R">
-                                                    <rect key="frame" x="95" y="105" width="200" height="50"/>
+                                                    <rect key="frame" x="79" y="105" width="200" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Jgu-aY-V4x"/>
                                                         <constraint firstAttribute="width" constant="200" id="fDQ-26-dhB"/>
@@ -117,7 +117,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠에 드는 시간으로부터 90분 주기의 기상 알람을 추천합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2J-uc-AQg">
-                                                    <rect key="frame" x="51" y="165" width="288" height="15"/>
+                                                    <rect key="frame" x="35" y="165" width="288" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,10 +153,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sJP-I2-AhW">
-                                        <rect key="frame" x="0.0" y="252.66666603088379" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="252.66666603088379" width="358" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sJP-I2-AhW" id="x4V-fj-QCn">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -182,7 +182,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TzD-75-zLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="578" y="818"/>
         </scene>
         <!--Awake Based View Controller-->
@@ -190,26 +189,26 @@
             <objects>
                 <viewController id="Jlo-W6-gYX" customClass="AwakeBasedViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8QF-ee-Ggy">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="641"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="641"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wjV-Ae-lqn">
-                                <rect key="frame" x="0.0" y="44" width="390" height="597"/>
+                                <rect key="frame" x="0.0" y="44" width="358" height="597"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="a2s-si-Hgl">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="208"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="208"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0KK-Hx-34V" userLabel="Content View">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="200"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기상 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIE-6c-w0k">
-                                                    <rect key="frame" x="150.66666666666666" y="20" width="89" height="29"/>
+                                                    <rect key="frame" x="134.66666666666666" y="20" width="89" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="jqp-d1-HDe">
-                                                    <rect key="frame" x="150" y="59" width="90" height="31"/>
+                                                    <rect key="frame" x="134" y="59" width="90" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="xnZ-V2-gdq"/>
                                                     </constraints>
@@ -218,7 +217,7 @@
                                                     </connections>
                                                 </datePicker>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOn-5Q-Cfv">
-                                                    <rect key="frame" x="95" y="105" width="200" height="50"/>
+                                                    <rect key="frame" x="79" y="105" width="200" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Ocs-Qb-B4A"/>
                                                         <constraint firstAttribute="width" constant="200" id="qho-4F-obz"/>
@@ -236,7 +235,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠에 드는 시간으로부터 90분 주기의 기상 알람을 추천합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-hz-6pj">
-                                                    <rect key="frame" x="51" y="165" width="288" height="15"/>
+                                                    <rect key="frame" x="35" y="165" width="288" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -272,10 +271,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e1H-sO-Bvy">
-                                        <rect key="frame" x="0.0" y="252.66666603088379" width="390" height="44"/>
+                                        <rect key="frame" x="0.0" y="252.66666603088379" width="358" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e1H-sO-Bvy" id="xfu-hT-iUT">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
