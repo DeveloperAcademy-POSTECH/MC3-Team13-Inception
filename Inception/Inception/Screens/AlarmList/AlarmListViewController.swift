@@ -256,7 +256,6 @@ extension AlarmListViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
     let alert = UIAlertController(
       title: "현재 알람으로 설정할까요?",
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
