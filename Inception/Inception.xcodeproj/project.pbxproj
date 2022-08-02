@@ -35,7 +35,6 @@
 		A738E867288F94B000076F19 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A738E866288F94B000076F19 /* Storyboarded.swift */; };
 		A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */; };
 		A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */; };
-		A76344C928966A1800EF3FEB /* alarmSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 90C1921A288F897400304262 /* alarmSound.m4a */; };
 		A7DD1AFD288E8ECF008D08A5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */; };
 		A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D32883DC0A0099E6CE /* UIView+.swift */; };
 		A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D62883DC190099E6CE /* UIStackView+.swift */; };
@@ -619,6 +618,7 @@
 				DEVELOPMENT_TEAM = 562Z37RH3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -648,6 +648,7 @@
 				DEVELOPMENT_TEAM = 562Z37RH3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
