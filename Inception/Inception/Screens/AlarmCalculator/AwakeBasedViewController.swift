@@ -44,7 +44,7 @@ class AwakeBasedViewController: UIViewController {
     for hour in stride(from: 4.5, to: 9.5, by: 1.5) {
       if Date() < setTime - (60*60*hour) - 900 {
         recoAlarms.append(Alarm(isOn: false, bedtimeDate: setTime - (60*60*hour) - 900, wakeuptimeDate: setTime))
-//      }
+      }
     }
     UIView.transition(
       with: tableView,
