@@ -27,7 +27,7 @@ class TabBarController: UITabBarController {
     /* MARK: - Tab 1 알람설정 */
     let alarmCalculator = AlarmCalculatorViewController.instantiateViewController()
     let alarmCalculatorViewController = UINavigationController(rootViewController: alarmCalculator)
-    alarmCalculatorViewController.tabBarItem = UITabBarItem.init(title: "알람설정", image: UIImage(systemName: "plus.square"), tag: 0)
+    alarmCalculatorViewController.tabBarItem = UITabBarItem.init(title: "알람추천", image: UIImage(systemName: "plus.square"), tag: 0)
     alarmCalculatorViewController.navigationBar.prefersLargeTitles = true
     
     /* MARK: - Tab 2 알람목록 */
