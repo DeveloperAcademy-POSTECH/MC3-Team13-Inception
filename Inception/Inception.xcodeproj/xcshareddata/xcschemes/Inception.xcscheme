@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B8B9D0992881311300F98980"
-               BuildableName = "Sleepie.app"
-               BlueprintName = "Sleepie"
+               BuildableName = "Inception.app"
+               BlueprintName = "Inception"
                ReferencedContainer = "container:Inception.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B8B9D0992881311300F98980"
-            BuildableName = "Sleepie.app"
-            BlueprintName = "Sleepie"
+            BuildableName = "Inception.app"
+            BlueprintName = "Inception"
             ReferencedContainer = "container:Inception.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B8B9D0992881311300F98980"
-            BuildableName = "Sleepie.app"
-            BlueprintName = "Sleepie"
+            BuildableName = "Inception.app"
+            BlueprintName = "Inception"
             ReferencedContainer = "container:Inception.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
