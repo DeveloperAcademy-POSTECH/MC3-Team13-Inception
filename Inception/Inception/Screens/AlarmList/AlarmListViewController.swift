@@ -263,6 +263,7 @@ extension AlarmListViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let presentAlarm = self.savedAlarm[indexPath.row]
     let alert = UIAlertController(
       title: "현재 알람으로 설정할까요?",
       message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
@@ -273,11 +274,15 @@ extension AlarmListViewController: UITableViewDelegate {
       style: .default
     ) { UIAlertAction in
       
-      self.manager.changePresentAlarm(target: self.savedAlarm[indexPath.row]) { success in
+      self.manager.changePresentAlarm(target: presentAlarm) { success in
       }
       self.reloadTables {
         self.settingClearButton()
       }
+      
+      self.notificationCenter.makeMorningNotification(wakeuptimeTime: presentAlarm.wakeupTime!)
+      self.notificationCenter.makeSleepAlarm(bedTime: presentAlarm.bedTime!)
+      
     }
     let cancel = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
     alert.addAction(cancel)

@@ -35,8 +35,8 @@ class SleepBasedRecommendCell: UITableViewCell {
         wakeupTime: self.cellWakeupTime
       ) { onSuccess in }
       
-      self.notificationCenter.makeSleepAlarm(bedTime: self.cellBedTime)
       self.notificationCenter.makeMorningNotification(wakeuptimeTime: self.cellWakeupTime)
+      self.notificationCenter.makeSleepAlarm(bedTime: self.cellBedTime)
       
       if let tabBarController = self.window?.rootViewController as? UITabBarController {
         let tabItem = tabBarController.tabBar.items?[1]
