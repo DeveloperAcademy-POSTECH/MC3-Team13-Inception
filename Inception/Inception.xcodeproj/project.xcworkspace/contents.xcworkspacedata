@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/mijookim/Developer/MC3/Inception/Inception.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
