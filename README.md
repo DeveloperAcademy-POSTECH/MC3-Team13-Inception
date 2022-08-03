@@ -4,7 +4,9 @@
 
 <div align="center"> 
   
-[앱 로고]
+<img width="800" alt="MC3_Inception_Sleepie 001" src="https://user-images.githubusercontent.com/51108729/182498112-197f6815-1294-49bd-add9-4d5e8752fd5b.jpeg">
+  
+<br/><br/>
 
 > _**“🌙 최소한의 수면으로 최고의 효율을 🌞”**_ <br/>
 > **90분 수면 주기 기반 기상/취침 시간 알림 앱**
@@ -22,7 +24,7 @@
 
 | Alarm Recommendation | Alarm List | Sleep Tracker | Alarm Clock |
 |:---:|:---:|:---:|:---:|
-|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182024110-f81bc0ea-5c35-42a4-89d9-d7acaa42ac86.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182024293-8884ff31-1e39-4e42-8ea1-75e617571938.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182024329-e43ee574-f5de-4ced-ac1f-4a78a8ffdea5.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182024329-e43ee574-f5de-4ced-ac1f-4a78a8ffdea5.png">| 
+|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182510308-dda4c150-8cfe-4b73-80ce-8be2c6aa3000.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182509756-4440dae5-b4f5-47d0-83d8-57c11d69c312.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182510549-86ba7b01-f82a-4e1a-a909-6a3daadd5ce0.png">|<img width="220" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182510556-8b785b68-f882-4eba-979a-7f7741addd9f.png">| 
 
 </div>
 
@@ -61,7 +63,7 @@ Inception-iOS
   └── Inception
           |── Network
           │   │── Manager
-          │   └── Model
+          │   └── Models
           |── Global
           │   │── Supports
           │   │      │── SceneDelegate
@@ -73,6 +75,7 @@ Inception-iOS
           │          │── Assets.xcassets
           │          └── Sounds
           └── Screens 
+             |── LaunchScreen
              |── TabBar
              └── AlarmCalculator
                    │── Views
