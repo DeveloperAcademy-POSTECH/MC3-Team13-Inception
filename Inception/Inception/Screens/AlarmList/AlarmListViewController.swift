@@ -141,8 +141,9 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   // MARK: - Clear Present Alarm and Show Empty View
   @IBAction func clearPresentAlarm(_ sender: UIButton) {
     if !presentAlarm.isEmpty {
-      savedTableEmptyView.isHidden = true
-      manager.offPresentAlarm() { onSuccess in
+        savedTableEmptyView.isHidden = true
+        manager.offPresentAlarm() { onSuccess in
+        self.notificationCenter.removeAllAlarm()
       }
       
       savedAlarm.append(presentAlarm.removeLast())
