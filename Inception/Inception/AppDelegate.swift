@@ -92,6 +92,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     let storyBoard: UIStoryboard = UIStoryboard(name: "AlarmClockView", bundle: nil)
     let presentViewController = storyBoard.instantiateViewController(withIdentifier: "AlarmClockViewController") as! AlarmClockViewController
     
+    if response.notification.request.content.body == "이제 잠들 시간 입니다" {
+      completionHandler()
+      return
+    }
+    
     guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else { return }
     presentViewController.modalPresentationStyle = .fullScreen
     rootViewController.present(presentViewController, animated: false, completion: nil)
