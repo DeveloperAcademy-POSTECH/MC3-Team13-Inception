@@ -26,7 +26,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 |<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182510308-dda4c150-8cfe-4b73-80ce-8be2c6aa3000.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182509756-4440dae5-b4f5-47d0-83d8-57c11d69c312.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182511919-0737093a-5509-4b0d-8d15-047e2c00f520.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182510556-8b785b68-f882-4eba-979a-7f7741addd9f.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/51108729/182511925-9fcc54e9-800f-4695-bc5b-bc365561ae6d.png">|
 
-</div>![Uploading 5.png…]()
+</div>
 
 <br/>
 
