@@ -33,7 +33,7 @@ struct Scheduler {
     
     let content = UNMutableNotificationContent()
     
-    content.title = "우리앱"
+    content.title = "Sleepie"
     content.body = "웨엥웨엥 일어날 시간입니다"
     content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
@@ -70,7 +70,7 @@ struct Scheduler {
     wakeupTimeDate.minute = minute
     wakeupTimeDate.second = 0
     
-    content.title = "우리앱"
+    content.title = "Sleepie"
     content.body = "웨엥웨엥 일어날 시간입니다"
     content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "alarmSound.m4a"))
     
@@ -102,7 +102,7 @@ struct Scheduler {
       
       let content = UNMutableNotificationContent()
       
-      content.title = "우리앱"
+      content.title = "Sleepie"
       content.body = "이제 잠들 시간 입니다"
       
       let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(bedTimeInterval),
