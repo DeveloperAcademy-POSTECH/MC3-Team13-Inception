@@ -33,11 +33,6 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if let tabItems = tabBarController?.tabBar.items {
-        let tabItem = tabItems[1]
-        tabItem.badgeValue = nil
-    }
-    
     reloadTables(completion: configureCellForTable)
     settingClearButton()
     presentTableEmptyView.isHidden = true
@@ -48,6 +43,12 @@ final class AlarmListViewController: UIViewController, Storyboarded {
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    
+    if let tabItems = tabBarController?.tabBar.items {
+        let tabItem = tabItems[1]
+        tabItem.badgeValue = nil
+    }
+    
     hideSavedListEmptyView {
       reloadTables(completion: settingClearButton)
     }
