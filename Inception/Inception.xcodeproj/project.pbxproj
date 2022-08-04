@@ -117,16 +117,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7793F9E32887EFA50094D69B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
-				7793F9EC2887F0B30094D69B /* SleepTrackDataManager.swift */,
-				77791E0F288953680042E56B /* AlarmDataManager.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		84E97A3628920E440079D7A6 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +168,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B82BF36A289B5499004DFD36 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				90C1921A288F897400304262 /* alarmSound.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		B82BF36B289B54B6004DFD36 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9D09D2881311300F98980 /* AppDelegate.swift */,
+				B8B9D09F2881311300F98980 /* SceneDelegate.swift */,
+				B8B9D0AE2881311500F98980 /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		B82BF36C289B5502004DFD36 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7793F9EC2887F0B30094D69B /* SleepTrackDataManager.swift */,
+				77791E0F288953680042E56B /* AlarmDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		B8B9D0912881311300F98980 = {
 			isa = PBXGroup;
 			children = (
@@ -202,13 +219,6 @@
 				B8B9D0B82881317E00F98980 /* Screens */,
 				B8B9D0B62881314600F98980 /* Network */,
 				B8B9D0B52881312C00F98980 /* Global */,
-				B8B9D09D2881311300F98980 /* AppDelegate.swift */,
-				B8B9D09F2881311300F98980 /* SceneDelegate.swift */,
-				B8B9D0A12881311300F98980 /* ViewController.swift */,
-				B8B9D0A32881311300F98980 /* Main.storyboard */,
-				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
-				90C1921A288F897400304262 /* alarmSound.m4a */,
-				B8B9D0AE2881311500F98980 /* Info.plist */,
 			);
 			indentWidth = 2;
 			path = Inception;
@@ -218,8 +228,8 @@
 		B8B9D0B52881312C00F98980 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B82BF36B289B54B6004DFD36 /* Supports */,
 				A738E865288F94A800076F19 /* Protocol */,
-				7793F9E32887EFA50094D69B /* CoreData */,
 				B8B9D0C2288132B300F98980 /* Resource */,
 				B8B9D0C12881329900F98980 /* Extension */,
 			);
@@ -229,6 +239,7 @@
 		B8B9D0B62881314600F98980 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B82BF36C289B5502004DFD36 /* Manager */,
 				B8B9D0B72881317000F98980 /* Models */,
 			);
 			path = Network;
@@ -237,12 +248,13 @@
 		B8B9D0B72881317000F98980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */,
+				A7257FDD28879A4C001A496D /* Alarm.swift */,
+				A7257FDF28879D60001A496D /* SleepRecord.swift */,
 				77F6F1FF2897A2EB00263BBB /* SleepRecordItem+CoreDataClass.swift */,
 				77F6F2002897A2EC00263BBB /* SleepRecordItem+CoreDataProperties.swift */,
 				77791E0B288953450042E56B /* AlarmItem+CoreDataClass.swift */,
 				77791E0C288953450042E56B /* AlarmItem+CoreDataProperties.swift */,
-				A7257FDD28879A4C001A496D /* Alarm.swift */,
-				A7257FDF28879D60001A496D /* SleepRecord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +262,9 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B8B9D0A32881311300F98980 /* Main.storyboard */,
+				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
+				B8B9D0A12881311300F98980 /* ViewController.swift */,
 				A7DD1AFB288E8EBD008D08A5 /* TabBar */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
@@ -347,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				B8B9D0A92881311500F98980 /* Assets.xcassets */,
+				B82BF36A289B5499004DFD36 /* Sounds */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -617,7 +633,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 562Z37RH3N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_FILE = Inception/Global/Supports/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -647,7 +663,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 562Z37RH3N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Inception/Info.plist;
+				INFOPLIST_FILE = Inception/Global/Supports/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
