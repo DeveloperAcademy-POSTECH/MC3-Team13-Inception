@@ -17,20 +17,26 @@ class AlarmDataManger {
   let modelName: String = "AlarmItem"
   
   // MARK: CREATE
-  func createAlarmItem(bedTime: Date, wakeupTime: Date, onSuccess: @escaping ((Bool) -> Void)) {
-    // remove present Alarm
-    offPresentAlarm() { onSuccess in
-    }
-    
-    if let context = context,
-       let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
-      if let item: AlarmItem = NSManagedObject(entity: entity, insertInto: context) as? AlarmItem {
-        item.isOn = true
-        item.bedTime = bedTime
-        item.wakeupTime = wakeupTime
-        
-        contextSave { success in
-          onSuccess(success)
+  func createAlarmItem(id: String, bedTime: Date, wakeupTime: Date,
+                       onSuccess: @escaping ((Bool) -> Void)) {
+    if let item = fetchDuplicatedAlarm(id: id){
+      changePresentAlarm(target: item) { success in
+        return
+      }
+    } else {
+      offPresentAlarm() { onSuccess in
+      }
+      if let context = context,
+         let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: modelName, in: context) {
+        if let item: AlarmItem = NSManagedObject(entity: entity, insertInto: context) as? AlarmItem {
+          item.id = id
+          item.isOn = true
+          item.bedTime = bedTime
+          item.wakeupTime = wakeupTime
+          
+          contextSave { success in
+            onSuccess(success)
+          }
         }
       }
     }
@@ -69,8 +75,15 @@ class AlarmDataManger {
   func fetchSavedAlarm() -> [AlarmItem]? {
     let fetchRequest: NSFetchRequest<AlarmItem> = AlarmItem.fetchRequest()
     fetchRequest.predicate = NSPredicate(format: "isOn == NO")
-    
     return try? context?.fetch(fetchRequest)
+  }
+  
+  /// read ONLY ** Duplicated ** Alarms
+  func fetchDuplicatedAlarm(id: String) -> AlarmItem? {
+    let fetchRequest: NSFetchRequest<AlarmItem> = AlarmItem.fetchRequest()
+    fetchRequest.returnsObjectsAsFaults = false
+    fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+    return try? context?.fetch(fetchRequest).first
   }
   
   // MARK: UPDATE
@@ -118,6 +131,14 @@ extension AlarmDataManger {
     } catch let error as NSError {
       print("Could not save🥶: \(error), \(error.userInfo)")
       onSuccess(false)
+    }
+  }
+  
+  func isItAlreadyPresent(targetId: String, currentId: String, alreadyPresent: (Bool) -> Void ) {
+    if targetId == currentId {
+      alreadyPresent(true)
+    } else {
+      alreadyPresent(false)
     }
   }
 }

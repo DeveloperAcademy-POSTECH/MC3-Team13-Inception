@@ -30,7 +30,9 @@ class AwakeBasedRecommendCell: UITableViewCell {
       title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
       style: .default
     ) { UIAlertAction in
-      AlarmDataManger.shared.createAlarmItem(
+      let id = Date().dateTo24HTimeString(self.cellBedTime) + Date().dateTo24HTimeString(self.cellWakeupTime)
+       AlarmDataManger.shared.createAlarmItem(
+        id: id,
         bedTime: self.cellBedTime,
         wakeupTime: self.cellWakeupTime
       ) { onSuccess in }
