@@ -106,7 +106,7 @@ extension AlarmClockViewController {
   
   // MARK : 시간 설정
   
-  @objc private func setTime(){
+   @objc private func setTime(){
     let date = Date()
     
     self.timeLabel.text = date.dateTo12HTimeString(date)
@@ -116,10 +116,9 @@ extension AlarmClockViewController {
   // MARK : 알람 재생
   /// 출처 :  https://www.youtube.com/watch?v=2kflmGGMBOA&t=308s
   
-  @objc func ringAlarm() {
+   @objc func ringAlarm() {
     if !isTurnOffAlarm {
       if let musicPlayer = musicPlayer, musicPlayer.isPlaying {
-        //알람 재생을 멈춘다
         turnOffAlarm()
       } else {
         let urlString = Bundle.main.path(forResource: "alarmSound", ofType: "m4a")
@@ -140,9 +139,9 @@ extension AlarmClockViewController {
     } else {
       return
     }
-  }// ringAlarm
+  }
   
-  func turnOffAlarm() {
+  private func turnOffAlarm() {
     musicPlayer?.stop()
     isTurnOffAlarm = true
   }
