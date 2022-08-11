@@ -7,7 +7,6 @@
 
 import AVFoundation
 import UIKit
-import CloudKit
 
 class AlarmClockViewController: UIViewController {
   private let notificationScheduler: Scheduler = Scheduler()
