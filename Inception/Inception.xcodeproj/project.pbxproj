@@ -53,6 +53,8 @@
 		B8B9D0A82881311300F98980 /* Inception.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8B9D0A62881311300F98980 /* Inception.xcdatamodeld */; };
 		B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0A92881311500F98980 /* Assets.xcassets */; };
 		B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */; };
+		B8DCAA2C28A3501E00B5CF0F /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */; };
+		B8DCAA2E28A3503300B5CF0F /* InformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		B8B9D0A92881311500F98980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8B9D0AC2881311500F98980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8B9D0AE2881311500F98980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B8DCAA2A28A34FF900B5CF0F /* Information */,
 				B8B9D0A32881311300F98980 /* Main.storyboard */,
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0A12881311300F98980 /* ViewController.swift */,
@@ -367,6 +372,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		B8DCAA2A28A34FF900B5CF0F /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */,
+				B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,6 +445,7 @@
 				B8900A3E2883FD7A00EE03DF /* AlarmListViewController.storyboard in Resources */,
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */,
+				B8DCAA2E28A3503300B5CF0F /* InformationViewController.storyboard in Resources */,
 				B8B9D0AA2881311500F98980 /* Assets.xcassets in Resources */,
 				77449BE428847A0C0051147B /* SleepTrackerTableViewController.storyboard in Resources */,
 				840B85F92897BE69005757F7 /* alarmSound.m4a in Resources */,
@@ -473,6 +488,7 @@
 				A7257FDE28879A4C001A496D /* Alarm.swift in Sources */,
 				77449BE62884CFDA0051147B /* DailySleepTrack.swift in Sources */,
 				77449BE82884D0040051147B /* SleepTrackerTableViewController.swift in Sources */,
+				B8DCAA2C28A3501E00B5CF0F /* InformationViewController.swift in Sources */,
 				77449BEA2884D2690051147B /* DailySleepTrackerTableViewCell.swift in Sources */,
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
 				77F6F2012897A2EC00263BBB /* SleepRecordItem+CoreDataClass.swift in Sources */,
