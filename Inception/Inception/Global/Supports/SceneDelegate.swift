@@ -19,7 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     /* TABBAR */
     let tabbar = TabBarController()
-    self.window?.rootViewController = tabbar
+//    self.window?.rootViewController = tabbar
+/* onboarding */
+    self.window?.rootViewController = OnBoardingPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+
+    
+/* onboarding */
+    
     notificationCenter.requestNotificationAuthorization()
     
     guard let _ = (scene as? UIWindowScene) else { return }
