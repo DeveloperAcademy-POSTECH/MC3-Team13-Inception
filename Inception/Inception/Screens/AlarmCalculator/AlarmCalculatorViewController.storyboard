@@ -106,11 +106,10 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="알람 찾기">
-                                                        <backgroundConfiguration key="background" cornerRadius="8">
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                        </backgroundConfiguration>
+                                                        <backgroundConfiguration key="background" cornerRadius="8"/>
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="searchAlarm:" destination="wts-GS-jDy" eventType="touchUpInside" id="dWS-ae-6kt"/>
@@ -224,11 +223,10 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="알람 찾기">
-                                                        <backgroundConfiguration key="background" cornerRadius="8">
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                        </backgroundConfiguration>
+                                                        <backgroundConfiguration key="background" cornerRadius="8"/>
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="searchAlarm:" destination="Jlo-W6-gYX" eventType="touchUpInside" id="yx1-z1-JjR"/>

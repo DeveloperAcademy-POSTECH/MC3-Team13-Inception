@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-Mm-2EE">
-                                <rect key="frame" x="84" y="584.5" width="246" height="119.5"/>
+                                <rect key="frame" x="84" y="560.5" width="246" height="119.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-RR-Puv">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="52"/>
@@ -66,10 +66,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-o3-EMd">
-                                <rect key="frame" x="56" y="220.5" width="302" height="302"/>
+                                <rect key="frame" x="68" y="220.5" width="278" height="278"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67B-UP-4wV">
-                                        <rect key="frame" x="81.5" y="108" width="139.5" height="86.5"/>
+                                        <rect key="frame" x="69.5" y="96" width="139.5" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w0-vG-wD5">
                                                 <rect key="frame" x="48.5" y="0.0" width="42" height="29"/>
@@ -97,6 +97,7 @@
                                 <constraints>
                                     <constraint firstItem="67B-UP-4wV" firstAttribute="centerX" secondItem="VcR-o3-EMd" secondAttribute="centerX" id="0VM-2e-GoK"/>
                                     <constraint firstItem="67B-UP-4wV" firstAttribute="centerY" secondItem="VcR-o3-EMd" secondAttribute="centerY" id="FD6-oL-KOY"/>
+                                    <constraint firstAttribute="width" constant="278" id="a7L-PM-3Mq"/>
                                     <constraint firstAttribute="width" secondItem="VcR-o3-EMd" secondAttribute="height" multiplier="1:1" id="v5r-AW-Uh3"/>
                                 </constraints>
                             </view>
@@ -104,9 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="8eI-cX-89I"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VcR-o3-EMd" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="56" id="0n5-E3-nQG"/>
                             <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="x1F-Mm-2EE" secondAttribute="trailing" constant="84" id="H1Z-Kg-gKU"/>
-                            <constraint firstItem="8eI-cX-89I" firstAttribute="trailing" secondItem="VcR-o3-EMd" secondAttribute="trailing" constant="56" id="H9a-uy-IyS"/>
                             <constraint firstItem="x1F-Mm-2EE" firstAttribute="top" secondItem="VcR-o3-EMd" secondAttribute="bottom" constant="62" id="HMh-d0-Fyl"/>
                             <constraint firstItem="x1F-Mm-2EE" firstAttribute="leading" secondItem="8eI-cX-89I" secondAttribute="leading" constant="84" id="Q28-6v-4KJ"/>
                             <constraint firstItem="8K9-ux-KU7" firstAttribute="top" secondItem="8eI-cX-89I" secondAttribute="top" constant="95" id="Vql-pp-zWK"/>

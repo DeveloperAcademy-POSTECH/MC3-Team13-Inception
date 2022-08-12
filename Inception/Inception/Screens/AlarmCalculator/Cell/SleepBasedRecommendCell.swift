@@ -23,14 +23,22 @@ class SleepBasedRecommendCell: UITableViewCell {
   @IBAction func addAlarm(_ sender: UIButton) {
     let alert = UIAlertController(
       title: "현재 알람으로 설정할까요?",
-      message: "한 번에 하나의 알람만 세팅할 수 있어요\n새 알람을 활성화할까요?",
+      message: """
+      한 번에 하나의 알람만 세팅할 수 있어요
+      새 알람을 활성화할까요?
+      
+      (⚠️ 무음모드, 방해금지 모드에서는
+      알람이 울리지 않습니다)
+      """,
       preferredStyle: UIAlertController.Style.alert
     )
     let confirm = UIAlertAction(
     title: AlarmDataManger.shared.fetchPresentAlarm() == nil ? "확인하기" : "변경하기",
     style: .default
     ) { UIAlertAction in
+      let id = Date().dateTo24HTimeString(self.cellBedTime) + Date().dateTo24HTimeString(self.cellWakeupTime)
       AlarmDataManger.shared.createAlarmItem(
+        id : id,
         bedTime: self.cellBedTime,
         wakeupTime: self.cellWakeupTime
       ) { onSuccess in }
