@@ -37,6 +37,7 @@
 		A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */; };
 		A7CF4D5728A4DDD0002F9D57 /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5628A4DDD0002F9D57 /* OnBoardingPageViewController.swift */; };
 		A7CF4D5A28A5E568002F9D57 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5928A5E568002F9D57 /* OnBoardingViewController.swift */; };
+		A7CF4D5C28A600ED002F9D57 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */; };
 		A7DD1AFD288E8ECF008D08A5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */; };
 		A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D32883DC0A0099E6CE /* UIView+.swift */; };
 		A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D62883DC190099E6CE /* UIStackView+.swift */; };
@@ -88,6 +89,7 @@
 		A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
 		A7CF4D5628A4DDD0002F9D57 /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A7CF4D5928A5E568002F9D57 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A7F246D32883DC0A0099E6CE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Inception/Global/Extension/View/UIView+.swift"; sourceTree = SOURCE_ROOT; };
 		A7F246D62883DC190099E6CE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				84E97A3728920EAB0079D7A6 /* UIApplication+.swift */,
+				A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				90BBDE6A2893843200137E75 /* Scheduler.swift in Sources */,
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
+				A7CF4D5C28A600ED002F9D57 /* UserDefaults+.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,

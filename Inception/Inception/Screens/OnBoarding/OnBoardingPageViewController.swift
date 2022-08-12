@@ -179,9 +179,18 @@ extension OnBoardingPageViewController {
   }
   
   @objc func nextDidTap(_ sender: UIButton) {
-    pageControl.currentPage += 1
-    goToNextPage()
-    hideControlsIfNeeded()
+    
+    if pageControl.currentPage == pages.count - 1{
+      let controller = TabBarController()
+      controller.modalPresentationStyle = .fullScreen
+      UserDefaults.standard.hasOnboarded = true
+      present(controller, animated: true, completion: nil)
+    } else {
+      pageControl.currentPage += 1
+      goToNextPage()
+      hideControlsIfNeeded()
+    }
+    
   }
 }
 
