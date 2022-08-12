@@ -35,6 +35,9 @@
 		A738E867288F94B000076F19 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A738E866288F94B000076F19 /* Storyboarded.swift */; };
 		A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */; };
 		A7587ACA2886BD2F00FFA04D /* AlarmListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */; };
+		A7CF4D5728A4DDD0002F9D57 /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5628A4DDD0002F9D57 /* OnBoardingPageViewController.swift */; };
+		A7CF4D5A28A5E568002F9D57 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5928A5E568002F9D57 /* OnBoardingViewController.swift */; };
+		A7CF4D5C28A600ED002F9D57 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */; };
 		A7DD1AFD288E8ECF008D08A5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */; };
 		A7F246D42883DC0A0099E6CE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D32883DC0A0099E6CE /* UIView+.swift */; };
 		A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F246D62883DC190099E6CE /* UIStackView+.swift */; };
@@ -84,6 +87,9 @@
 		A738E866288F94B000076F19 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A7587AC72886BD2A00FFA04D /* AlarmListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmListCell.xib; sourceTree = "<group>"; };
 		A7587AC92886BD2F00FFA04D /* AlarmListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListCell.swift; sourceTree = "<group>"; };
+		A7CF4D5628A4DDD0002F9D57 /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
+		A7CF4D5928A5E568002F9D57 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 		A7DD1AFC288E8ECF008D08A5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A7F246D32883DC0A0099E6CE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+.swift"; path = "Inception/Global/Extension/View/UIView+.swift"; sourceTree = SOURCE_ROOT; };
 		A7F246D62883DC190099E6CE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				84E97A3728920EAB0079D7A6 /* UIApplication+.swift */,
+				A7CF4D5B28A600ED002F9D57 /* UserDefaults+.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -147,6 +154,15 @@
 				A738E866288F94B000076F19 /* Storyboarded.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A7CF4D5528A4DDA6002F9D57 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				A7CF4D5628A4DDD0002F9D57 /* OnBoardingPageViewController.swift */,
+				A7CF4D5928A5E568002F9D57 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		A7DD1AFB288E8EBD008D08A5 /* TabBar */ = {
@@ -266,6 +282,7 @@
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0A12881311300F98980 /* ViewController.swift */,
 				A7DD1AFB288E8EBD008D08A5 /* TabBar */,
+				A7CF4D5528A4DDA6002F9D57 /* OnBoarding */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
 				B8B9D0BD2881323D00F98980 /* SleepTracker */,
 				B8B9D0BC2881323200F98980 /* SleepSatisfaction */,
@@ -449,10 +466,12 @@
 			files = (
 				90BBDE6A2893843200137E75 /* Scheduler.swift in Sources */,
 				84D7C3342885414C00F1A0C5 /* SleepBasedViewController.swift in Sources */,
+				A7CF4D5C28A600ED002F9D57 /* UserDefaults+.swift in Sources */,
 				84D7C33E28855AD500F1A0C5 /* AwakeBasedViewController.swift in Sources */,
 				90A8B3C92884420A002E1D84 /* AlarmClockViewController.swift in Sources */,
 				B8B9D0A22881311300F98980 /* ViewController.swift in Sources */,
 				B8A6C33F2890CB42003E3E4C /* UIImage+.swift in Sources */,
+				A7CF4D5728A4DDD0002F9D57 /* OnBoardingPageViewController.swift in Sources */,
 				A7F246D72883DC190099E6CE /* UIStackView+.swift in Sources */,
 				B8900A3C2883FD4700EE03DF /* AlarmListViewController.swift in Sources */,
 				B8B9D09E2881311300F98980 /* AppDelegate.swift in Sources */,
@@ -465,6 +484,7 @@
 				77791E0D288953450042E56B /* AlarmItem+CoreDataClass.swift in Sources */,
 				A7257FE028879D60001A496D /* SleepRecord.swift in Sources */,
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
+				A7CF4D5A28A5E568002F9D57 /* OnBoardingViewController.swift in Sources */,
 				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
 				84E97A3828920EAB0079D7A6 /* UIApplication+.swift in Sources */,
 				77791E10288953680042E56B /* AlarmDataManager.swift in Sources */,
