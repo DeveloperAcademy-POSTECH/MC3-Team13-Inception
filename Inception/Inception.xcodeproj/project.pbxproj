@@ -61,6 +61,7 @@
 		B8DCAA3328A632EA00B5CF0F /* TeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */; };
 		B8DCAA3528A632FF00B5CF0F /* TeamMembersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */; };
 		B8DCAA3728A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */; };
+		B8DCAA3928A7D30E00B5CF0F /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCAA3828A7D30E00B5CF0F /* PrivacyPolicyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersViewController.swift; sourceTree = "<group>"; };
 		B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamMembersViewController.storyboard; sourceTree = "<group>"; };
 		B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrivacyPolicyViewController.storyboard; sourceTree = "<group>"; };
+		B8DCAA3828A7D30E00B5CF0F /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +413,7 @@
 				B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */,
 				B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */,
 				B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */,
+				B8DCAA3828A7D30E00B5CF0F /* PrivacyPolicyViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				A7CF4D5A28A5E568002F9D57 /* OnBoardingViewController.swift in Sources */,
 				A7F246D92883DD430099E6CE /* SleepSatisfacationViewController.swift in Sources */,
 				84E97A3828920EAB0079D7A6 /* UIApplication+.swift in Sources */,
+				B8DCAA3928A7D30E00B5CF0F /* PrivacyPolicyViewController.swift in Sources */,
 				77791E10288953680042E56B /* AlarmDataManager.swift in Sources */,
 				A71944A728845374004FF1BE /* UIButton+.swift in Sources */,
 				7793F9ED2887F0B30094D69B /* SleepTrackDataManager.swift in Sources */,
@@ -693,7 +697,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = TeamMembersViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = PrivacyPolicyViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -723,7 +727,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = TeamMembersViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = PrivacyPolicyViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
