@@ -58,6 +58,9 @@
 		B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */; };
 		B8DCAA2C28A3501E00B5CF0F /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */; };
 		B8DCAA2E28A3503300B5CF0F /* InformationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */; };
+		B8DCAA3328A632EA00B5CF0F /* TeamMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */; };
+		B8DCAA3528A632FF00B5CF0F /* TeamMembersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */; };
+		B8DCAA3728A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +117,9 @@
 		B8B9D0AE2881311500F98980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationViewController.storyboard; sourceTree = "<group>"; };
+		B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMembersViewController.swift; sourceTree = "<group>"; };
+		B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamMembersViewController.storyboard; sourceTree = "<group>"; };
+		B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrivacyPolicyViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,10 +288,10 @@
 		B8B9D0B82881317E00F98980 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B8DCAA2A28A34FF900B5CF0F /* Information */,
 				B8B9D0A32881311300F98980 /* Main.storyboard */,
 				B8B9D0AB2881311500F98980 /* LaunchScreen.storyboard */,
 				B8B9D0A12881311300F98980 /* ViewController.swift */,
+				B8DCAA2A28A34FF900B5CF0F /* Information */,
 				A7DD1AFB288E8EBD008D08A5 /* TabBar */,
 				A7CF4D5528A4DDA6002F9D57 /* OnBoarding */,
 				B8B9D0BE2881324700F98980 /* AlarmClock */,
@@ -392,10 +398,21 @@
 		B8DCAA2A28A34FF900B5CF0F /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				B8DCAA2F28A6326F00B5CF0F /* Views */,
 				B8DCAA2B28A3501E00B5CF0F /* InformationViewController.swift */,
 				B8DCAA2D28A3503300B5CF0F /* InformationViewController.storyboard */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		B8DCAA2F28A6326F00B5CF0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8DCAA3228A632EA00B5CF0F /* TeamMembersViewController.swift */,
+				B8DCAA3428A632FF00B5CF0F /* TeamMembersViewController.storyboard */,
+				B8DCAA3628A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +476,7 @@
 				90A8B3C7288441FC002E1D84 /* AlarmClockView.storyboard in Resources */,
 				84D7C34628864FF200F1A0C5 /* AwakeBasedRecommendCell.xib in Resources */,
 				84D7C34228864EDA00F1A0C5 /* SleepBasedRecommendCell.xib in Resources */,
+				B8DCAA3728A7AB4300B5CF0F /* PrivacyPolicyViewController.storyboard in Resources */,
 				B8900A3E2883FD7A00EE03DF /* AlarmListViewController.storyboard in Resources */,
 				B8B9D0AD2881311500F98980 /* LaunchScreen.storyboard in Resources */,
 				A9D3D4732882EFB400EDF412 /* AlarmCalculatorViewController.storyboard in Resources */,
@@ -468,6 +486,7 @@
 				840B85F92897BE69005757F7 /* alarmSound.m4a in Resources */,
 				A7F246DB2883DE580099E6CE /* SleepSatisfacationViewController.storyboard in Resources */,
 				B8B9D0A52881311300F98980 /* Main.storyboard in Resources */,
+				B8DCAA3528A632FF00B5CF0F /* TeamMembersViewController.storyboard in Resources */,
 				A7587AC82886BD2A00FFA04D /* AlarmListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +528,7 @@
 				77449BE62884CFDA0051147B /* DailySleepTrack.swift in Sources */,
 				77449BE82884D0040051147B /* SleepTrackerTableViewController.swift in Sources */,
 				B8DCAA2C28A3501E00B5CF0F /* InformationViewController.swift in Sources */,
+				B8DCAA3328A632EA00B5CF0F /* TeamMembersViewController.swift in Sources */,
 				77449BEA2884D2690051147B /* DailySleepTrackerTableViewCell.swift in Sources */,
 				A7F246DD2883EBA30099E6CE /* EmojiButton.swift in Sources */,
 				77F6F2012897A2EC00263BBB /* SleepRecordItem+CoreDataClass.swift in Sources */,
@@ -673,7 +693,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = TeamMembersViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -703,7 +723,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Sleepie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = TeamMembersViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
