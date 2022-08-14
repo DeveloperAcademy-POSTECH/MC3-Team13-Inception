@@ -181,10 +181,13 @@ extension OnBoardingPageViewController {
   @objc func nextDidTap(_ sender: UIButton) {
     
     if pageControl.currentPage == pages.count - 1{
+      
       let controller = TabBarController()
       controller.modalPresentationStyle = .fullScreen
       UserDefaults.standard.hasOnboarded = true
-      present(controller, animated: true, completion: nil)
+      self.view.window?.rootViewController = controller
+      self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+      
     } else {
       pageControl.currentPage += 1
       goToNextPage()
