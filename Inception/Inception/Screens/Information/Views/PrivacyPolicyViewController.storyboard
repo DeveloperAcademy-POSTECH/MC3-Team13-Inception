@@ -11,7 +11,7 @@
         <!--Privacy Policy View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PrivacyPolicyViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PrivacyPolicyViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJ5-Lg-YEe" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="904"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-DO-bee">
-                                                <rect key="frame" x="16" y="0.0" width="343" height="904"/>
+                                                <rect key="frame" x="16" y="0.0" width="343" height="920"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cYX-P7-Fik">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="93.333333333333329"/>
@@ -153,16 +153,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xdq-lX-Dxc">
-                                                        <rect key="frame" x="0.0" y="701.33333333333337" width="335.33333333333331" height="71.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="701.33333333333337" width="318" height="87.333333333333371"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. 개인정보의 파기" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wan-Ud-evi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335.33333333333331" height="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="17"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-6b-MCB">
-                                                                <rect key="frame" x="0.0" y="25.000000000000004" width="335.33333333333331" height="46.333333333333343"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-6b-MCB">
+                                                                <rect key="frame" x="0.0" y="25.000000000000004" width="318" height="62.333333333333343"/>
                                                                 <string key="text">당사의 어플리케이션은 독립 실행 방식의 어플리케이션으로 별도의 서버를 사용하지 않고있습니다. 또한 개인정보를 저장하지 않으므로 파기할 것이 없습니다. 그러나 사용자가 원할 경우 어플리케이션을 '삭제'함으로서 모든 데이터를 파기할 수 있습니다.</string>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <nil key="textColor"/>
@@ -171,7 +171,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-fa-GoS">
-                                                        <rect key="frame" x="0.0" y="800.66666666666663" width="331.33333333333331" height="103.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="816.66666666666663" width="331.33333333333331" height="103.33333333333337"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8. 개인정보 보호책임자 작성" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-hP-FYK">
                                                                 <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>

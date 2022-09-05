@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-final class TeamMembersViewController: UIViewController, Storyboarded {
+final class TeamMembersViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
