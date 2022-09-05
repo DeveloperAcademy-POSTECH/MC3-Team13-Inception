@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InformationTableViewController: UITableViewController {
+class InformationTableViewController: UITableViewController, Storyboarded {
   
   struct Option {
     let title: String
