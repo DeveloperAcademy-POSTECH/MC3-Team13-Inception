@@ -39,7 +39,7 @@
                             <outlet property="delegate" destination="3T8-bn-Ncv" id="gLW-qb-09Y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Information" largeTitleDisplayMode="never" id="R9v-2f-ctf"/>
+                    <navigationItem key="navigationItem" title="앱 정보" largeTitleDisplayMode="never" id="R9v-2f-ctf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlD-VO-5W1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

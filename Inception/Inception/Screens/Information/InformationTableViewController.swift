@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class InformationTableViewController: UITableViewController, Storyboarded {
   
@@ -32,7 +33,7 @@ class InformationTableViewController: UITableViewController, Storyboarded {
     let model = options[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "InformationViewTableCell", for: indexPath)
     cell.textLabel?.text = model.title
-//    cell.selectionStyle = .none
+    cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     
     return cell
   }
@@ -66,8 +67,9 @@ class InformationTableViewController: UITableViewController, Storyboarded {
   
   private func goToUserGuidance() {
     print("goToUserGuidance")
-    let userGuidanceViewController = OnBoardingPageViewController()
-    navigationController?.pushViewController(userGuidanceViewController, animated: true)
+    let githubURL = NSURL(string: "https://sticky-broker-f64.notion.site/Sleepie-App-Description-0d241abc9c954b9189403fe17906db4f")
+    let githubSafariView: SFSafariViewController = SFSafariViewController(url: githubURL! as URL)
+    self.present(githubSafariView, animated: true, completion: nil)
   }
   
   private func goToPrivacyPolicy() {
