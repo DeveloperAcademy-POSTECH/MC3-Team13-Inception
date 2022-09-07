@@ -66,21 +66,18 @@ class InformationTableViewController: UITableViewController, Storyboarded {
   }
   
   private func goToUserGuidance() {
-    print("goToUserGuidance")
     let githubURL = NSURL(string: "https://sticky-broker-f64.notion.site/Sleepie-App-Description-0d241abc9c954b9189403fe17906db4f")
     let githubSafariView: SFSafariViewController = SFSafariViewController(url: githubURL! as URL)
     self.present(githubSafariView, animated: true, completion: nil)
   }
   
   private func goToPrivacyPolicy() {
-    print("goToPrivacyPolicy")
     let storyboard = UIStoryboard(name: "PrivacyPolicyViewController", bundle: nil)
     guard let privacyPolicyViewController = storyboard.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as? PrivacyPolicyViewController else { return }
     navigationController?.pushViewController(privacyPolicyViewController, animated: true)
   }
   
   private func goToTeamMemberInfo() {
-    print("goToTeamMemberInfo")
     let storyboard = UIStoryboard(name: "TeamMembersViewController", bundle: nil)
     guard let memberInfoController = storyboard.instantiateViewController(withIdentifier: "teamMemberViewController") as? TeamMembersViewController else { return }
     navigationController?.pushViewController(memberInfoController, animated: true)

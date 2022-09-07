@@ -40,7 +40,6 @@ class AlarmCalculatorViewController: UIViewController, Storyboarded {
   // MARK: - NavigationBar Button Action
   
   @objc private func infoButtonDidTap(_ sender: UIBarButtonItem) {
-    print("goToInformation")
     let storyboard = UIStoryboard(name: "InformationViewController", bundle: nil)
     guard let informationViewController = storyboard.instantiateViewController(withIdentifier: "informationViewController") as? InformationTableViewController else { return }
     navigationController?.pushViewController(informationViewController, animated: true)
