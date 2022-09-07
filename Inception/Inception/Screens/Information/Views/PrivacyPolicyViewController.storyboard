@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PrivacyPolicyViewController" customModule="Inception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3k-5m-dXl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJ5-Lg-YEe" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-DO-bee">
+                                                <rect key="frame" x="16" y="0.0" width="343" height="920"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cYX-P7-Fik">
+                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="93.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleepy 개인정보처리방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZJ-DQ-tBd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="193.33333333333334" height="23"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleepie는 개인정보보호법에 따라 이용자들의 개인정보 보호 및 권익을 보호하고자 다음과 같은 처리방침을 두고 있습니다. 당사는 개인정보처리방침을 개정하는 경우 앱 화면 및 앱스토어를 통하여 공지할 것입니다." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcS-wj-Pr6">
+                                                                <rect key="frame" x="0.0" y="31.000000000000004" width="342" height="62.333333333333343"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-ig-9jT">
+                                                        <rect key="frame" x="0.0" y="121.33333333333333" width="280" height="39.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 개인정보의 처리 목적" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-0n-zQK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사에서 개인정보를 별도로 저장하거나 이용하지 않습니다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-2t-V55">
+                                                                <rect key="frame" x="0.0" y="24.999999999999996" width="280" height="14.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7X0-EE-uSG">
+                                                        <rect key="frame" x="0.0" y="188.66666666666666" width="335" height="87.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 개인정보 파일 현황" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uko-jU-UMF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사는 별도의 개인정보 파일을 사용하지 않으며 저장하지도 않습니다. 당사는 쿠키를 저장하지 않으며 이용하지 않습니다. 이용자가 이에 대해 의문이 있다면 해당 서비스(애플 및, 각 광고 미디어)로 직접 연락해야 합니다." lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNS-tm-p24">
+                                                                <rect key="frame" x="0.0" y="25.000000000000032" width="335" height="62.333333333333343"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6uc-l9-bKn">
+                                                        <rect key="frame" x="0.0" y="304" width="328.33333333333331" height="55.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. 개인정보의 처리 및 보유기간" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="po3-Oz-fwW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="328.33333333333331" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사는 개인정보를 직접적으로 저장하거나 보유하지 않습니다. 따라서 당사는 이용자의 개인정보를 처리하는 내용도 보유기간도 없습니다." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdR-99-9qo">
+                                                                <rect key="frame" x="0.0" y="25" width="328.33333333333331" height="30.333333333333329"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NgB-lA-EaY">
+                                                        <rect key="frame" x="0.0" y="387.33333333333331" width="256.33333333333331" height="39.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. 개인정보의 제3자 제공에 관한 사항" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDS-4Q-jiI">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256.33333333333331" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사는 개인정보를 제3자에게 제공하지 않고 있습니다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFl-Wg-MUY">
+                                                                <rect key="frame" x="0.0" y="24.999999999999996" width="256.33333333333331" height="14.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Osr-xV-ZmC">
+                                                        <rect key="frame" x="0.0" y="454.66666666666669" width="204" height="39.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. 개인정보처리 위탁" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om7-nh-C3Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="204" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사는 개인정보를 위탁하고 있지 않습니다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y3-RC-JXE">
+                                                                <rect key="frame" x="0.0" y="24.99999999999994" width="204" height="14.333333333333332"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-ha-XQS">
+                                                        <rect key="frame" x="0.0" y="522" width="259.33333333333331" height="151.33333333333337"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6. 정보주체의 권리, 의무 및 그 행사방법" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMt-LN-ZHJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="259.33333333333331" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUE-Wa-CaL">
+                                                                <rect key="frame" x="0.0" y="24.999999999999993" width="259.33333333333331" height="126.33333333333331"/>
+                                                                <string key="text">이용자는 개인정보주체로서 권리를 행사할 수 있습니다.
+
+1) 개인정보 열람요구
+2) 오류 등이 있을 경우 정정 요구
+3) 삭제요구
+4) 처리 정지 요구
+
+당사는 개인정보를 저장하거나 위탁하지 않습니다.</string>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xdq-lX-Dxc">
+                                                        <rect key="frame" x="0.0" y="701.33333333333337" width="318" height="87.333333333333371"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7. 개인정보의 파기" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wan-Ud-evi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="318" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-6b-MCB">
+                                                                <rect key="frame" x="0.0" y="25.000000000000004" width="318" height="62.333333333333343"/>
+                                                                <string key="text">당사의 어플리케이션은 독립 실행 방식의 어플리케이션으로 별도의 서버를 사용하지 않고있습니다. 또한 개인정보를 저장하지 않으므로 파기할 것이 없습니다. 그러나 사용자가 원할 경우 어플리케이션을 '삭제'함으로서 모든 데이터를 파기할 수 있습니다.</string>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-fa-GoS">
+                                                        <rect key="frame" x="0.0" y="816.66666666666663" width="331.33333333333331" height="103.33333333333337"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8. 개인정보 보호책임자 작성" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-hP-FYK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-Wd-wSd">
+                                                                <rect key="frame" x="0.0" y="24.999999999999993" width="331.33333333333331" height="78.333333333333314"/>
+                                                                <string key="text">본 개인정보처리정책에 대해 궁금하신 사항이 있거나, 개인정보 처리절차에 대한 질문, 의견 또는 우려가 있을 경우 아래 연락처로 연락 주시기 바랍니다.
+
+- 이메일 : mijkim22@gmail.com</string>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="802" id="ASk-cP-0JF"/>
+                                            <constraint firstAttribute="bottom" secondItem="sp0-DO-bee" secondAttribute="bottom" id="AeS-zb-weL"/>
+                                            <constraint firstItem="sp0-DO-bee" firstAttribute="top" secondItem="MJ5-Lg-YEe" secondAttribute="top" id="BJB-2h-H8D"/>
+                                            <constraint firstAttribute="trailing" secondItem="sp0-DO-bee" secondAttribute="trailing" constant="16" id="Gam-gu-h5v"/>
+                                            <constraint firstItem="sp0-DO-bee" firstAttribute="leading" secondItem="MJ5-Lg-YEe" secondAttribute="leading" constant="16" id="PAe-Lm-FCD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MJ5-Lg-YEe" firstAttribute="width" secondItem="M5B-Pq-w15" secondAttribute="width" id="7Hk-Hb-whg"/>
+                                    <constraint firstItem="MJ5-Lg-YEe" firstAttribute="trailing" secondItem="2hj-mJ-sf2" secondAttribute="trailing" id="XcI-8J-hGw"/>
+                                    <constraint firstItem="MJ5-Lg-YEe" firstAttribute="bottom" secondItem="2hj-mJ-sf2" secondAttribute="bottom" id="etu-Jr-Xus"/>
+                                    <constraint firstItem="MJ5-Lg-YEe" firstAttribute="top" secondItem="2hj-mJ-sf2" secondAttribute="top" id="kE9-Yf-xic"/>
+                                    <constraint firstItem="MJ5-Lg-YEe" firstAttribute="leading" secondItem="2hj-mJ-sf2" secondAttribute="leading" id="rYT-tn-DG1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="2hj-mJ-sf2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="M5B-Pq-w15"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o3k-5m-dXl" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="2dV-ER-lsI"/>
+                            <constraint firstItem="o3k-5m-dXl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5lv-5Y-u5k"/>
+                            <constraint firstItem="o3k-5m-dXl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Bbu-IA-Bgk"/>
+                            <constraint firstItem="o3k-5m-dXl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rjN-bE-rwp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="Uz7-z8-Op9">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="39.666666666666664"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1. 개인정보의 처리 목적" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33F-Fp-GjM">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="17.333333333333332"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="당사에서 개인정보를 별도로 저장하거나 이용하지 않습니다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35D-0U-qcT">
+                            <rect key="frame" x="0.0" y="25.333333333333332" width="280" height="14.333333333333332"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="iBy-xm-Jxv"/>
+                </stackView>
+            </objects>
+            <point key="canvasLocation" x="68" y="42.857142857142861"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -25,5 +25,23 @@ class AlarmCalculatorViewController: UIViewController, Storyboarded {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setNavigationItem()
+  }
+  
+  func setNavigationItem() {
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      image: UIImage(systemName: "info.circle"),
+      style: .plain,
+      target: self,
+      action: #selector(infoButtonDidTap))
+    self.navigationController?.navigationBar.tintColor = .systemOrange
+  }
+  
+  // MARK: - NavigationBar Button Action
+  
+  @objc private func infoButtonDidTap(_ sender: UIBarButtonItem) {
+    let storyboard = UIStoryboard(name: "InformationViewController", bundle: nil)
+    guard let informationViewController = storyboard.instantiateViewController(withIdentifier: "informationViewController") as? InformationTableViewController else { return }
+    navigationController?.pushViewController(informationViewController, animated: true)
   }
 }

@@ -296,7 +296,9 @@ extension AlarmListViewController: UITableViewDelegate {
     alert.addAction(confirm)
     alert.preferredAction = confirm
     
-    UIApplication.firstKeyWindowForConnectedScenes?.rootViewController?.present(alert, animated: true, completion: nil)
+    UIApplication.firstKeyWindowForConnectedScenes?.rootViewController?.present(alert,
+                                                                                animated: true,
+                                                                                completion: nil)
     
     tableView.deselectRow(at: indexPath, animated: false)
   }
