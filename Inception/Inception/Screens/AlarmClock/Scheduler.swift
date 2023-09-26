@@ -10,9 +10,13 @@ import UIKit
 struct Scheduler {
   let userNotificationCenter = UNUserNotificationCenter.current()
   let musicPlayTime = 29
-  // MARK : Notification 권한 요청
   
-  func requestNotificationAuthorization() {
+  
+  // MARK : Public Fucntions
+  
+  // Notification 권한 요청
+  // TODO: 앱 시작할때 권한 요청하도록 변경
+  public func requestNotificationAuthorization() {
     
     let authorizationOption = UNAuthorizationOptions(arrayLiteral: [.alert, .sound])
     
@@ -23,10 +27,8 @@ struct Scheduler {
     }
   }
   
-  // MARK : 기상 알림 등록
-  
-  //편의에 따라 취사선택할 수 있도록 overloading 하였습니다
-  func makeMorningNotification(minutes: Double) {
+  // 기상 알람 등록
+  public func makeMorningNotification(minutes: Double) {
     self.removeAllAlarm()
     
     let seconds = minutes * 60
@@ -54,7 +56,7 @@ struct Scheduler {
     }
   }
   
-  func makeMorningNotification(wakeuptimeTime: Date) {
+  public func makeMorningNotification(wakeuptimeTime: Date) {
     self.removeAllAlarm()
     
     lazy var wakeupTimeDate = DateComponents()
@@ -92,10 +94,9 @@ struct Scheduler {
     }
   }
   
+  // 알람 등록
   
-  // MARK : 취침 알림 등록
-  
-  func makeSleepAlarm(bedTime: Date) {
+  public func makeSleepAlarm(bedTime: Date) {
     let fifteenMinute = TimeInterval(15 * 60)
     if Date() < bedTime - fifteenMinute {
       let bedTimeInterval = Date().secondInterval(from: Date(), to: bedTime) - fifteenMinute
@@ -119,9 +120,9 @@ struct Scheduler {
     } else { return }
   }
   
-  // MARK : 알림 삭제
-  
-  func removeAllAlarm() {
+  // 알림 삭제
+
+  public func removeAllAlarm() {
     userNotificationCenter.removeAllPendingNotificationRequests()
   }
 }

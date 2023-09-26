@@ -18,11 +18,13 @@ class AlarmClockViewController: UIViewController {
   @IBOutlet weak var meridiemLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   
+  // MARK: - Lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     titleLabel.numberOfLines = 0
-    titleLabel.text = "개운한 아침을 위해" + "\n지금 기상하세요"
+    titleLabel.text = "개운한 아침을 위해\n지금 기상하세요"
     
     setTime()
     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTime),
@@ -34,6 +36,8 @@ class AlarmClockViewController: UIViewController {
     Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(ringAlarm),
                          userInfo: nil, repeats: true)
   }
+  
+  // MARK: - Functions
   
   @IBAction func snoozeButtonTap(_ sender: Any) {
     turnOffAlarm()
